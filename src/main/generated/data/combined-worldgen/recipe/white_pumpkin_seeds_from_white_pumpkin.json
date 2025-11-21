@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "white_pumpkin_seeds",
+  "ingredients": [
+    "combined-worldgen:white_pumpkin"
+  ],
+  "result": {
+    "count": 4,
+    "id": "combined-worldgen:white_pumpkin_seeds"
+  }
+}

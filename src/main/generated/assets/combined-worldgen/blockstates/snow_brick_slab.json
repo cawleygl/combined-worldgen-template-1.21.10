@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "combined-worldgen:block/snow_brick_slab"
+    },
+    "type=double": {
+      "model": "combined-worldgen:block/snow_bricks"
+    },
+    "type=top": {
+      "model": "combined-worldgen:block/snow_brick_slab_top"
+    }
+  }
+}

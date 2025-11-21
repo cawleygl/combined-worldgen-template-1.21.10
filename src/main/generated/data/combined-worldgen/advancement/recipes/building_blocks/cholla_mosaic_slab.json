@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cholla_mosaic": {
+      "conditions": {
+        "items": [
+          {
+            "items": "combined-worldgen:cholla_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "combined-worldgen:cholla_mosaic_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cholla_mosaic"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "combined-worldgen:cholla_mosaic_slab"
+    ]
+  }
+}

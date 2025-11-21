@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "combined-worldgen:block/baobab_leaves",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -9604319
+      }
+    ]
+  }
+}

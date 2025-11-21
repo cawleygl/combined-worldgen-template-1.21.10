@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "combined-worldgen:block/cholla_mosaic",
+    "side": "combined-worldgen:block/cholla_mosaic",
+    "top": "combined-worldgen:block/cholla_mosaic"
+  }
+}

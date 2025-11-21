@@ -1,0 +1,33 @@
+package bluesteel42.combinedworldgen;
+
+import bluesteel42.combinedworldgen.datagen.*;
+import bluesteel42.combinedworldgen.world.ModConfiguredFeatures;
+import bluesteel42.combinedworldgen.world.ModPlacedFeatures;
+import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.minecraft.registry.RegistryBuilder;
+import net.minecraft.registry.RegistryKeys;
+
+public class CombinedWorldgenDataGenerator implements DataGeneratorEntrypoint {
+	@Override
+	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
+		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
+		pack.addProvider(ModBlockTagProvider::new);
+		pack.addProvider(ModItemTagProvider::new);
+		pack.addProvider(ModEntityTypeTagProvider::new);
+		pack.addProvider(ModModelProvider::new);
+		pack.addProvider(ModBlockLootTableProvider::new);
+		pack.addProvider(ModEntityLootTableProvider::new);
+		pack.addProvider(ModShearingLootTableProvider::new);
+		pack.addProvider(ModHarvestLootTableProvider::new);
+		pack.addProvider(ModGiftLootTableProvider::new);
+		pack.addProvider(ModRecipeProvider::new);
+		pack.addProvider(ModRegistryDataGenerator::new);
+	}
+
+	@Override
+	public void buildRegistry(RegistryBuilder registryBuilder) {
+		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
+	}
+}

@@ -1,0 +1,296 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_leaves_top"
+      },
+      "when": {
+        "axis": "z"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_leaves_top",
+        "y": 180
+      },
+      "when": {
+        "axis": "z"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_leaves_side",
+        "y": 90
+      },
+      "when": {
+        "axis": "z"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_leaves_side",
+        "y": 270
+      },
+      "when": {
+        "axis": "z"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_leaves_side",
+        "x": 90
+      },
+      "when": {
+        "axis": "z"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_leaves_side",
+        "x": 270
+      },
+      "when": {
+        "axis": "z"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_leaves_side"
+      },
+      "when": {
+        "axis": "x"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_leaves_side",
+        "y": 180
+      },
+      "when": {
+        "axis": "x"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_leaves_top",
+        "y": 90
+      },
+      "when": {
+        "axis": "x"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_leaves_top",
+        "y": 270
+      },
+      "when": {
+        "axis": "x"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_leaves_side",
+        "x": 90
+      },
+      "when": {
+        "axis": "x"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_leaves_side",
+        "x": 270
+      },
+      "when": {
+        "axis": "x"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_leaves_side"
+      },
+      "when": {
+        "axis": "y"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_leaves_side",
+        "y": 180
+      },
+      "when": {
+        "axis": "y"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_leaves_side",
+        "y": 90
+      },
+      "when": {
+        "axis": "y"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_leaves_side",
+        "y": 270
+      },
+      "when": {
+        "axis": "y"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_leaves_top",
+        "x": 90
+      },
+      "when": {
+        "axis": "y"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_leaves_top",
+        "x": 270
+      },
+      "when": {
+        "axis": "y"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/azalea_stem_center"
+      },
+      "when": {
+        "axis": "y"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/azalea_stem_center",
+        "x": 90
+      },
+      "when": {
+        "axis": "z"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/azalea_stem_center",
+        "y": 90,
+        "x": 90
+      },
+      "when": {
+        "axis": "x"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_stem_side"
+      },
+      "when": {
+        "axis": "z"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_stem_side"
+      },
+      "when": {
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_stem_side",
+        "y": 180
+      },
+      "when": {
+        "axis": "z"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_stem_side",
+        "y": 180
+      },
+      "when": {
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_stem_side",
+        "y": 90
+      },
+      "when": {
+        "axis": "x"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_stem_side",
+        "y": 90
+      },
+      "when": {
+        "east": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_stem_side",
+        "y": 270
+      },
+      "when": {
+        "axis": "x"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_stem_side",
+        "y": 270
+      },
+      "when": {
+        "west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_stem_side",
+        "x": 90
+      },
+      "when": {
+        "axis": "y"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_stem_side",
+        "x": 90
+      },
+      "when": {
+        "down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_stem_side",
+        "x": 270
+      },
+      "when": {
+        "axis": "y"
+      }
+    },
+    {
+      "apply": {
+        "model": "combined-worldgen:block/leafy_azalea_stem_side",
+        "x": 270
+      },
+      "when": {
+        "up": "true"
+      }
+    }
+  ]
+}

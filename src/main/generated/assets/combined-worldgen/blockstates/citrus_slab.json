@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "combined-worldgen:block/citrus_slab"
+    },
+    "type=double": {
+      "model": "combined-worldgen:block/citrus_planks"
+    },
+    "type=top": {
+      "model": "combined-worldgen:block/citrus_slab_top"
+    }
+  }
+}

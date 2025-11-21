@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "combined-worldgen:block/dogwood_log",
+    "side": "combined-worldgen:block/dogwood_log"
+  }
+}

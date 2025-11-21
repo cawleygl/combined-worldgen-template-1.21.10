@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_stripped_azalea_stem": {
+      "conditions": {
+        "items": [
+          {
+            "items": "combined-worldgen:stripped_azalea_stem"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "combined-worldgen:stripped_azalea_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stripped_azalea_stem"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "combined-worldgen:stripped_azalea_block"
+    ]
+  }
+}

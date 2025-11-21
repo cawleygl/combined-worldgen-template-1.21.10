@@ -1,0 +1,12 @@
+{
+  "values": [
+    "combined-worldgen:mossy_brick_wall",
+    "combined-worldgen:mossy_tuff_brick_wall",
+    "combined-worldgen:mossy_deepslate_brick_wall",
+    "combined-worldgen:mossy_cobbled_deepslate_wall",
+    "combined-worldgen:snow_brick_wall",
+    "combined-worldgen:polished_andesite_wall",
+    "combined-worldgen:polished_diorite_wall",
+    "combined-worldgen:polished_granite_wall"
+  ]
+}

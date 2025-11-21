@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "combined-worldgen:block/kapok_slab"
+    },
+    "type=double": {
+      "model": "combined-worldgen:block/kapok_planks"
+    },
+    "type=top": {
+      "model": "combined-worldgen:block/kapok_slab_top"
+    }
+  }
+}

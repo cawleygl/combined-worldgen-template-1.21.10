@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_stripped_cholla_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "combined-worldgen:stripped_cholla_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "combined-worldgen:cholla_shelf"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stripped_cholla_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "combined-worldgen:cholla_shelf"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "combined-worldgen:mossy_cobbled_deepslate"
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "combined-worldgen:mossy_cobbled_deepslate_stairs"
+  }
+}

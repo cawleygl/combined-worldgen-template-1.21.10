@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "combined-worldgen:snowy_spruce",
+    "features": [
+      {
+        "chance": 0.25,
+        "feature": "combined-worldgen:tall_red_maple"
+      },
+      {
+        "chance": 0.025,
+        "feature": "combined-worldgen:short_red_maple"
+      },
+      {
+        "chance": 0.0025,
+        "feature": "combined-worldgen:tall_yellow_maple"
+      },
+      {
+        "chance": 0.00025,
+        "feature": "combined-worldgen:short_yellow_maple"
+      },
+      {
+        "chance": 0.0125,
+        "feature": "combined-worldgen:fallen_snowy_spruce_tree"
+      },
+      {
+        "chance": 0.0025,
+        "feature": "combined-worldgen:fallen_snowy_maple_tree"
+      }
+    ]
+  }
+}

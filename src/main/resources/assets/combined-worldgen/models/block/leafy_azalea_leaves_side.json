@@ -1,0 +1,7 @@
+{
+  "parent": "combined-worldgen:block/template_leafy_azalea_leaves_side",
+  "textures": {
+    "leaves": "minecraft:block/azalea_leaves",
+    "particle": "combined-worldgen:block/azalea_stem"
+  }
+}

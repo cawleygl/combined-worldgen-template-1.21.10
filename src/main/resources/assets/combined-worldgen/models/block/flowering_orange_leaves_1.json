@@ -1,0 +1,6 @@
+{
+    "parent": "combined-worldgen:block/template_flowering_orange_leaves",
+    "textures": {
+        "overlay": "combined-worldgen:block/flowering_orange_leaves_overlay_1"
+    }
+}

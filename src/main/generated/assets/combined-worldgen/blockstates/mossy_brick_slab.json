@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "combined-worldgen:block/mossy_brick_slab"
+    },
+    "type=double": {
+      "model": "combined-worldgen:block/mossy_bricks"
+    },
+    "type=top": {
+      "model": "combined-worldgen:block/mossy_brick_slab_top"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "combined-worldgen:mossy_bricks",
+  "result": {
+    "count": 1,
+    "id": "combined-worldgen:mossy_brick_wall"
+  }
+}

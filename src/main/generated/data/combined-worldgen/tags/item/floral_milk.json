@@ -1,0 +1,16 @@
+{
+  "values": [
+    "combined-worldgen:floral_milk_bottle_wither",
+    "combined-worldgen:floral_milk_bottle_haste",
+    "combined-worldgen:floral_milk_bottle_poison",
+    "combined-worldgen:floral_milk_bottle_jump_boost",
+    "combined-worldgen:floral_milk_bottle_regeneration",
+    "combined-worldgen:floral_milk_bottle_weakness",
+    "combined-worldgen:floral_milk_bottle_fire_resistance",
+    "combined-worldgen:floral_milk_bottle_night_vision",
+    "combined-worldgen:floral_milk_bottle_nausea",
+    "combined-worldgen:floral_milk_bottle_blindness",
+    "combined-worldgen:floral_milk_bottle_saturation",
+    "combined-worldgen:floral_milk_bottle_remove_longest"
+  ]
+}

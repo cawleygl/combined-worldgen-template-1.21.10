@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cactus_pad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "combined-worldgen:cactus_pad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "combined-worldgen:cooked_cactus_pad_from_campfire_cooking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cactus_pad"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "combined-worldgen:cooked_cactus_pad_from_campfire_cooking"
+    ]
+  }
+}

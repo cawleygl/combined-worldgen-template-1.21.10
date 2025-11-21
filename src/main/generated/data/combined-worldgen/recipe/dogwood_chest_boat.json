@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "chest_boat",
+  "ingredients": [
+    "minecraft:chest",
+    "combined-worldgen:dogwood_boat"
+  ],
+  "result": {
+    "count": 1,
+    "id": "combined-worldgen:dogwood_chest_boat"
+  }
+}

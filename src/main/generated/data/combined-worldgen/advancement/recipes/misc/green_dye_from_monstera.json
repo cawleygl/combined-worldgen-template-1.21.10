@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_monstera": {
+      "conditions": {
+        "items": [
+          {
+            "items": "combined-worldgen:monstera"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "combined-worldgen:green_dye_from_monstera"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_monstera"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "combined-worldgen:green_dye_from_monstera"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "minecraft:jungle_tree",
+    "features": [
+      {
+        "chance": 0.2,
+        "feature": "combined-worldgen:cacao_tree"
+      },
+      {
+        "chance": 0.1,
+        "feature": "combined-worldgen:orange_tree"
+      },
+      {
+        "chance": 0.5,
+        "feature": "combined-worldgen:orange_bush"
+      },
+      {
+        "chance": 0.33333334,
+        "feature": "minecraft:mega_jungle_tree_checked"
+      },
+      {
+        "chance": 0.0125,
+        "feature": "minecraft:fallen_jungle_tree"
+      },
+      {
+        "chance": 0.0125,
+        "feature": "combined-worldgen:fallen_cacao_tree"
+      },
+      {
+        "chance": 0.0125,
+        "feature": "combined-worldgen:fallen_orange_tree"
+      }
+    ]
+  }
+}

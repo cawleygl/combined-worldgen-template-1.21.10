@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "combined-worldgen:block/snow_bricks"
+    }
+  }
+}

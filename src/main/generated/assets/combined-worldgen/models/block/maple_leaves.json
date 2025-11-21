@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "combined-worldgen:block/maple_leaves"
+  }
+}

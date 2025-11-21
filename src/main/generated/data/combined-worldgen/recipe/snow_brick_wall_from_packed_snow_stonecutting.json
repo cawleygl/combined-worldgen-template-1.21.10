@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "combined-worldgen:packed_snow",
+  "result": {
+    "count": 1,
+    "id": "combined-worldgen:snow_brick_wall"
+  }
+}

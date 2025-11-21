@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "combined-worldgen:block/monstera_bottom"
+    },
+    "half=upper": {
+      "model": "combined-worldgen:block/monstera_top"
+    }
+  }
+}

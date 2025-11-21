@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "combined-worldgen:block/snow_bricks",
+    "side": "combined-worldgen:block/snow_bricks",
+    "top": "combined-worldgen:block/snow_bricks"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "combined-worldgen:snowy_spruce_sapling"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:spruce_sapling"
+  }
+}

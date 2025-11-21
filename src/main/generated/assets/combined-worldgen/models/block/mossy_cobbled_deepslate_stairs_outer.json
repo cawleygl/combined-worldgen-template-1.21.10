@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "combined-worldgen:block/mossy_cobbled_deepslate",
+    "side": "combined-worldgen:block/mossy_cobbled_deepslate",
+    "top": "combined-worldgen:block/mossy_cobbled_deepslate"
+  }
+}

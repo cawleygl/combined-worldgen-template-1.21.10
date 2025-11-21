@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_shelf_left",
+  "textures": {
+    "all": "combined-worldgen:block/azalea_shelf",
+    "particle": "combined-worldgen:block/stripped_azalea_block"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "combined-worldgen:block/stripped_willow_log",
+    "side": "combined-worldgen:block/stripped_willow_log"
+  }
+}

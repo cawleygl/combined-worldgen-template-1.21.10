@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_shelf_body",
+  "textures": {
+    "all": "combined-worldgen:block/cholla_shelf",
+    "particle": "combined-worldgen:block/stripped_cholla_block"
+  }
+}

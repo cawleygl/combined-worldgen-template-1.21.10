@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dried_cholla": {
+      "conditions": {
+        "items": [
+          {
+            "items": "combined-worldgen:dried_cholla"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "combined-worldgen:stick_from_dried_cholla_item"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dried_cholla"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "combined-worldgen:stick_from_dried_cholla_item"
+    ]
+  }
+}

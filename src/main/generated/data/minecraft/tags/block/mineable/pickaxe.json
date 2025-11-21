@@ -1,0 +1,29 @@
+{
+  "values": [
+    "#combined-worldgen:petrified_logs",
+    "combined-worldgen:petrified_planks",
+    "combined-worldgen:petrified_stairs",
+    "combined-worldgen:petrified_slab",
+    "combined-worldgen:petrified_door",
+    "combined-worldgen:petrified_trapdoor",
+    "combined-worldgen:petrified_fence",
+    "combined-worldgen:mossy_bricks",
+    "combined-worldgen:mossy_brick_stairs",
+    "combined-worldgen:mossy_brick_slab",
+    "combined-worldgen:mossy_tuff_bricks",
+    "combined-worldgen:mossy_tuff_brick_stairs",
+    "combined-worldgen:mossy_tuff_brick_slab",
+    "combined-worldgen:mossy_tuff_brick_wall",
+    "combined-worldgen:mossy_deepslate_bricks",
+    "combined-worldgen:mossy_deepslate_brick_stairs",
+    "combined-worldgen:mossy_deepslate_brick_slab",
+    "combined-worldgen:mossy_cobbled_deepslate",
+    "combined-worldgen:mossy_cobbled_deepslate_stairs",
+    "combined-worldgen:mossy_cobbled_deepslate_slab",
+    "combined-worldgen:smooth_deepslate",
+    "combined-worldgen:smooth_deepslate_slab",
+    "combined-worldgen:packed_snow",
+    "combined-worldgen:snow_bricks",
+    "combined-worldgen:chiseled_snow_bricks"
+  ]
+}

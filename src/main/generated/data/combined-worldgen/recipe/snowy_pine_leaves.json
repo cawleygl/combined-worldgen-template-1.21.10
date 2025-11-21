@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "combined-worldgen:pine_leaves",
+    "minecraft:snowball"
+  ],
+  "result": {
+    "count": 1,
+    "id": "combined-worldgen:snowy_pine_leaves"
+  }
+}

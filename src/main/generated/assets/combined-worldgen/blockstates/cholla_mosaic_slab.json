@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "combined-worldgen:block/cholla_mosaic_slab"
+    },
+    "type=double": {
+      "model": "combined-worldgen:block/cholla_mosaic"
+    },
+    "type=top": {
+      "model": "combined-worldgen:block/cholla_mosaic_slab_top"
+    }
+  }
+}

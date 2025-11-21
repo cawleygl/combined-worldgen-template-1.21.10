@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_azalea_mosaic": {
+      "conditions": {
+        "items": [
+          {
+            "items": "combined-worldgen:azalea_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "combined-worldgen:azalea_mosaic_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_azalea_mosaic"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "combined-worldgen:azalea_mosaic_slab"
+    ]
+  }
+}

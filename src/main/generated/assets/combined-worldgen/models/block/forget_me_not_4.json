@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/flowerbed_4",
+  "textures": {
+    "flowerbed": "combined-worldgen:block/forget_me_not",
+    "stem": "combined-worldgen:block/forget_me_not_stem"
+  }
+}

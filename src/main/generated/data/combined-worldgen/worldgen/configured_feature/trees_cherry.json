@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "minecraft:cherry_bees_005",
+    "features": [
+      {
+        "chance": 0.00625,
+        "feature": "combined-worldgen:fallen_cherry_tree"
+      }
+    ]
+  }
+}

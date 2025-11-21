@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_uv_locked_x",
+  "textures": {
+    "end": "combined-worldgen:block/stripped_cholla_block_top",
+    "side": "combined-worldgen:block/stripped_cholla_block"
+  }
+}

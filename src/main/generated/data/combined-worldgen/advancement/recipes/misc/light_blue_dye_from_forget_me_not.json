@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_forget_me_not": {
+      "conditions": {
+        "items": [
+          {
+            "items": "combined-worldgen:forget_me_not"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "combined-worldgen:light_blue_dye_from_forget_me_not"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_forget_me_not"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "combined-worldgen:light_blue_dye_from_forget_me_not"
+    ]
+  }
+}

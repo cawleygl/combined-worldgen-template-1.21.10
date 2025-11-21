@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "combined-worldgen:block/petrified_slab"
+    },
+    "type=double": {
+      "model": "combined-worldgen:block/petrified_planks"
+    },
+    "type=top": {
+      "model": "combined-worldgen:block/petrified_slab_top"
+    }
+  }
+}

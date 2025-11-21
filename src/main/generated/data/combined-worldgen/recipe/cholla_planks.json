@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    "#combined-worldgen:cholla_blocks"
+  ],
+  "result": {
+    "count": 2,
+    "id": "combined-worldgen:cholla_planks"
+  }
+}

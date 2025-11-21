@@ -1,0 +1,13 @@
+{
+  "values": [
+    "#combined-worldgen:petrified_logs",
+    "combined-worldgen:petrified_planks",
+    "combined-worldgen:petrified_stairs",
+    "combined-worldgen:petrified_slab",
+    "combined-worldgen:petrified_door",
+    "combined-worldgen:petrified_trapdoor",
+    "combined-worldgen:petrified_fence",
+    "combined-worldgen:petrified_button",
+    "combined-worldgen:petrified_pressure_plate"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hellebore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "combined-worldgen:hellebore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "combined-worldgen:lime_dye_from_hellebore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_hellebore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "combined-worldgen:lime_dye_from_hellebore"
+    ]
+  }
+}

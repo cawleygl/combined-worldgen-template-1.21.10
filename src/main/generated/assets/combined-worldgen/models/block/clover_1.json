@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/flowerbed_1",
+  "textures": {
+    "flowerbed": "combined-worldgen:block/clover",
+    "stem": "combined-worldgen:block/clover_stem"
+  }
+}

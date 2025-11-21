@@ -1,0 +1,421 @@
+{
+  "type": "minecraft:shearing",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "dandelion"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/dandelion_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "poppy"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/poppy_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "cornflower"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/cornflower_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "allium"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/allium_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "blue_orchid"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/blue_orchid_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "oxeye_daisy"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/oxeye_daisy_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "azure_bluet"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/azure_bluet_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "red_tulip"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/red_tulip_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "orange_tulip"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/orange_tulip_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "white_tulip"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/white_tulip_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "pink_tulip"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/pink_tulip_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "lily_of_the_valley"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/lily_of_the_valley_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "lilac"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/lilac_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "peony"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/peony_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "rose"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/rose_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "sunflower"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/sunflower_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "torchflower"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/torchflower_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "pitcher_plant"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/pitcher_plant_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "open_eyeblossom"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/open_eyeblossom_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "closed_eyeblossom"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/closed_eyeblossom_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "wither_rose"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/wither_rose_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "cactus_flower"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/cactus_flower_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "monstera"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/monstera_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "yellow_tulip"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/yellow_tulip_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "purple_tulip"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/purple_tulip_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "hellebore"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/hellebore_moobloom"
+            },
+            {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "components": {
+                      "combined-worldgen:moobloom/variant": "giant_padma"
+                    }
+                  }
+                }
+              ],
+              "value": "combined-worldgen:shearing/giant_padma_moobloom"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

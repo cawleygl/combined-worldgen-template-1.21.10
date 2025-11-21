@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "bottom": "combined-worldgen:block/petrified_door_bottom",
+    "top": "combined-worldgen:block/petrified_door_top"
+  }
+}

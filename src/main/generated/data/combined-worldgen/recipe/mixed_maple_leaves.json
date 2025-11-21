@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "combined-worldgen:maple_leaves",
+    "combined-worldgen:red_maple_leaves",
+    "combined-worldgen:yellow_maple_leaves"
+  ],
+  "result": {
+    "count": 3,
+    "id": "combined-worldgen:mixed_maple_leaves"
+  }
+}

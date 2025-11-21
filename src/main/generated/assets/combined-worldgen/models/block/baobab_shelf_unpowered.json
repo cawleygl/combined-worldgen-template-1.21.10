@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_shelf_unpowered",
+  "textures": {
+    "all": "combined-worldgen:block/baobab_shelf",
+    "particle": "combined-worldgen:block/stripped_baobab_log"
+  }
+}

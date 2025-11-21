@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_shelf_right",
+  "textures": {
+    "all": "combined-worldgen:block/dogwood_shelf",
+    "particle": "combined-worldgen:block/stripped_dogwood_log"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "combined-worldgen:block/azalea_mosaic",
+    "side": "combined-worldgen:block/azalea_mosaic",
+    "top": "combined-worldgen:block/azalea_mosaic"
+  }
+}

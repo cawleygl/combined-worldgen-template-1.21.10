@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "combined-worldgen:block/dogwood_slab"
+    },
+    "type=double": {
+      "model": "combined-worldgen:block/dogwood_planks"
+    },
+    "type=top": {
+      "model": "combined-worldgen:block/dogwood_slab_top"
+    }
+  }
+}

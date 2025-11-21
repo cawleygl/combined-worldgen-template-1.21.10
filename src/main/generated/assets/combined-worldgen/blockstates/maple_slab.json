@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "combined-worldgen:block/maple_slab"
+    },
+    "type=double": {
+      "model": "combined-worldgen:block/maple_planks"
+    },
+    "type=top": {
+      "model": "combined-worldgen:block/maple_slab_top"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": "combined-worldgen:cactus_pad",
+  "result": {
+    "id": "combined-worldgen:cooked_cactus_pad"
+  }
+}

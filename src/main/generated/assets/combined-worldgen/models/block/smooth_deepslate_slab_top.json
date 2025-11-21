@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "combined-worldgen:block/smooth_deepslate",
+    "side": "combined-worldgen:block/smooth_deepslate",
+    "top": "combined-worldgen:block/smooth_deepslate"
+  }
+}

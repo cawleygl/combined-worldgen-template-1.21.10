@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_snowy_pine_sapling": {
+      "conditions": {
+        "items": [
+          {
+            "items": "combined-worldgen:snowy_pine_sapling"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "combined-worldgen:pine_sapling_from_snowy_pine_sapling"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_snowy_pine_sapling"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "combined-worldgen:pine_sapling_from_snowy_pine_sapling"
+    ]
+  }
+}

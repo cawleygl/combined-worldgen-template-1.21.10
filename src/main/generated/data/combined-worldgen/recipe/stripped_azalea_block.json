@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "combined-worldgen:stripped_azalea_stem",
+    "combined-worldgen:stripped_azalea_stem",
+    "combined-worldgen:stripped_azalea_stem",
+    "combined-worldgen:stripped_azalea_stem",
+    "combined-worldgen:stripped_azalea_stem",
+    "combined-worldgen:stripped_azalea_stem",
+    "combined-worldgen:stripped_azalea_stem",
+    "combined-worldgen:stripped_azalea_stem",
+    "combined-worldgen:stripped_azalea_stem"
+  ],
+  "result": {
+    "count": 1,
+    "id": "combined-worldgen:stripped_azalea_block"
+  }
+}

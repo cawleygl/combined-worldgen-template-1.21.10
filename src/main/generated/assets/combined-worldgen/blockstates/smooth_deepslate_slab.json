@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "combined-worldgen:block/smooth_deepslate_slab"
+    },
+    "type=double": {
+      "model": "combined-worldgen:block/smooth_deepslate"
+    },
+    "type=top": {
+      "model": "combined-worldgen:block/smooth_deepslate_slab_top"
+    }
+  }
+}

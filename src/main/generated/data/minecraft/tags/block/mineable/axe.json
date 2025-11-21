@@ -1,0 +1,20 @@
+{
+  "values": [
+    "#combined-worldgen:azalea_blocks",
+    "combined-worldgen:azalea_mosaic",
+    "combined-worldgen:azalea_mosaic_stairs",
+    "combined-worldgen:azalea_mosaic_slab",
+    "#combined-worldgen:cholla_blocks",
+    "combined-worldgen:cholla_mosaic",
+    "combined-worldgen:cholla_mosaic_stairs",
+    "combined-worldgen:cholla_mosaic_slab",
+    "combined-worldgen:dried_cholla",
+    "combined-worldgen:white_pumpkin",
+    "combined-worldgen:carved_white_pumpkin",
+    "combined-worldgen:white_jack_o_lantern",
+    "combined-worldgen:soul_jack_o_lantern",
+    "combined-worldgen:green_pumpkin",
+    "combined-worldgen:carved_green_pumpkin",
+    "combined-worldgen:green_jack_o_lantern"
+  ]
+}
