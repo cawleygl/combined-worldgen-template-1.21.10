@@ -1,7 +1,0 @@
-{
-	"parent": "combined-worldgen:block/template_potted_azalea_stem",
-	"textures": {
-		"side": "combined-worldgen:block/stripped_azalea_block",
-		"top": "combined-worldgen:block/stripped_azalea_block_top"
-	}
-}
