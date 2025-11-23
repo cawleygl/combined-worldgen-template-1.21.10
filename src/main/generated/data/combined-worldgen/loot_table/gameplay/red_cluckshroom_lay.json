@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "combined-worldgen:cluckshroom_egg"
+          "name": "combined-worldgen:spotted_egg"
         }
       ],
       "rolls": 1.0

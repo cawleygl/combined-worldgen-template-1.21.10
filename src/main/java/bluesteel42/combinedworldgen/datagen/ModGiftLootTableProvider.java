@@ -23,8 +23,12 @@ public class ModGiftLootTableProvider extends SimpleFabricLootTableProvider {
     @Override
     public void accept(BiConsumer<RegistryKey<LootTable>, LootTable.Builder> lootTableBiConsumer) {
         lootTableBiConsumer.accept(
-                ModLootTables.CLUCKSHROOM_LAY_GAMEPLAY,
-                LootTable.builder().pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).with(ItemEntry.builder(ModItems.CLUCKSHROOM_EGG)))
+                ModLootTables.RED_CLUCKSHROOM_LAY_GAMEPLAY,
+                LootTable.builder().pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).with(ItemEntry.builder(ModItems.SPOTTED_EGG)))
+        );
+        lootTableBiConsumer.accept(
+                ModLootTables.BROWN_CLUCKSHROOM_LAY_GAMEPLAY,
+                LootTable.builder().pool(LootPool.builder().rolls(ConstantLootNumberProvider.create(1.0F)).with(ItemEntry.builder(ModItems.UMAMI_EGG)))
         );
     }
 }

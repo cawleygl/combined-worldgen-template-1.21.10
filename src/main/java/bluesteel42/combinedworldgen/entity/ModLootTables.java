@@ -42,7 +42,8 @@ public class ModLootTables {
     public static final RegistryKey<LootTable> MOOBLOOM_GIANT_PADMA_SHEARING = register("shearing/giant_padma_moobloom");
 
     public static RegistryKey<LootTable> CLUCKSHROOM_SHEARING = RegistryKey.of(RegistryKeys.LOOT_TABLE, Identifier.of(CombinedWorldgen.MOD_ID, "shearing/cluckshroom"));
-    public static RegistryKey<LootTable> CLUCKSHROOM_LAY_GAMEPLAY = RegistryKey.of(RegistryKeys.LOOT_TABLE, Identifier.of(CombinedWorldgen.MOD_ID, "gameplay/cluckshroom_lay"));
+    public static RegistryKey<LootTable> RED_CLUCKSHROOM_LAY_GAMEPLAY = RegistryKey.of(RegistryKeys.LOOT_TABLE, Identifier.of(CombinedWorldgen.MOD_ID, "gameplay/red_cluckshroom_lay"));
+    public static RegistryKey<LootTable> BROWN_CLUCKSHROOM_LAY_GAMEPLAY = RegistryKey.of(RegistryKeys.LOOT_TABLE, Identifier.of(CombinedWorldgen.MOD_ID, "gameplay/brown_cluckshroom_lay"));
 
     private static RegistryKey<LootTable> register(String path) {
         return RegistryKey.of(RegistryKeys.LOOT_TABLE, Identifier.of(CombinedWorldgen.MOD_ID, path));

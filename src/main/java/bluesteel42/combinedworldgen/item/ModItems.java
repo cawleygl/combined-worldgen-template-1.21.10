@@ -1,10 +1,11 @@
 package bluesteel42.combinedworldgen.item;
 
 import bluesteel42.combinedworldgen.CombinedWorldgen;
-import bluesteel42.combinedworldgen.block.ModBlocks;
 import bluesteel42.combinedworldgen.block.flora.ModFloraBlocks;
 import bluesteel42.combinedworldgen.block.pumpkin.ModPumpkinBlocks;
+import bluesteel42.combinedworldgen.entity.ModDataComponentTypes;
 import bluesteel42.combinedworldgen.entity.ModEntities;
+import bluesteel42.combinedworldgen.entity.cluckshroom.CluckshroomEntity;
 import bluesteel42.combinedworldgen.util.ModTags;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -12,7 +13,6 @@ import net.minecraft.block.Block;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.ConsumableComponent;
 import net.minecraft.component.type.EquippableComponent;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -53,7 +53,8 @@ public class ModItems {
     public static final Item WITHER_FLORAL_MILK_BOTTLE = register("floral_milk_bottle_wither", createFloralMilkSettings(ModFoodComponents.FLORAL_MILK_WITHER));
     public static final Item HASTE_FLORAL_MILK_BOTTLE = register("floral_milk_bottle_haste", createFloralMilkSettings(ModFoodComponents.FLORAL_MILK_HASTE));
 
-    public static final Item CLUCKSHROOM_EGG = register("cluckshroom_egg", CluckshroomEggItem::new, new Item.Settings().maxCount(16));
+    public static final Item SPOTTED_EGG = register("spotted_egg", CluckshroomEggItem::new, new Item.Settings().maxCount(16).component(ModDataComponentTypes.CLUCKSHROOM_VARIANT, CluckshroomEntity.Variant.RED));
+    public static final Item UMAMI_EGG = register("umami_egg", CluckshroomEggItem::new, new Item.Settings().maxCount(16).component(ModDataComponentTypes.CLUCKSHROOM_VARIANT, CluckshroomEntity.Variant.BROWN));
 
     private static Item.Settings createFloralMilkSettings(ConsumableComponent component) {
         return new Item.Settings().recipeRemainder(Items.GLASS_BOTTLE).component(DataComponentTypes.CONSUMABLE, component).useRemainder(Items.GLASS_BOTTLE).maxCount(1);
@@ -170,11 +171,13 @@ public class ModItems {
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.BLUE_EGG, ModItems.CLUCKSHROOM_EGG);
+                    itemGroup.addAfter(Items.BLUE_EGG, ModItems.UMAMI_EGG);
+                    itemGroup.addAfter(Items.BLUE_EGG, ModItems.SPOTTED_EGG);
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.BLUE_EGG, ModItems.CLUCKSHROOM_EGG);
+                    itemGroup.addAfter(Items.BLUE_EGG, ModItems.UMAMI_EGG);
+                    itemGroup.addAfter(Items.BLUE_EGG, ModItems.SPOTTED_EGG);
                 });
 
         ItemTooltipCallback.EVENT.register((itemStack, tooltipContext, tooltipType, list) -> {

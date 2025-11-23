@@ -45,8 +45,6 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.FoliageColors;
 
-import java.util.Map;
-
 import static net.minecraft.client.data.BlockStateModelGenerator.createWallBlockState;
 import static net.minecraft.client.data.BlockStateModelGenerator.createWeightedVariant;
 
@@ -457,7 +455,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerFlowerPotPlantAndItem(ModFloraBlocks.HELLEBORE, ModFloraBlocks.POTTED_HELLEBORE, BlockStateModelGenerator.CrossType.NOT_TINTED);
 
         blockStateModelGenerator.registerItemModel(ModItems.CLUCKSHROOM_SPAWN_EGG);
-        blockStateModelGenerator.registerItemModel(ModItems.CLUCKSHROOM_EGG);
+        blockStateModelGenerator.registerItemModel(ModItems.SPOTTED_EGG);
+        blockStateModelGenerator.registerItemModel(ModItems.UMAMI_EGG);
     }
 
     @Override

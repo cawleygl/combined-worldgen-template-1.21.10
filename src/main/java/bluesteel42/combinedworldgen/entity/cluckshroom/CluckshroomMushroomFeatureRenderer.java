@@ -33,20 +33,19 @@ public class CluckshroomMushroomFeatureRenderer extends FeatureRenderer<Cluckshr
             boolean bl = cluckshroomEntityRenderState.hasOutline() && cluckshroomEntityRenderState.invisible;
             if (!cluckshroomEntityRenderState.invisible || bl) {
                 int j = LivingEntityRenderer.getOverlay(cluckshroomEntityRenderState, 0.0F);
-                BlockState backBlockState = cluckshroomEntityRenderState.backMushroom;
-                BlockStateModel backBlockStateModel = this.blockRenderManager.getModel(backBlockState);
+                BlockState blockState = cluckshroomEntityRenderState.type.getMushroomState();
+//                BlockState blockState = Blocks.RED_MUSHROOM.getDefaultState();
+                BlockStateModel blockStateModel = this.blockRenderManager.getModel(blockState);
                 matrixStack.push();
                 matrixStack.scale(-0.525F, -0.525F, 0.525F);
                 matrixStack.translate(-0.625F, -1.55F, -0.35F);
-                this.renderMushroom(matrixStack, orderedRenderCommandQueue, i, bl, cluckshroomEntityRenderState.outlineColor, backBlockState, j, backBlockStateModel);
+                this.renderMushroom(matrixStack, orderedRenderCommandQueue, i, bl, cluckshroomEntityRenderState.outlineColor, blockState, j, blockStateModel);
                 matrixStack.pop();
                 matrixStack.push();
-                BlockState headBlockState = cluckshroomEntityRenderState.headMushroom;
-                BlockStateModel headBlockStateModel = this.blockRenderManager.getModel(headBlockState);
                 this.getContextModel().getHead().applyTransform(matrixStack);
                 matrixStack.scale(-0.525F, -0.525F, 0.525F);
                 matrixStack.translate(-0.4F, 0.65F, -0.5F);
-                this.renderMushroom(matrixStack, orderedRenderCommandQueue, i, bl, cluckshroomEntityRenderState.outlineColor, headBlockState, j, headBlockStateModel);
+                this.renderMushroom(matrixStack, orderedRenderCommandQueue, i, bl, cluckshroomEntityRenderState.outlineColor, blockState, j, blockStateModel);
                 matrixStack.pop();
             }
         }

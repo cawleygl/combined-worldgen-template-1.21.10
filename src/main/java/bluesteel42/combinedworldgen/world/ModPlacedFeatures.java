@@ -48,6 +48,7 @@ public class ModPlacedFeatures {
 
     public static final RegistryKey<PlacedFeature> OLD_GROWTH_BIRCH_VIOLET_PLACED_KEY = registerKey("old_growth_birch_violet");
     public static final RegistryKey<PlacedFeature> OLD_GROWTH_BIRCH_MOSS_PLACED_KEY = registerKey("old_growth_birch_moss");
+    public static final RegistryKey<PlacedFeature> BIRCH_FOREST_CLOVER_PLACED_KEY = registerKey("birch_forest_clover");
 
     public static final RegistryKey<PlacedFeature> FOREST_BIRCH_LEAF_LITTER_PLACED_KEY = registerKey("forest_birch_leaf_litter");
     public static final RegistryKey<PlacedFeature> FOREST_BIRCH_BEES_0002_PLACED_KEY = registerKey("forest_birch_bees_0002");
@@ -241,6 +242,14 @@ public class ModPlacedFeatures {
         );
 
         register(context, OLD_GROWTH_BIRCH_VIOLET_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OLD_GROWTH_BIRCH_VIOLET_KEY),
+                CountPlacementModifier.of(3),
+                RarityFilterPlacementModifier.of(2),
+                SquarePlacementModifier.of(),
+                PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
+                BiomePlacementModifier.of()
+        );
+
+        register(context, BIRCH_FOREST_CLOVER_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BIRCH_FOREST_CLOVER_KEY),
                 CountPlacementModifier.of(3),
                 RarityFilterPlacementModifier.of(2),
                 SquarePlacementModifier.of(),

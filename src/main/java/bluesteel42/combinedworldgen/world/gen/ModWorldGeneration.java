@@ -28,8 +28,10 @@ public class ModWorldGeneration {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.MUSHROOM_FIELDS), GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.MUSHROOM_ORE_BROWN_MUSHROOM_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.MUSHROOM_FIELDS), GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.MUSHROOM_ORE_RED_MUSHROOM_PLACED_KEY);
 
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.OLD_GROWTH_BIRCH_FOREST), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.OLD_GROWTH_BIRCH_VIOLET_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.OLD_GROWTH_BIRCH_FOREST), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.OLD_GROWTH_BIRCH_MOSS_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.OLD_GROWTH_BIRCH_FOREST), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.OLD_GROWTH_BIRCH_MOSS_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.BIRCH_FOREST), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.BIRCH_FOREST_CLOVER_PLACED_KEY);
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.CHERRY_GROVE), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.FLOWER_PATCH_CHERRY_PLACED_KEY);
 

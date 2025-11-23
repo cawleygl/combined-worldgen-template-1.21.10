@@ -1,5 +1,6 @@
 package bluesteel42.combinedworldgen.entity.cluckshroom;
 
+import bluesteel42.combinedworldgen.entity.ModDataComponentTypes;
 import bluesteel42.combinedworldgen.entity.ModEntities;
 import bluesteel42.combinedworldgen.item.ModItems;
 import net.minecraft.block.BlockState;
@@ -17,6 +18,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
+
+import java.util.Objects;
 
 public class CluckshroomEggEntity extends ThrownItemEntity {
     private static final EntityDimensions EMPTY_DIMENSIONS = EntityDimensions.fixed(0.0F, 0.0F);
@@ -74,6 +77,7 @@ public class CluckshroomEggEntity extends ThrownItemEntity {
                     if (cluckshroomEntity != null) {
                         cluckshroomEntity.setBreedingAge(-24000);
                         cluckshroomEntity.refreshPositionAndAngles(this.getX(), this.getY(), this.getZ(), this.getYaw(), 0.0F);
+                        cluckshroomEntity.setVariant(Objects.requireNonNull(this.getStack().get(ModDataComponentTypes.CLUCKSHROOM_VARIANT)));
                         if (!cluckshroomEntity.recalculateDimensions(EMPTY_DIMENSIONS)) {
                             break;
                         }
@@ -88,7 +92,7 @@ public class CluckshroomEggEntity extends ThrownItemEntity {
                 int k = MathHelper.floor(this.getY());
                 int l = MathHelper.floor(this.getZ() + (i / 2 % 2 * 2 - 1) * 0.25F);
                 BlockPos blockPos = new BlockPos(j, k, l);
-                BlockState mushroom = this.random.nextBoolean() ? Blocks.RED_MUSHROOM.getDefaultState() : Blocks.BROWN_MUSHROOM.getDefaultState();
+                BlockState mushroom = Objects.requireNonNull(this.getStack().get(ModDataComponentTypes.CLUCKSHROOM_VARIANT)).getMushroomState();
                 if (this.getEntityWorld().getBlockState(blockPos).isIn(BlockTags.AIR) && mushroom.canPlaceAt(this.getEntityWorld(), blockPos)) {
                     this.getEntityWorld().setBlockState(blockPos, mushroom);
                     this.getEntityWorld().emitGameEvent(GameEvent.BLOCK_PLACE, blockPos, GameEvent.Emitter.of(this, mushroom));
@@ -102,6 +106,6 @@ public class CluckshroomEggEntity extends ThrownItemEntity {
 
     @Override
     protected Item getDefaultItem() {
-        return ModItems.CLUCKSHROOM_EGG;
+        return ModItems.SPOTTED_EGG;
     }
 }

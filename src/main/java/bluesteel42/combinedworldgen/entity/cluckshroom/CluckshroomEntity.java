@@ -2,6 +2,8 @@ package bluesteel42.combinedworldgen.entity.cluckshroom;
 
 import bluesteel42.combinedworldgen.entity.ModEntities;
 import bluesteel42.combinedworldgen.entity.ModLootTables;
+import com.mojang.serialization.Codec;
+import io.netty.buffer.ByteBuf;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
@@ -11,13 +13,19 @@ import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.conversion.EntityConversionContext;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.passive.AnimalEntity;
-import net.minecraft.entity.passive.MooshroomEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.loot.LootTable;
+import net.minecraft.network.codec.PacketCodec;
+import net.minecraft.network.codec.PacketCodecs;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.server.world.ServerWorld;
@@ -28,6 +36,8 @@ import net.minecraft.storage.ReadView;
 import net.minecraft.storage.WriteView;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.StringIdentifiable;
+import net.minecraft.util.function.ValueLists;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -36,8 +46,12 @@ import net.minecraft.world.*;
 import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.UUID;
+import java.util.function.IntFunction;
+
 public class CluckshroomEntity extends AnimalEntity implements Shearable {
     private static final EntityDimensions BABY_BASE_DIMENSIONS = EntityType.CHICKEN.getDimensions().scaled(0.5F).withEyeHeight(0.2975F);
+    private static final TrackedData<Integer> VARIANT = DataTracker.registerData(CluckshroomEntity.class, TrackedDataHandlerRegistry.INTEGER);
     public float flapProgress;
     public float maxWingDeviation;
     public float prevMaxWingDeviation;
@@ -45,8 +59,8 @@ public class CluckshroomEntity extends AnimalEntity implements Shearable {
     public float flapSpeed = 1.0F;
     private float field_28639 = 1.0F;
     public int eggLayTime = this.random.nextInt(6000) + 6000;
-    public BlockState headMushroom = this.random.nextInt(2) != 0 ? Blocks.RED_MUSHROOM.getDefaultState() : Blocks.BROWN_MUSHROOM.getDefaultState();
-    public BlockState backMushroom = this.random.nextInt(2) == 0 ? Blocks.RED_MUSHROOM.getDefaultState() : Blocks.BROWN_MUSHROOM.getDefaultState();
+    @Nullable
+    private UUID lightningId;
 
     public CluckshroomEntity(EntityType<? extends CluckshroomEntity> entityType, World world) {
         super(entityType, world);
@@ -76,12 +90,30 @@ public class CluckshroomEntity extends AnimalEntity implements Shearable {
         return AnimalEntity.createAnimalAttributes().add(EntityAttributes.MAX_HEALTH, 4.0).add(EntityAttributes.MOVEMENT_SPEED, 0.25);
     }
 
-    public BlockState getHeadMushroomState() {
-        return headMushroom;
+    @Override
+    public float getPathfindingFavor(BlockPos pos, WorldView world) {
+        return world.getBlockState(pos.down()).isOf(Blocks.MYCELIUM) ? 10.0F : -world.getPhototaxisFavor(pos);
     }
 
-    public BlockState getBackMushroomState() {
-        return backMushroom;
+    public static boolean canSpawn(EntityType<CluckshroomEntity> type, ServerWorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
+        return world.getBlockState(pos.down()).isIn(BlockTags.MOOSHROOMS_SPAWNABLE_ON) && isLightLevelValidForNaturalSpawn(world, pos);
+    }
+
+
+    @Override
+    public void onStruckByLightning(ServerWorld world, LightningEntity lightning) {
+        UUID uUID = lightning.getUuid();
+        if (!uUID.equals(this.lightningId)) {
+            this.setVariant(this.getVariant() == CluckshroomEntity.Variant.RED ? CluckshroomEntity.Variant.BROWN : CluckshroomEntity.Variant.RED);
+            this.lightningId = uUID;
+            this.playSound(SoundEvents.ENTITY_MOOSHROOM_CONVERT, 2.0F, 1.0F);
+        }
+    }
+
+    @Override
+    protected void initDataTracker(DataTracker.Builder builder) {
+        super.initDataTracker(builder);
+        builder.add(VARIANT, CluckshroomEntity.Variant.DEFAULT.index);
     }
 
     @Override
@@ -103,7 +135,11 @@ public class CluckshroomEntity extends AnimalEntity implements Shearable {
 
         this.flapProgress = this.flapProgress + this.flapSpeed * 2.0F;
         if (this.getEntityWorld() instanceof ServerWorld serverWorld && this.isAlive() && !this.isBaby() && --this.eggLayTime <= 0) {
-            if (this.forEachGiftedItem(serverWorld, ModLootTables.CLUCKSHROOM_LAY_GAMEPLAY, this::dropStack)) {
+            RegistryKey<LootTable> laidEgg = ModLootTables.RED_CLUCKSHROOM_LAY_GAMEPLAY;
+            if (this.getVariant() == CluckshroomEntity.Variant.BROWN) {
+                laidEgg = ModLootTables.BROWN_CLUCKSHROOM_LAY_GAMEPLAY;
+            }
+            if (this.forEachGiftedItem(serverWorld, laidEgg, this::dropStack)) {
                 this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
                 this.emitGameEvent(GameEvent.ENTITY_PLACE);
             }
@@ -123,7 +159,7 @@ public class CluckshroomEntity extends AnimalEntity implements Shearable {
                     int k = MathHelper.floor(this.getY());
                     int l = MathHelper.floor(this.getZ() + (i / 2 % 2 * 2 - 1) * 0.25F);
                     BlockPos blockPos = new BlockPos(j, k, l);
-                    BlockState mushroom = this.random.nextBoolean() ? this.headMushroom : this.backMushroom;
+                    BlockState mushroom = this.getVariant().getMushroomState();
                     if (this.getEntityWorld().getBlockState(blockPos).isIn(BlockTags.AIR) && mushroom.canPlaceAt(this.getEntityWorld(), blockPos)) {
                         this.getEntityWorld().setBlockState(blockPos, mushroom);
                         this.getEntityWorld().emitGameEvent(GameEvent.BLOCK_PLACE, blockPos, GameEvent.Emitter.of(this, mushroom));
@@ -151,14 +187,7 @@ public class CluckshroomEntity extends AnimalEntity implements Shearable {
         }
     }
 
-    @Override
-    public float getPathfindingFavor(BlockPos pos, WorldView world) {
-        return world.getBlockState(pos.down()).isOf(Blocks.MYCELIUM) ? 10.0F : -world.getPhototaxisFavor(pos);
-    }
 
-    public static boolean canSpawn(EntityType<CluckshroomEntity> type, ServerWorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
-        return world.getBlockState(pos.down()).isIn(BlockTags.MOOSHROOMS_SPAWNABLE_ON) && isLightLevelValidForNaturalSpawn(world, pos);
-    }
 
     @Override
     protected boolean isFlappingWings() {
@@ -190,26 +219,23 @@ public class CluckshroomEntity extends AnimalEntity implements Shearable {
         this.playSound(SoundEvents.ENTITY_CHICKEN_STEP, 0.15F, 1.0F);
     }
 
-    @Nullable
-    public CluckshroomEntity createChild(ServerWorld serverWorld, PassiveEntity passiveEntity) {
-        return ModEntities.CLUCKSHROOM.create(serverWorld, SpawnReason.BREEDING);
-    }
-
     @Override
     public boolean isBreedingItem(ItemStack stack) {
         return stack.isIn(ItemTags.CHICKEN_FOOD);
     }
 
     @Override
-    protected void readCustomData(ReadView view) {
-        super.readCustomData(view);
-        view.getOptionalInt("EggLayTime").ifPresent(eggLayTime -> this.eggLayTime = eggLayTime);
+    protected void writeCustomData(WriteView view) {
+        super.writeCustomData(view);
+        view.put("Type", CluckshroomEntity.Variant.CODEC, this.getVariant());
+        view.putInt("EggLayTime", this.eggLayTime);
     }
 
     @Override
-    protected void writeCustomData(WriteView view) {
-        super.writeCustomData(view);
-        view.putInt("EggLayTime", this.eggLayTime);
+    protected void readCustomData(ReadView view) {
+        super.readCustomData(view);
+        this.setVariant((CluckshroomEntity.Variant)view.read("Type", CluckshroomEntity.Variant.CODEC).orElse(CluckshroomEntity.Variant.DEFAULT));
+        view.getOptionalInt("EggLayTime").ifPresent(eggLayTime -> this.eggLayTime = eggLayTime);
     }
 
     @Override
@@ -236,6 +262,75 @@ public class CluckshroomEntity extends AnimalEntity implements Shearable {
     @Override
     public boolean isShearable() {
         return this.isAlive() && !this.isBaby();
+    }
+
+    void setVariant(CluckshroomEntity.Variant variant) {
+        this.dataTracker.set(VARIANT, variant.index);
+    }
+
+    public CluckshroomEntity.Variant getVariant() {
+        return CluckshroomEntity.Variant.fromIndex(this.dataTracker.get(VARIANT));
+    }
+
+    @Nullable
+    public CluckshroomEntity createChild(ServerWorld serverWorld, PassiveEntity passiveEntity) {
+        CluckshroomEntity cluckshroomEntity = ModEntities.CLUCKSHROOM.create(serverWorld, SpawnReason.BREEDING);
+        if (cluckshroomEntity != null) {
+            cluckshroomEntity.setVariant(this.chooseBabyVariant((CluckshroomEntity)passiveEntity));
+        }
+
+        return cluckshroomEntity;
+    }
+
+    private CluckshroomEntity.Variant chooseBabyVariant(CluckshroomEntity cluckshroom) {
+        CluckshroomEntity.Variant variant = this.getVariant();
+        CluckshroomEntity.Variant variant2 = cluckshroom.getVariant();
+        CluckshroomEntity.Variant variant3;
+        if (variant == variant2 && this.random.nextInt(1024) == 0) {
+            variant3 = variant == CluckshroomEntity.Variant.BROWN ? CluckshroomEntity.Variant.RED : CluckshroomEntity.Variant.BROWN;
+        } else {
+            variant3 = this.random.nextBoolean() ? variant : variant2;
+        }
+
+        return variant3;
+    }
+
+    public static enum Variant implements StringIdentifiable {
+        RED("red", 0, Blocks.RED_MUSHROOM.getDefaultState()),
+        BROWN("brown", 1, Blocks.BROWN_MUSHROOM.getDefaultState());
+
+        public static final CluckshroomEntity.Variant DEFAULT = RED;
+        public static final Codec<CluckshroomEntity.Variant> CODEC = StringIdentifiable.createCodec(CluckshroomEntity.Variant::values);
+        private static final IntFunction<CluckshroomEntity.Variant> INDEX_MAPPER = ValueLists.createIndexToValueFunction(
+                CluckshroomEntity.Variant::getIndex, values(), ValueLists.OutOfBoundsHandling.CLAMP
+        );
+        public static final PacketCodec<ByteBuf, CluckshroomEntity.Variant> PACKET_CODEC = PacketCodecs.indexed(INDEX_MAPPER, CluckshroomEntity.Variant::getIndex);
+        private final String name;
+        final int index;
+        private final BlockState mushroom;
+
+        private Variant(final String name, final int index, final BlockState mushroom) {
+            this.name = name;
+            this.index = index;
+            this.mushroom = mushroom;
+        }
+
+        public BlockState getMushroomState() {
+            return this.mushroom;
+        }
+
+        @Override
+        public String asString() {
+            return this.name;
+        }
+
+        private int getIndex() {
+            return this.index;
+        }
+
+        static CluckshroomEntity.Variant fromIndex(int index) {
+            return (CluckshroomEntity.Variant)INDEX_MAPPER.apply(index);
+        }
     }
 
 }

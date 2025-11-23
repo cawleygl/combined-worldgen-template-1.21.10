@@ -18,6 +18,7 @@ import java.util.List;
 public class PineWoodTreePlacedFeatures {
 
     public static final RegistryKey<PlacedFeature> PINE_BEES_005_PLACED_KEY = ModPlacedFeatures.registerKey("pine_bees_005");
+    public static final RegistryKey<PlacedFeature> PINE_BEES_0002_PLACED_KEY = ModPlacedFeatures.registerKey("pine_bees_0002");
     public static final RegistryKey<PlacedFeature> MEGA_PINE_HIGH_PLACED_KEY = ModPlacedFeatures.registerKey("mega_pine_high");
     public static final RegistryKey<PlacedFeature> MEGA_PINE_LOW_PLACED_KEY = ModPlacedFeatures.registerKey("mega_pine_low");
     public static final RegistryKey<PlacedFeature> FALLEN_PINE_PLACED_KEY = ModPlacedFeatures.registerKey("fallen_pine_tree");
@@ -32,6 +33,9 @@ public class PineWoodTreePlacedFeatures {
         var configuredFeatures = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
         ModPlacedFeatures.register(context, PINE_BEES_005_PLACED_KEY, configuredFeatures.getOrThrow(PineWoodTreeConfiguredFeatures.PINE_BEES_005_KEY),
+                PlacedFeatures.wouldSurvive(PineWoodModBlocks.MOD_SAPLING)
+        );
+        ModPlacedFeatures.register(context, PINE_BEES_0002_PLACED_KEY, configuredFeatures.getOrThrow(PineWoodTreeConfiguredFeatures.PINE_BEES_0002_KEY),
                 PlacedFeatures.wouldSurvive(PineWoodModBlocks.MOD_SAPLING)
         );
         ModPlacedFeatures.register(context, MEGA_PINE_HIGH_PLACED_KEY, configuredFeatures.getOrThrow(PineWoodTreeConfiguredFeatures.MEGA_PINE_HIGH_KEY),

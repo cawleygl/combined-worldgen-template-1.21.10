@@ -49,7 +49,6 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.registry.tag.TagKey;
@@ -508,7 +507,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(ItemTags.BEE_FOOD).add(ModFloraBlocks.MONSTERA.asItem());
         valueLookupBuilder(ItemTags.FLOWERS).add(ModFloraBlocks.MONSTERA.asItem());
 
-        valueLookupBuilder(ItemTags.EGGS).add(ModItems.CLUCKSHROOM_EGG);
+        valueLookupBuilder(ItemTags.EGGS).add(ModItems.SPOTTED_EGG);
+        valueLookupBuilder(ItemTags.EGGS).add(ModItems.UMAMI_EGG);
 
         valueLookupBuilder(ModTags.Items.FLORAL_MILK).add(ModItems.WITHER_FLORAL_MILK_BOTTLE);
         valueLookupBuilder(ModTags.Items.FLORAL_MILK).add(ModItems.HASTE_FLORAL_MILK_BOTTLE);

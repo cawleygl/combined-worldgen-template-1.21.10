@@ -74,11 +74,10 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> MUSHROOM_ORE_BROWN_MUSHROOM_KEY = registerKey("ore_brown_mushroom");
     public static final RegistryKey<ConfiguredFeature<?, ?>> MUSHROOM_ORE_RED_MUSHROOM_KEY = registerKey("ore_red_mushroom");
 
-
-
     public static final RegistryKey<ConfiguredFeature<?, ?>> OLD_GROWTH_BIRCH_VIOLET_KEY = registerKey("old_growth_birch_violet");
     public static final RegistryKey<ConfiguredFeature<?, ?>> OLD_GROWTH_BIRCH_MOSS_CARPET_KEY = registerKey("old_growth_birch_moss_carpet");
     public static final RegistryKey<ConfiguredFeature<?, ?>> OLD_GROWTH_BIRCH_MOSS_BLOCK_KEY = registerKey("old_growth_birch_moss_block");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BIRCH_FOREST_CLOVER_KEY = registerKey("birch_forest_clover");
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> SAPLING_BIRCH_KEY = registerKey("sapling_birch");
     public static final RegistryKey<ConfiguredFeature<?, ?>> SAPLING_BIRCH_BEES_005_KEY = registerKey("sapling_birch_bees_005");
@@ -109,10 +108,8 @@ public class ModConfiguredFeatures {
 
     /* SNOWY BIOMES */
     public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_SNOWY_GRASS = registerKey("patch_snowy_grass");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_SNOWY_TALL_GRASS = registerKey("patch_snowy_tall_grass");
     public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_SNOWY_BUSH = registerKey("patch_snowy_bush");
     public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_SNOWY_GRASS_AND_FERNS = registerKey("patch_snowy_grass_and_ferns");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_SNOWY_LARGE_FERN = registerKey("patch_snowy_large_ferns");
     public static final RegistryKey<ConfiguredFeature<?, ?>> FLOWER_SNOWY = registerKey("flower_snowy");
 
     /* SAVANNA BIOME */
@@ -337,6 +334,12 @@ public class ModConfiguredFeatures {
                 OLD_GROWTH_BIRCH_VIOLET_KEY,
                 Feature.FLOWER,
                 new RandomPatchFeatureConfig(64, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,new SimpleBlockFeatureConfig(new WeightedBlockStateProvider(flowerbed(ModFloraBlocks.VIOLET)))))
+        );
+
+        register(context,
+                BIRCH_FOREST_CLOVER_KEY,
+                Feature.FLOWER,
+                new RandomPatchFeatureConfig(64, 6, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,new SimpleBlockFeatureConfig(new WeightedBlockStateProvider(denseFlowerbed(ModFloraBlocks.CLOVER)))))
         );
 
         register(context,

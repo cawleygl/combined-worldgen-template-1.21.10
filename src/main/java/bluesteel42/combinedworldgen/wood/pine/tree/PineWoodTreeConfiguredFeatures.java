@@ -38,6 +38,7 @@ public class PineWoodTreeConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> MEGA_SNOWY_SPRUCE_HIGH_KEY = ModConfiguredFeatures.registerKey("mega_snowy_spruce_high");
     public static final RegistryKey<ConfiguredFeature<?, ?>> MEGA_SNOWY_SPRUCE_LOW_KEY = ModConfiguredFeatures.registerKey("mega_snowy_spruce_low");
     public static final RegistryKey<ConfiguredFeature<?, ?>> PINE_BEES_005_KEY = ModConfiguredFeatures.registerKey("pine_bees_005");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PINE_BEES_0002_KEY = ModConfiguredFeatures.registerKey("pine_bees_0002");
     public static final RegistryKey<ConfiguredFeature<?, ?>> MEGA_PINE_HIGH_KEY = ModConfiguredFeatures.registerKey("mega_pine_high");
     public static final RegistryKey<ConfiguredFeature<?, ?>> MEGA_PINE_LOW_KEY = ModConfiguredFeatures.registerKey("mega_pine_low");
     public static final RegistryKey<ConfiguredFeature<?, ?>> FALLEN_PINE_TREE_KEY = ModConfiguredFeatures.registerKey("fallen_pine_tree");
@@ -56,6 +57,16 @@ public class PineWoodTreeConfiguredFeatures {
 
                 new TwoLayersFeatureSize(2, 0, 2)
         ).ignoreVines().decorators(List.of(new BeehiveTreeDecorator(0.05F))).build());
+
+        ModConfiguredFeatures.register(context, PINE_BEES_0002_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(PineWoodModBlocks.MOD_LOG),
+                new StraightTrunkPlacer(6, 4, 0),
+
+                BlockStateProvider.of(PineWoodModBlocks.MOD_LEAVES),
+                new PineFoliagePlacer(ConstantIntProvider.create(1), ConstantIntProvider.create(1), UniformIntProvider.create(3, 4)),
+
+                new TwoLayersFeatureSize(2, 0, 2)
+        ).ignoreVines().decorators(List.of(new BeehiveTreeDecorator(0.002F))).build());
 
         ModConfiguredFeatures.register(context, MEGA_PINE_HIGH_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(PineWoodModBlocks.MOD_LOG),

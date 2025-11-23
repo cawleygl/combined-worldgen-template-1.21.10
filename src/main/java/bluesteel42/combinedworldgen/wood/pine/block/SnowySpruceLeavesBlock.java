@@ -82,7 +82,6 @@ public class SnowySpruceLeavesBlock extends LeavesBlock {
     @Override
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (world.getLightLevel(LightType.BLOCK, pos) > 11 - state.getOpacity()) {
-            CombinedWorldgen.LOGGER.info(String.valueOf(world.getLightLevel(LightType.BLOCK, pos) > 11 - state.getOpacity()));
             this.melt(state, world, pos);
         }
         super.randomTick(state, world, pos, random);

@@ -95,7 +95,8 @@
   "item.combined-worldgen.floral_milk_bottle_saturation.tooltip": "Remove Saturation",
 
   "item.combined-worldgen.cluckshroom_spawn_egg": "Cluckshroom Spawn Egg",
-  "item.combined-worldgen.cluckshroom_egg": "Spotted Egg",
+  "item.combined-worldgen.spotted_egg": "Spotted Egg",
+  "item.combined-worldgen.umami_egg": "Umami Egg",
 
   "block.combined-worldgen.azalea_stem": "Azalea Stem",
   "block.combined-worldgen.leafy_azalea_stem": "Leafy Azalea Stem",

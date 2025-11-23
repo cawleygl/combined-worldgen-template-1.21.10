@@ -203,9 +203,9 @@ public class MoobloomEntity extends AbstractCowEntity implements Shearable {
     @Override
     public float getPathfindingFavor(BlockPos pos, WorldView world) {
         if (world.getBlockState(pos).isOf(this.getVariant().getFlowerState().getBlock())) {
-            return 10.0F;
+            return 11.0F;
         } else if (world.getBlockState(pos).isIn(BlockTags.FLOWERS) || world.getBlockState(pos.down()).isIn(BlockTags.FLOWERS)) {
-            return 9.0F;
+            return 10.0F;
         } else return world.getPhototaxisFavor(pos);
     }
 
