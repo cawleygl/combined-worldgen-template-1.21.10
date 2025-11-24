@@ -387,10 +387,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         KapokWoodModBoats.MOD_CHEST_BOAT,
                         KapokWoodModBlocks.MOD_SHELF
                 );
-                createShapeless(RecipeCategory.BUILDING_BLOCKS, KapokWoodModBlocks.MOD_LEAVES, 1)
-                        .input(Blocks.JUNGLE_LEAVES)
-                        .criterion(hasItem(Blocks.JUNGLE_LEAVES), conditionsFromItem(Blocks.JUNGLE_LEAVES))
-                        .offerTo(exporter, "kapok_leaves_from_vanilla_jungle_leaves");
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, KapokWoodModBlocks.MOD_LEAVES, 1)
+//                        .input(Blocks.JUNGLE_LEAVES)
+//                        .criterion(hasItem(Blocks.JUNGLE_LEAVES), conditionsFromItem(Blocks.JUNGLE_LEAVES))
+//                        .offerTo(exporter, "kapok_leaves_from_vanilla_jungle_leaves");
             }
             private void generateMapleRecipes() {
                 generateNaturalWoodRecipes(
@@ -447,10 +447,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         PineWoodModBlocks.MOD_SHELF
                 );
                 /*  ADDITIONAL BLOCKS */
-                createShapeless(RecipeCategory.BUILDING_BLOCKS, PineWoodModBlocks.SPRUCE_LEAVES_FALLING_NEEDLES, 1)
-                        .input(Blocks.SPRUCE_LEAVES)
-                        .criterion(hasItem(Blocks.SPRUCE_LEAVES), conditionsFromItem(Blocks.SPRUCE_LEAVES))
-                        .offerTo(exporter, "modded_spruce_leaves_from_vanilla");
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, PineWoodModBlocks.SPRUCE_LEAVES_FALLING_NEEDLES, 1)
+//                        .input(Blocks.SPRUCE_LEAVES)
+//                        .criterion(hasItem(Blocks.SPRUCE_LEAVES), conditionsFromItem(Blocks.SPRUCE_LEAVES))
+//                        .offerTo(exporter, "modded_spruce_leaves_from_vanilla");
                 offerSnowyBlockRecipes(PineWoodModBlocks.MOD_LEAVES, PineWoodModBlocks.SNOWY_PINE_LEAVES);
                 offerSnowyBlockRecipes(PineWoodModBlocks.SPRUCE_LEAVES_FALLING_NEEDLES, PineWoodModBlocks.SNOWY_SPRUCE_LEAVES);
                 offerSnowyBlockRecipes(PineWoodModBlocks.MOD_SAPLING, PineWoodModBlocks.SNOWY_PINE_SAPLING);

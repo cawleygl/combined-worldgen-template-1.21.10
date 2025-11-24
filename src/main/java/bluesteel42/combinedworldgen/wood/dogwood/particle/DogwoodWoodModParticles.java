@@ -6,7 +6,7 @@ import net.minecraft.particle.SimpleParticleType;
 
 public class DogwoodWoodModParticles {
 
-    public static final SimpleParticleType DOGWOOD_LEAVES = ModParticles.register("dogwood_leaves",FabricParticleTypes.simple());
+    public static final SimpleParticleType DOGWOOD_LEAVES = ModParticles.register("dogwood_leaves", FabricParticleTypes.simple());
 
     public static void initialize() {}
 }

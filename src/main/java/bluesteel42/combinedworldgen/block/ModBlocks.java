@@ -4,8 +4,6 @@ import bluesteel42.combinedworldgen.CombinedWorldgen;
 import bluesteel42.combinedworldgen.block.building.ModBuildingBlocks;
 import bluesteel42.combinedworldgen.block.flora.ModFloraBlocks;
 import bluesteel42.combinedworldgen.block.pumpkin.ModPumpkinBlocks;
-import bluesteel42.combinedworldgen.entity.ModEntities;
-import bluesteel42.combinedworldgen.wood.dogwood.block.DogwoodWoodModBlocks;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;

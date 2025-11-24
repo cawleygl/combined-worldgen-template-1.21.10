@@ -1,12 +1,8 @@
 package bluesteel42.combinedworldgen.particle;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.client.particle.*;
 import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.world.ClientWorld;
-import net.minecraft.particle.SimpleParticleType;
-import net.minecraft.util.math.random.Random;
 
 public class ModLeavesParticle extends BillboardParticle {
     private static final float SPEED_SCALE = 0.0025F;
@@ -89,18 +85,4 @@ public class ModLeavesParticle extends BillboardParticle {
         }
     }
 
-    @Environment(EnvType.CLIENT)
-    public static class CherryLeavesFactory implements ParticleFactory<SimpleParticleType> {
-        private final SpriteProvider spriteProvider;
-
-        public CherryLeavesFactory(SpriteProvider spriteProvider) {
-            this.spriteProvider = spriteProvider;
-        }
-
-        public Particle createParticle(
-                SimpleParticleType simpleParticleType, ClientWorld clientWorld, double d, double e, double f, double g, double h, double i, Random random
-        ) {
-            return new ModLeavesParticle(clientWorld, d, e, f, this.spriteProvider.getSprite(random), 0.25F, 2.0F, false, true, 1.0F, 0.0F);
-        }
-    }
 }

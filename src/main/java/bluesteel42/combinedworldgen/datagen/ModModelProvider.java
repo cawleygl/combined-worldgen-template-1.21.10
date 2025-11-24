@@ -39,14 +39,22 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.data.*;
+import net.minecraft.client.render.model.json.ModelVariant;
 import net.minecraft.client.render.model.json.WeightedVariant;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.Item;
+import net.minecraft.state.property.Properties;
+import net.minecraft.state.property.Property;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.biome.FoliageColors;
 
-import static net.minecraft.client.data.BlockStateModelGenerator.createWallBlockState;
-import static net.minecraft.client.data.BlockStateModelGenerator.createWeightedVariant;
+import java.util.Optional;
+
+import static net.minecraft.client.data.BlockStateModelGenerator.*;
+import static net.minecraft.client.data.Models.FLOWER_POT_CROSS;
+import static net.minecraft.client.data.TextureMap.*;
+import static net.minecraft.client.data.TexturedModel.makeFactory;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -123,6 +131,10 @@ public class ModModelProvider extends FabricModelProvider {
                 AzaleaWoodModRafts.MOD_CHEST_RAFT,
                 AzaleaWoodModBlocks.MOD_SHELF
         );
+        generateAzaleaStemModels(blockStateModelGenerator, AzaleaWoodModBlocks.AZALEA_STEM);
+        generateAzaleaStemModels(blockStateModelGenerator, AzaleaWoodModBlocks.STRIPPED_AZALEA_STEM);
+        generatePottedAzaleaModels(blockStateModelGenerator, AzaleaWoodModBlocks.POTTED_AZALEA_STEM, AzaleaWoodModBlocks.MOD_BLOCK);
+        generatePottedAzaleaModels(blockStateModelGenerator, AzaleaWoodModBlocks.POTTED_STRIPPED_AZALEA_STEM, AzaleaWoodModBlocks.STRIPPED_MOD_BLOCK);
     }
     private void generateBaobabBlockModels(BlockStateModelGenerator blockStateModelGenerator) {
         generateNaturalWoodBlockModels(blockStateModelGenerator,
@@ -295,9 +307,16 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerOrientableTrapdoor(PetrifiedWoodModBlocks.MOD_TRAPDOOR);
     }
 
+    private static final TextureKey FLOWER = TextureKey.of("flower");
+    private static final Model TEMPLATE_WATER_LILY = modBlock("template_water_lily", FLOWER);
+    private static TextureMap flower(Block block) {
+        return new TextureMap().put(FLOWER, getSubId(block, "_petal"));
+    }
     private void generateWaterLilyModels(BlockStateModelGenerator blockStateModelGenerator, Block lily) {
+        ModelVariant modelVariant = createModelVariant(ModelIds.getBlockModelId(lily));
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(lily, BlockStateModelGenerator.modelWithYRotation(modelVariant)));
+        TEMPLATE_WATER_LILY.upload(lily, flower(lily), blockStateModelGenerator.modelCollector);
         blockStateModelGenerator.registerItemModel(lily.asItem());
-        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(lily, BlockStateModelGenerator.modelWithYRotation(BlockStateModelGenerator.createModelVariant(ModelIds.getBlockModelId(lily)))));
     }
     private void registerPumpkinModels(BlockStateModelGenerator blockStateModelGenerator, Block pumpkin, Block carvedPumpkin, Block jackOLantern, Block pumpkinStem, Block attachedPumpkinStem) {
         blockStateModelGenerator.registerGourd(pumpkinStem, attachedPumpkinStem);
@@ -374,8 +393,118 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerParentedItemModel(wall, inventoryModel);
     }
 
+    private static TextureMap pottedAzaleaBlockModel(Block plantBlock) {
+        return new TextureMap().put(TextureKey.SIDE, getId(plantBlock)).put(TextureKey.END, getSubId(plantBlock, "_top"));
+    }
+
+    private static void generatePottedAzaleaModels(BlockStateModelGenerator blockStateModelGenerator, Block pottedBlock, Block plantBlock) {
+        blockStateModelGenerator.registerSingleton(pottedBlock, makeFactory((block) -> pottedAzaleaBlockModel(plantBlock), modBlock("template_potted_azalea_stem", TextureKey.TOP, TextureKey.SIDE)));
+    }
+
+    private static TextureMap pottedPlantModel(Block plantBlock) {
+        return new TextureMap().put(TextureKey.PLANT, getId(plantBlock));
+    }
+    private static void generatePottedPlantModels(BlockStateModelGenerator blockStateModelGenerator, Block pottedBlock, Block pottedTextureBlock) {
+        blockStateModelGenerator.registerSingleton(pottedBlock, makeFactory((block) -> pottedPlantModel(pottedTextureBlock), vanillaBlock("flower_pot_cross", TextureKey.PLANT)));
+    }
+
+    private static void generatePottedVanillaPlantModels(BlockStateModelGenerator blockStateModelGenerator, Block pottedBlock, Block plantBlock) {
+        blockStateModelGenerator.registerSingleton(pottedBlock, makeFactory((block) -> plant(plantBlock), FLOWER_POT_CROSS));
+    }
+
+    private static final Model TEMPLATE_AZALEA_STEM_INVENTORY = modBlock("template_azalea_stem_inventory", TextureKey.STEM, TextureKey.TOP);
+    private static final Model TEMPLATE_AZALEA_STEM_SIDE = modBlock("template_azalea_stem_side", TextureKey.STEM, TextureKey.TOP);
+    private static final Model TEMPLATE_AZALEA_STEM_CENTER = modBlock("template_azalea_stem_center", TextureKey.STEM);
+
+    private static TextureMap stemTop(Block block) {
+        return new TextureMap().put(TextureKey.STEM, getId(block)).put(TextureKey.TOP, getSubId(block, "_top"));
+    }
+    private static TextureMap stem(Block block) {
+        return new TextureMap().put(TextureKey.STEM, getId(block));
+    }
+
+    private static BlockModelDefinitionCreator createAzaleaStemBlockState(
+            Block stemBlock,
+            WeightedVariant sideModel,
+            WeightedVariant centerModel
+    ) {
+        return MultipartBlockModelDefinitionCreator.create(stemBlock)
+                .with(createMultipartConditionBuilder().put(Properties.AXIS, Direction.Axis.Y), centerModel)
+                .with(createMultipartConditionBuilder().put(Properties.AXIS, Direction.Axis.Z), centerModel.apply(ROTATE_X_90))
+                .with(createMultipartConditionBuilder().put(Properties.AXIS, Direction.Axis.X), centerModel.apply(ROTATE_X_90).apply(ROTATE_Y_90))
+                .with(createMultipartConditionBuilder().put(Properties.AXIS, Direction.Axis.Z), sideModel)
+                .with(createMultipartConditionBuilder().put(Properties.NORTH, true), sideModel)
+                .with(createMultipartConditionBuilder().put(Properties.AXIS, Direction.Axis.Z), sideModel.apply(ROTATE_Y_180))
+                .with(createMultipartConditionBuilder().put(Properties.SOUTH, true), sideModel.apply(ROTATE_Y_180))
+                .with(createMultipartConditionBuilder().put(Properties.AXIS, Direction.Axis.X), sideModel.apply(ROTATE_Y_90))
+                .with(createMultipartConditionBuilder().put(Properties.EAST, true), sideModel.apply(ROTATE_Y_90))
+                .with(createMultipartConditionBuilder().put(Properties.AXIS, Direction.Axis.X), sideModel.apply(ROTATE_Y_270))
+                .with(createMultipartConditionBuilder().put(Properties.WEST, true), sideModel.apply(ROTATE_Y_270))
+                .with(createMultipartConditionBuilder().put(Properties.AXIS, Direction.Axis.Y), sideModel.apply(ROTATE_X_90))
+                .with(createMultipartConditionBuilder().put(Properties.DOWN, true), sideModel.apply(ROTATE_X_90))
+                .with(createMultipartConditionBuilder().put(Properties.AXIS, Direction.Axis.Y), sideModel.apply(ROTATE_X_270))
+                .with(createMultipartConditionBuilder().put(Properties.UP, true), sideModel.apply(ROTATE_X_270));
+    }
+
+    private static void generateAzaleaStemModels(BlockStateModelGenerator blockStateModelGenerator, Block stemBlock) {
+        WeightedVariant weightedVariant = BlockStateModelGenerator.createWeightedVariant(
+                TEMPLATE_AZALEA_STEM_SIDE.upload(stemBlock, "_side", stemTop(stemBlock), blockStateModelGenerator.modelCollector)
+        );
+        WeightedVariant weightedVariant2 = BlockStateModelGenerator.createWeightedVariant(
+                TEMPLATE_AZALEA_STEM_CENTER.upload(stemBlock, "_center", stem(stemBlock), blockStateModelGenerator.modelCollector)
+        );
+        blockStateModelGenerator.blockStateCollector.accept(createAzaleaStemBlockState(stemBlock, weightedVariant, weightedVariant2));
+        Identifier identifier = TEMPLATE_AZALEA_STEM_INVENTORY.upload(stemBlock, stemTop(stemBlock), blockStateModelGenerator.modelCollector);
+        blockStateModelGenerator.registerParentedItemModel(stemBlock, identifier);
+    }
+
+    private static final TextureKey LEAVES = TextureKey.of("leaves");
+    private static final TextureKey OVERLAY = TextureKey.of("overlay");
+    private static final Model TINTED_LEAVES_WITH_OVERLAY_MODEL = modBlock("template_tinted_leaves_with_overlay", LEAVES, OVERLAY);
+    private static TextureMap tintedLeavesWithOverlayBlockModel(Block combinedBlock, Block tintedLeavesBlock) {
+        return new TextureMap().put(LEAVES, getId(tintedLeavesBlock)).put(OVERLAY, getSubId(combinedBlock, "_overlay"));
+    }
+    private static TextureMap tintedLeavesWithOverlayAndStagesBlockModel(Block combinedBlock, Block tintedLeavesBlock, int stage) {
+        return new TextureMap().put(LEAVES, getId(tintedLeavesBlock)).put(OVERLAY, getSubId(combinedBlock, "_overlay_" + stage));
+    }
+
+    private static void generateTintedLeavesBlockWithOverlayModels(BlockStateModelGenerator blockStateModelGenerator, Block combinedBlock, Block tintedLeavesBlock, int leavesTint) {
+        blockStateModelGenerator.registerSingleton(combinedBlock, makeFactory((block) -> tintedLeavesWithOverlayBlockModel(block, tintedLeavesBlock), TINTED_LEAVES_WITH_OVERLAY_MODEL));
+        blockStateModelGenerator.registerTintedItemModel(combinedBlock, getId(combinedBlock), ItemModels.constantTintSource(leavesTint));
+    }
+
+    private static void registerTintableBlockStateWithStages(
+            BlockStateModelGenerator blockStateModelGenerator, Block combinedBlock, Block tintedLeavesBlock, Property<Integer> stageProperty, int... stages
+    ) {
+        if (stageProperty.getValues().size() != stages.length) {
+            throw new IllegalArgumentException("missing values for property: " + stageProperty);
+        } else {
+            blockStateModelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(combinedBlock).with(BlockStateVariantMap.models(stageProperty).generate(stage -> {
+                String string = "_" + stages[stage];
+                TextureMap textureMap = tintedLeavesWithOverlayAndStagesBlockModel(combinedBlock, tintedLeavesBlock, stages[stage]);
+                return createWeightedVariant(TINTED_LEAVES_WITH_OVERLAY_MODEL.upload(combinedBlock, string, textureMap, blockStateModelGenerator.modelCollector));
+            })));
+        }
+    }
+    private static void generateFloweringCitrusLeavesModels(BlockStateModelGenerator blockStateModelGenerator, Block combinedBlock, Block tintedLeavesBlock, int leavesTint) {
+        registerTintableBlockStateWithStages(blockStateModelGenerator, combinedBlock, tintedLeavesBlock, Properties.AGE_3, 0, 1, 2, 3);
+//        blockStateModelGenerator.registerSingleton(combinedBlock, makeFactory((block) -> tintedLeavesWithOverlayBlockModel(block, tintedLeavesBlock), modBlock("template_tinted_leaves_with_overlay", LEAVES, OVERLAY)));
+        blockStateModelGenerator.registerTintedItemModel(combinedBlock, Identifier.of(CombinedWorldgen.MOD_ID, "block/flowering_orange_leaves_0"), ItemModels.constantTintSource(leavesTint));
+    }
+
+    private static Model vanillaBlock(String parent, TextureKey... requiredTextureKeys) {
+        return new Model(Optional.of(Identifier.ofVanilla("block/" + parent)), Optional.empty(), requiredTextureKeys);
+    }
+    private static Model modBlock(String parent, TextureKey... requiredTextureKeys) {
+        return new Model(Optional.of(Identifier.of(CombinedWorldgen.MOD_ID, "block/" + parent)), Optional.empty(), requiredTextureKeys);
+    }
+
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+
+        generateTintedLeavesBlockWithOverlayModels(blockStateModelGenerator, MapleWoodModBlocks.MIXED_MAPLE_LEAVES, MapleWoodModBlocks.MOD_LEAVES, MapleWoodInitializer.MOD_LEAF_TINT_COLOR);
+        generateFloweringCitrusLeavesModels(blockStateModelGenerator, CitrusWoodModBlocks.FLOWERING_ORANGE_LEAVES, CitrusWoodModBlocks.MOD_LEAVES, CitrusWoodInitializer.MOD_LEAF_TINT_COLOR);
+
         generateAzaleaBlockModels(blockStateModelGenerator);
         generateBaobabBlockModels(blockStateModelGenerator);
         generateChollaBlockModels(blockStateModelGenerator);
@@ -386,14 +515,6 @@ public class ModModelProvider extends FabricModelProvider {
         generatePetrifiedBlockModels(blockStateModelGenerator);
         generatePineBlockModels(blockStateModelGenerator);
         generateWillowBlockModels(blockStateModelGenerator);
-
-//        blockStateModelGenerator.registerFlowerPotPlant(Blocks.CACTUS_FLOWER, ModFloraBlocks.POTTED_CACTUS_FLOWER, BlockStateModelGenerator.CrossType.NOT_TINTED);
-//        blockStateModelGenerator.registerFlowerPotPlant(Blocks.SUGAR_CANE, ModFloraBlocks.POTTED_SUGAR_CANE, BlockStateModelGenerator.CrossType.NOT_TINTED);
-//        blockStateModelGenerator.registerFlowerPotPlant(Blocks.ROSE_BUSH, ModFloraBlocks.POTTED_ROSE, BlockStateModelGenerator.CrossType.NOT_TINTED);
-//        blockStateModelGenerator.registerFlowerPotPlant(Blocks.PEONY, ModFloraBlocks.POTTED_PEONY, BlockStateModelGenerator.CrossType.NOT_TINTED);
-//        blockStateModelGenerator.registerFlowerPotPlant(Blocks.LILAC, ModFloraBlocks.POTTED_LILAC, BlockStateModelGenerator.CrossType.NOT_TINTED);
-//        blockStateModelGenerator.registerFlowerPotPlant(Blocks.SUNFLOWER, ModFloraBlocks.POTTED_SUNFLOWER, BlockStateModelGenerator.CrossType.NOT_TINTED);
-//        blockStateModelGenerator.registerFlowerPotPlant(ModFloraBlocks.MONSTERA, ModFloraBlocks.POTTED_MONSTERA, BlockStateModelGenerator.CrossType.NOT_TINTED);
 
         generateBlockAndSlabModels(blockStateModelGenerator, ModBuildingBlocks.SMOOTH_DEEPSLATE, ModBuildingBlocks.SMOOTH_DEEPSLATE_SLAB);
 
@@ -406,8 +527,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBuildingBlocks.CHISELED_SNOW_BRICKS);
 
         generateWallFromVanillaBlock(blockStateModelGenerator, Blocks.POLISHED_ANDESITE, ModBuildingBlocks.POLISHED_ANDESITE_WALL);
-        generateWallFromVanillaBlock(blockStateModelGenerator, Blocks.POLISHED_ANDESITE, ModBuildingBlocks.POLISHED_DIORITE_WALL);
-        generateWallFromVanillaBlock(blockStateModelGenerator, Blocks.POLISHED_ANDESITE, ModBuildingBlocks.POLISHED_GRANITE_WALL);
+        generateWallFromVanillaBlock(blockStateModelGenerator, Blocks.POLISHED_DIORITE, ModBuildingBlocks.POLISHED_DIORITE_WALL);
+        generateWallFromVanillaBlock(blockStateModelGenerator, Blocks.POLISHED_GRANITE, ModBuildingBlocks.POLISHED_GRANITE_WALL);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LOOSE_DIRT);
 
@@ -445,6 +566,15 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTintableCross(ModFloraBlocks.SMALL_PITCHER_PLANT, BlockStateModelGenerator.CrossType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModFloraBlocks.SMALL_MONSTERA, BlockStateModelGenerator.CrossType.NOT_TINTED);
 
+        generatePottedVanillaPlantModels(blockStateModelGenerator, ModFloraBlocks.POTTED_CACTUS_FLOWER, Blocks.CACTUS_FLOWER);
+
+        generatePottedPlantModels(blockStateModelGenerator, ModFloraBlocks.POTTED_LILAC, ModFloraBlocks.SMALL_LILAC);
+        generatePottedPlantModels(blockStateModelGenerator, ModFloraBlocks.POTTED_MONSTERA, ModFloraBlocks.SMALL_MONSTERA);
+        generatePottedPlantModels(blockStateModelGenerator, ModFloraBlocks.POTTED_PEONY, ModFloraBlocks.SMALL_PEONY);
+        generatePottedPlantModels(blockStateModelGenerator, ModFloraBlocks.POTTED_ROSE, ModFloraBlocks.SMALL_ROSE);
+        generatePottedPlantModels(blockStateModelGenerator, ModFloraBlocks.POTTED_SUGAR_CANE, ModFloraBlocks.POTTED_SUGAR_CANE);
+        generatePottedPlantModels(blockStateModelGenerator, ModFloraBlocks.POTTED_SUNFLOWER, ModFloraBlocks.SMALL_SUNFLOWER);
+
         blockStateModelGenerator.registerDoubleBlockAndItem(ModFloraBlocks.MONSTERA, BlockStateModelGenerator.CrossType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerbed(ModFloraBlocks.VIOLET);
         blockStateModelGenerator.registerFlowerbed(ModFloraBlocks.FORGET_ME_NOT);
@@ -457,6 +587,9 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerItemModel(ModItems.CLUCKSHROOM_SPAWN_EGG);
         blockStateModelGenerator.registerItemModel(ModItems.SPOTTED_EGG);
         blockStateModelGenerator.registerItemModel(ModItems.UMAMI_EGG);
+
+
+
     }
 
     @Override

@@ -49,13 +49,6 @@ public class ModFloraBlocks {
             false,
             true
     );
-    public static final Block POTTED_MONSTERA = ModBlocks.register(
-            "potted_monstera",
-            settings -> new FlowerPotBlock(ModFloraBlocks.MONSTERA, settings),
-            Blocks.createFlowerPotSettings(),
-            false,
-            true
-    );
     public static final Block POTTED_SUGAR_CANE = ModBlocks.register(
             "potted_sugar_cane",
             settings -> new FlowerPotBlock(Blocks.SUGAR_CANE, settings),
@@ -106,6 +99,13 @@ public class ModFloraBlocks {
                     .offset(AbstractBlock.OffsetType.XZ)
                     .burnable()
                     .pistonBehavior(PistonBehavior.DESTROY),
+            true,
+            true
+    );
+    public static final Block POTTED_MONSTERA = ModBlocks.register(
+            "potted_monstera",
+            settings -> new FlowerPotBlock(ModFloraBlocks.MONSTERA, settings),
+            Blocks.createFlowerPotSettings(),
             true,
             true
     );
