@@ -188,6 +188,9 @@ public class ModModelProvider extends FabricModelProvider {
                 CitrusWoodModBlocks.POTTED_MOD_SAPLING,
                 CitrusWoodModBlocks.MOD_SHELF
         );
+        // ADDITIONAL BLOCKS
+        generateFloweringCitrusLeavesModels(blockStateModelGenerator, CitrusWoodModBlocks.FLOWERING_ORANGE_LEAVES, CitrusWoodModBlocks.MOD_LEAVES, CitrusWoodInitializer.MOD_LEAF_TINT_COLOR);
+
     }
     private void generateDogwoodBlockModels(BlockStateModelGenerator blockStateModelGenerator) {
         generateNaturalWoodBlockModels(blockStateModelGenerator,
@@ -249,6 +252,7 @@ public class ModModelProvider extends FabricModelProvider {
         /* ADDITIONAL BLOCKS*/
         blockStateModelGenerator.registerSimpleCubeAll(MapleWoodModBlocks.RED_MAPLE_LEAVES);
         blockStateModelGenerator.registerSimpleCubeAll(MapleWoodModBlocks.YELLOW_MAPLE_LEAVES);
+        generateTintedLeavesBlockWithOverlayModels(blockStateModelGenerator, MapleWoodModBlocks.MIXED_MAPLE_LEAVES, MapleWoodModBlocks.MOD_LEAVES, MapleWoodInitializer.MOD_LEAF_TINT_COLOR);
     }
     private void generatePineBlockModels(BlockStateModelGenerator blockStateModelGenerator) {
         generateNaturalWoodBlockModels(blockStateModelGenerator,
@@ -488,7 +492,6 @@ public class ModModelProvider extends FabricModelProvider {
     }
     private static void generateFloweringCitrusLeavesModels(BlockStateModelGenerator blockStateModelGenerator, Block combinedBlock, Block tintedLeavesBlock, int leavesTint) {
         registerTintableBlockStateWithStages(blockStateModelGenerator, combinedBlock, tintedLeavesBlock, Properties.AGE_3, 0, 1, 2, 3);
-//        blockStateModelGenerator.registerSingleton(combinedBlock, makeFactory((block) -> tintedLeavesWithOverlayBlockModel(block, tintedLeavesBlock), modBlock("template_tinted_leaves_with_overlay", LEAVES, OVERLAY)));
         blockStateModelGenerator.registerTintedItemModel(combinedBlock, Identifier.of(CombinedWorldgen.MOD_ID, "block/flowering_orange_leaves_0"), ItemModels.constantTintSource(leavesTint));
     }
 
@@ -501,10 +504,6 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-
-        generateTintedLeavesBlockWithOverlayModels(blockStateModelGenerator, MapleWoodModBlocks.MIXED_MAPLE_LEAVES, MapleWoodModBlocks.MOD_LEAVES, MapleWoodInitializer.MOD_LEAF_TINT_COLOR);
-        generateFloweringCitrusLeavesModels(blockStateModelGenerator, CitrusWoodModBlocks.FLOWERING_ORANGE_LEAVES, CitrusWoodModBlocks.MOD_LEAVES, CitrusWoodInitializer.MOD_LEAF_TINT_COLOR);
-
         generateAzaleaBlockModels(blockStateModelGenerator);
         generateBaobabBlockModels(blockStateModelGenerator);
         generateChollaBlockModels(blockStateModelGenerator);
@@ -587,8 +586,6 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerItemModel(ModItems.CLUCKSHROOM_SPAWN_EGG);
         blockStateModelGenerator.registerItemModel(ModItems.SPOTTED_EGG);
         blockStateModelGenerator.registerItemModel(ModItems.UMAMI_EGG);
-
-
 
     }
 
