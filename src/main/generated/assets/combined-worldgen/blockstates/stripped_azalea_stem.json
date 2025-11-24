@@ -20,8 +20,8 @@
     {
       "apply": {
         "model": "combined-worldgen:block/stripped_azalea_stem_center",
-        "y": 90,
-        "x": 90
+        "x": 90,
+        "y": 90
       },
       "when": {
         "axis": "x"

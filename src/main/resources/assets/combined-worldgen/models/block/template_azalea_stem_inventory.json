@@ -13,8 +13,8 @@
 				"east": {"uv": [6, 0, 12, 16], "texture": "#stem"},
 				"south": {"uv": [8, 0, 14, 16], "texture": "#stem"},
 				"west": {"uv": [2, 0, 8, 16], "texture": "#stem"},
-				"up": {"uv": [5, 5, 11, 11], "texture": "#stem_top"},
-				"down": {"uv": [5, 5, 11, 11], "texture": "#stem_top"}
+				"up": {"uv": [5, 5, 11, 11], "texture": "#top"},
+				"down": {"uv": [5, 5, 11, 11], "texture": "#top"}
 			}
 		}
 	]

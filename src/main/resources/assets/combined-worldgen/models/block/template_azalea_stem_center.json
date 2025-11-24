@@ -2,8 +2,7 @@
 	"credit": "Made with Blockbench",
 	"parent": "minecraft:block/block",
 	"textures": {
-		"particle": "combined-worldgen:block/stripped_azalea_stem",
-		"stem": "combined-worldgen:block/stripped_azalea_stem"
+		"particle": "#stem"
 	},
 	"elements": [
 		{
