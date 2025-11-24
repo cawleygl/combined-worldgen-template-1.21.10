@@ -2,8 +2,11 @@ package bluesteel42.combinedworldgen.wood.azalea.entity;
 
 import bluesteel42.combinedworldgen.CombinedWorldgen;
 import bluesteel42.combinedworldgen.wood.azalea.AzaleaWoodInitializer;
+import com.terraformersmc.terraform.boat.api.data.TerraformBoatData;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.vehicle.RaftEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
@@ -16,6 +19,8 @@ public class AzaleaWoodModRafts {
 
     public static final Item MOD_RAFT = registerRaftItem(AzaleaWoodInitializer.MOD_WOOD_NAME + "_raft", AzaleaWoodModRafts.MOD_RAFTS_ID, false, true);
     public static final Item MOD_CHEST_RAFT = registerRaftItem(AzaleaWoodInitializer.MOD_WOOD_NAME + "_chest_raft", AzaleaWoodModRafts.MOD_RAFTS_ID, true, true);
+
+    public static final EntityType<RaftEntity> MOD_RAFT_ENTITY = TerraformBoatData.get(MOD_RAFTS_ID).raftEntityType();
 
     public static Item registerRaftItem(String path, Identifier boatId, boolean chest, boolean raft) {
         final RegistryKey<Item> registryKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(CombinedWorldgen.MOD_ID, path));

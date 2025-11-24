@@ -2,8 +2,11 @@ package bluesteel42.combinedworldgen.wood.citrus.entity;
 
 import bluesteel42.combinedworldgen.CombinedWorldgen;
 import bluesteel42.combinedworldgen.wood.citrus.CitrusWoodInitializer;
+import com.terraformersmc.terraform.boat.api.data.TerraformBoatData;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.vehicle.BoatEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
@@ -16,6 +19,8 @@ public class CitrusWoodModBoats {
 
     public static final Item MOD_BOAT = registerBoatItem(CitrusWoodInitializer.MOD_WOOD_NAME + "_boat", CitrusWoodModBoats.MOD_BOATS_ID, false, false);
     public static final Item MOD_CHEST_BOAT = registerBoatItem(CitrusWoodInitializer.MOD_WOOD_NAME + "_chest_boat", CitrusWoodModBoats.MOD_BOATS_ID, true, false);
+
+    public static final EntityType<BoatEntity> MOD_BOAT_ENTITY = TerraformBoatData.get(MOD_BOATS_ID).boatEntityType();
 
     public static Item registerBoatItem(String path, Identifier boatId, boolean chest, boolean raft) {
         final RegistryKey<Item> registryKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(CombinedWorldgen.MOD_ID, path));
