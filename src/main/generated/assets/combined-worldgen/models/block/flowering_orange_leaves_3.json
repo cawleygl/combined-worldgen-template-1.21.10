@@ -1,0 +1,7 @@
+{
+  "parent": "combined-worldgen:block/template_tinted_leaves_with_overlay",
+  "textures": {
+    "leaves": "combined-worldgen:block/citrus_leaves",
+    "overlay": "combined-worldgen:block/flowering_orange_leaves_overlay_3"
+  }
+}
