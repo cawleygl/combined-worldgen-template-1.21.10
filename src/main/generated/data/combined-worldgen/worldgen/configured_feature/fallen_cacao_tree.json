@@ -29,7 +29,7 @@
     ],
     "log_length": {
       "type": "minecraft:uniform",
-      "max_inclusive": 11,
+      "max_inclusive": 6,
       "min_inclusive": 4
     },
     "stump_decorators": [

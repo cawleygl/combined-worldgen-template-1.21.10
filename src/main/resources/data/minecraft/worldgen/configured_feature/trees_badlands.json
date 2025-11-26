@@ -4,7 +4,7 @@
     "default": "combined-worldgen:petrified_tree",
     "features": [
       {
-        "chance": 0.0125,
+        "chance": 0.95,
         "feature": "combined-worldgen:fallen_petrified_tree"
       }
     ]

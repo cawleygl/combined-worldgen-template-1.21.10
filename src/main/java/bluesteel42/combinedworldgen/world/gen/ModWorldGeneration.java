@@ -16,6 +16,13 @@ public class ModWorldGeneration {
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.ORE_COARSE_DIRT_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.ORE_LOOSE_DIRT_PLACED_KEY);
 
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, PetrifiedWoodTreePlacedFeatures.PETRIFIED_TREE_ORE_X_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, PetrifiedWoodTreePlacedFeatures.PETRIFIED_TREE_ORE_Y_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, PetrifiedWoodTreePlacedFeatures.PETRIFIED_TREE_ORE_Z_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.WOODED_BADLANDS), GenerationStep.Feature.UNDERGROUND_ORES, PetrifiedWoodTreePlacedFeatures.PETRIFIED_TREE_ORE_BADLANDS_X_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.WOODED_BADLANDS), GenerationStep.Feature.UNDERGROUND_ORES, PetrifiedWoodTreePlacedFeatures.PETRIFIED_TREE_ORE_BADLANDS_Y_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.WOODED_BADLANDS), GenerationStep.Feature.UNDERGROUND_ORES, PetrifiedWoodTreePlacedFeatures.PETRIFIED_TREE_ORE_BADLANDS_Z_PLACED_KEY);
+
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(List.of(BiomeKeys.PLAINS, BiomeKeys.SUNFLOWER_PLAINS, BiomeKeys.FOREST,  BiomeKeys.FLOWER_FOREST, BiomeKeys.BIRCH_FOREST, BiomeKeys.DARK_FOREST, BiomeKeys.TAIGA, BiomeKeys.SAVANNA, BiomeKeys.SAVANNA_PLATEAU, BiomeKeys.WINDSWEPT_HILLS, BiomeKeys.WINDSWEPT_FOREST, BiomeKeys.WINDSWEPT_GRAVELLY_HILLS, BiomeKeys.WINDSWEPT_SAVANNA, BiomeKeys.JUNGLE, BiomeKeys.SPARSE_JUNGLE, BiomeKeys.BAMBOO_JUNGLE, BiomeKeys.MEADOW, BiomeKeys.CHERRY_GROVE)), GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.EXTRA_DIRT_ORE_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(List.of(BiomeKeys.SWAMP, BiomeKeys.MANGROVE_SWAMP, BiomeKeys.RIVER, BiomeKeys.WARM_OCEAN, BiomeKeys.LUKEWARM_OCEAN, BiomeKeys.DEEP_OCEAN, BiomeKeys.DEEP_LUKEWARM_OCEAN, BiomeKeys.OCEAN, BiomeKeys.DEEP_COLD_OCEAN, BiomeKeys.COLD_OCEAN)), GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.WET_ORE_MUD_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(List.of(BiomeKeys.DESERT, BiomeKeys.BEACH, BiomeKeys.STONY_SHORE)), GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.DESERT_ORE_SAND_PLACED_KEY);
@@ -43,9 +50,6 @@ public class ModWorldGeneration {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.SWAMP), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.SWAMP_MUD_DISK_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.SWAMP), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.SWAMP_MUD_DISK_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.SWAMP), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PATCH_TALL_GRASS_BUSH_NEAR_WATER_SWAMP_PLACED_KEY);
-
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, PetrifiedWoodTreePlacedFeatures.PETRIFIED_TREE_ORE_X_PLACED_KEY);
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, PetrifiedWoodTreePlacedFeatures.PETRIFIED_TREE_ORE_Z_PLACED_KEY);
 
         BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.MUSHROOM_FIELDS), SpawnGroup.CREATURE, ModEntities.CLUCKSHROOM, 10, 4, 8);
 

@@ -58,7 +58,7 @@ public class KapokWoodTreeConfiguredFeatures {
                 ).decorators(ImmutableList.of(new CocoaTreeDecorator(0.2F), TrunkVineTreeDecorator.INSTANCE, new LeavesVineTreeDecorator(0.25F))).ignoreVines().build()
         );
 
-        ModConfiguredFeatures.register(context, FALLEN_CACAO_TREE_KEY, Feature.FALLEN_TREE, new FallenTreeFeatureConfig.Builder(BlockStateProvider.of(Blocks.JUNGLE_LOG), UniformIntProvider.create(4, 11))
+        ModConfiguredFeatures.register(context, FALLEN_CACAO_TREE_KEY, Feature.FALLEN_TREE, new FallenTreeFeatureConfig.Builder(BlockStateProvider.of(Blocks.JUNGLE_LOG), UniformIntProvider.create(4, 6))
                 .logDecorators(
                         ImmutableList.of(
                                 new AttachedToLogsTreeDecorator(
