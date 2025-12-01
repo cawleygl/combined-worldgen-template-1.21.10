@@ -32,16 +32,21 @@ import net.minecraft.block.TallPlantBlock;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
+import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.entry.LeafEntry;
 import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.ExplosionDecayLootFunction;
+import net.minecraft.loot.function.LimitCountLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.operator.BoundedIntUnaryOperator;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.predicate.StatePredicate;
@@ -466,6 +471,31 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
                 );
     }
 
+    public LootTable.Builder smallCactusDrops(Block withShears, ItemConvertible withoutShears) {
+        RegistryWrapper.Impl<Enchantment> impl = this.registries.getOrThrow(RegistryKeys.ENCHANTMENT);
+        return this.dropsWithShears(
+                withShears,
+                (LootPoolEntry.Builder<?>)this.applyExplosionDecay(
+                        withShears, ItemEntry.builder(withoutShears)
+                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0F, 3.0F)))
+                                .apply(ApplyBonusLootFunction.oreDrops(impl.getOrThrow(Enchantments.FORTUNE)))
+                )
+        );
+    }
+
+    public LootTable.Builder wildCropDrops(Block withShears, Item crop) {
+        RegistryWrapper.Impl<Enchantment> impl = this.registries.getOrThrow(RegistryKeys.ENCHANTMENT);
+        return this.dropsWithShears(
+                withShears,
+                (LootPoolEntry.Builder<?>)this.applyExplosionDecay(
+                        withShears,
+                        ItemEntry.builder(crop)
+                                .conditionally(RandomChanceLootCondition.builder(0.125F))
+                                .apply(ApplyBonusLootFunction.uniformBonusCount(impl.getOrThrow(Enchantments.FORTUNE), 2))
+                )
+        );
+    }
+
     @Override
     public void generate() {
         generateAzaleaWoodLootTables();
@@ -479,13 +509,9 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         generatePineWoodLootTables();
         generateWillowWoodLootTables();
 
-        addDrop(ModFloraBlocks.POTTED_CACTUS_FLOWER, pottedPlantDrops(Blocks.CACTUS_FLOWER));
-        addDrop(ModFloraBlocks.POTTED_ROSE, pottedPlantDrops(Blocks.ROSE_BUSH));
-        addDrop(ModFloraBlocks.POTTED_PEONY, pottedPlantDrops(Blocks.PEONY));
-        addDrop(ModFloraBlocks.POTTED_LILAC, pottedPlantDrops(Blocks.LILAC));
-        addDrop(ModFloraBlocks.POTTED_SUGAR_CANE, pottedPlantDrops(Blocks.SUGAR_CANE));
-        addDrop(ModFloraBlocks.POTTED_SUNFLOWER, pottedPlantDrops(Blocks.SUNFLOWER));
-        addDrop(ModFloraBlocks.POTTED_MONSTERA, pottedPlantDrops(ModFloraBlocks.MONSTERA));
+        addDrop(ModBlocks.QUEEN_ANNES_LACE,  (block) -> wildCropDrops(block, Items.CARROT));
+        addDrop(ModBlocks.SEA_BEET, (block) -> wildCropDrops(block, Items.BEETROOT_SEEDS));
+        addDrop(ModBlocks.TUBERED_DIRT, block -> this.oreDrops(block, Items.POTATO));
 
         addDrop(ModBuildingBlocks.MOSSY_BRICKS);
         addDrop(ModBuildingBlocks.MOSSY_BRICK_STAIRS);
@@ -539,6 +565,14 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModFloraBlocks.GIANT_PADMA);
         addDrop(ModFloraBlocks.MONSTERA, block -> this.dropsWithProperty(block, TallPlantBlock.HALF, DoubleBlockHalf.LOWER));
 
+        addDrop(ModFloraBlocks.POTTED_CACTUS_FLOWER, pottedPlantDrops(Blocks.CACTUS_FLOWER));
+        addDrop(ModFloraBlocks.POTTED_ROSE, pottedPlantDrops(Blocks.ROSE_BUSH));
+        addDrop(ModFloraBlocks.POTTED_PEONY, pottedPlantDrops(Blocks.PEONY));
+        addDrop(ModFloraBlocks.POTTED_LILAC, pottedPlantDrops(Blocks.LILAC));
+        addDrop(ModFloraBlocks.POTTED_SUGAR_CANE, pottedPlantDrops(Blocks.SUGAR_CANE));
+        addDrop(ModFloraBlocks.POTTED_SUNFLOWER, pottedPlantDrops(Blocks.SUNFLOWER));
+        addDrop(ModFloraBlocks.POTTED_MONSTERA, pottedPlantDrops(ModFloraBlocks.MONSTERA));
+
         addDrop(ModFloraBlocks.WHITE_WATER_LILY);
         addDrop(ModFloraBlocks.BLUE_WATER_LILY);
         addDrop(ModFloraBlocks.PINK_WATER_LILY);
@@ -561,6 +595,8 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModFloraBlocks.SNOWY_BUSH, this::dropsWithSilkTouchOrShears);
         addPottedPlantDrops(ModFloraBlocks.POTTED_SNOWY_FERN);
 
+        addDrop(ModFloraBlocks.SMALL_CACTUS, block -> this.smallCactusDrops(block, ModItems.CACTUS_PAD));
+        addPottedPlantDrops(ModFloraBlocks.POTTED_SMALL_CACTUS);
 
     }
 }

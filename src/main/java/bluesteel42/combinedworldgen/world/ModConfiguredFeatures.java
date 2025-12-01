@@ -33,15 +33,16 @@ import net.minecraft.state.property.IntProperty;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.Pool;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.VerticalSurfaceType;
-import net.minecraft.util.math.intprovider.ConstantIntProvider;
-import net.minecraft.util.math.intprovider.UniformIntProvider;
+import net.minecraft.util.math.intprovider.*;
 import net.minecraft.util.math.noise.DoublePerlinNoiseSampler;
 import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
+import net.minecraft.world.gen.placementmodifier.BlockFilterPlacementModifier;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.stateprovider.NoiseBlockStateProvider;
 import net.minecraft.world.gen.stateprovider.PredicatedStateProvider;
@@ -57,6 +58,10 @@ public class ModConfiguredFeatures {
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_COARSE_DIRT_KEY = registerKey("ore_coarse_dirt");
     public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_LOOSE_DIRT_KEY = registerKey("ore_loose_dirt");
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_TUBERED_DIRT_KEY = registerKey("ore_tubered_dirt");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_QUEEN_ANNES_LACE_KEY = registerKey("patch_queen_annes_lace");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_SEA_BEET_KEY = registerKey("patch_sea_beet");
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_WHITE_PUMPKIN_KEY = registerKey("patch_white_pumpkin");
     public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_GREEN_PUMPKIN_KEY = registerKey("patch_green_pumpkin");
@@ -126,6 +131,9 @@ public class ModConfiguredFeatures {
     /* PLAINS BIOME */
     public static final RegistryKey<ConfiguredFeature<?, ?>> CLOVER_PLAINS_KEY = registerKey("clover_plains");
 
+    /* DESERT BIOME */
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PATCH_SMALL_CACTUS_KEY = registerKey("patch_small_cactus");
+
     public static Pool.Builder<BlockState> flowerbed(Block flowerbed) {
         return segmentedBlock(flowerbed, 1, 4, FlowerbedBlock.FLOWER_AMOUNT, FlowerbedBlock.HORIZONTAL_FACING);
     }
@@ -164,6 +172,18 @@ public class ModConfiguredFeatures {
 
         register(context, ORE_LOOSE_DIRT_KEY, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), ModBlocks.LOOSE_DIRT.getDefaultState(),33));
         register(context, ORE_COARSE_DIRT_KEY, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), Blocks.COARSE_DIRT.getDefaultState(),33));
+
+        register(context, ORE_TUBERED_DIRT_KEY, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.CONVERTABLE_TO_MUD), ModBlocks.TUBERED_DIRT.getDefaultState(),6));
+        register(context, PATCH_QUEEN_ANNES_LACE_KEY, Feature.RANDOM_PATCH,
+                new RandomPatchFeatureConfig(
+                        20, 4, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.QUEEN_ANNES_LACE)))
+                )
+        );
+        register(context, PATCH_SEA_BEET_KEY, Feature.RANDOM_PATCH,
+                new RandomPatchFeatureConfig(
+                    30, 6, 5, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.SEA_BEET)))
+                )
+        );
 
         register(context, EXTRA_DIRT_ORE_KEY, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), Blocks.DIRT.getDefaultState(),33));
         register(context, WET_ORE_MUD_KEY, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), Blocks.MUD.getDefaultState(),33));
@@ -551,6 +571,10 @@ public class ModConfiguredFeatures {
                 )
         );
 
+        /* DESERT BIOME */
+        ConfiguredFeatures.register(context, PATCH_SMALL_CACTUS_KEY, Feature.RANDOM_PATCH,
+                new RandomPatchFeatureConfig(24, 5, 3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(ModFloraBlocks.SMALL_CACTUS))))
+        );
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {

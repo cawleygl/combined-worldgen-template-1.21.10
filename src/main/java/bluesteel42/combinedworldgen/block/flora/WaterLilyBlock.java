@@ -51,7 +51,7 @@ public class WaterLilyBlock extends PlantBlock implements Fertilizable {
 
     @Override
     public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {
-        return true;
+        return Fertilizable.canSpread(world, pos, state);
     }
 
     @Override
@@ -59,20 +59,24 @@ public class WaterLilyBlock extends PlantBlock implements Fertilizable {
         return true;
     }
 
+//    @Override
+//    public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
+//        for (int k = 0; k < 8; k++) {
+//            BlockPos blockPos2 = pos.add(random.nextInt(5) - 2, 0, random.nextInt(5) - 2);
+//            int placeChance = random.nextInt(4);
+//            if (!world.isAir(blockPos2) || !state.canPlaceAt(world, blockPos2) || placeChance == 0) {
+//                continue;
+//            }
+//
+//            if (placeChance == 1 || placeChance == 2) {
+//                world.setBlockState(blockPos2, Blocks.LILY_PAD.getDefaultState(), Block.NOTIFY_LISTENERS);
+//            } else {
+//                world.setBlockState(blockPos2, state, Block.NOTIFY_LISTENERS);
+//            }
+//        }
+//    }
     @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-        for (int k = 0; k < 8; k++) {
-            BlockPos blockPos2 = pos.add(random.nextInt(5) - 2, 0, random.nextInt(5) - 2);
-            int placeChance = random.nextInt(4);
-            if (!world.isAir(blockPos2) || !state.canPlaceAt(world, blockPos2) || placeChance == 0) {
-                continue;
-            }
-
-            if (placeChance == 1 || placeChance == 2) {
-                world.setBlockState(blockPos2, Blocks.LILY_PAD.getDefaultState(), Block.NOTIFY_LISTENERS);
-            } else {
-                world.setBlockState(blockPos2, state, Block.NOTIFY_LISTENERS);
-            }
-        }
+        Fertilizable.findPosToSpreadTo(world, pos, state).ifPresent(posx -> world.setBlockState(posx, this.getDefaultState()));
     }
 }

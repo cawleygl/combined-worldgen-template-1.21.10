@@ -23,12 +23,17 @@ import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.*;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 
 import java.util.List;
 
 public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> ORE_COARSE_DIRT_PLACED_KEY = registerKey("ore_coarse_dirt");
     public static final RegistryKey<PlacedFeature> ORE_LOOSE_DIRT_PLACED_KEY = registerKey("ore_loose_dirt");
+
+    public static final RegistryKey<PlacedFeature> ORE_TUBERED_DIRT_PLACED_KEY = registerKey("ore_tubered_dirt");
+    public static final RegistryKey<PlacedFeature> PATCH_QUEEN_ANNES_LACE_PLACED_KEY = registerKey("patch_queen_annes_lace");
+    public static final RegistryKey<PlacedFeature> PATCH_SEA_BEET_PLACED_KEY = registerKey("patch_sea_beet");
 
     public static final RegistryKey<PlacedFeature> PATCH_WHITE_PUMPKIN_PLACED_KEY = registerKey("patch_white_pumpkin");
     public static final RegistryKey<PlacedFeature> PATCH_GREEN_PUMPKIN_PLACED_KEY = registerKey("patch_green_pumpkin");
@@ -93,6 +98,11 @@ public class ModPlacedFeatures {
     /* CLOVER PLAINS */
     public static final RegistryKey<PlacedFeature> CLOVER_PLAINS_PLACED_KEY = registerKey("clover_plains");
 
+    /* DESERT BIOME */
+    public static final RegistryKey<PlacedFeature> PATCH_SMALL_CACTUS_DESERT_PLACED_KEY = registerKey("patch_small_cactus_desert");
+    public static final RegistryKey<PlacedFeature> PATCH_SMALL_CACTUS_DECORATED_PLACED_KEY = registerKey("patch_small_cactus_decorated");
+    public static final RegistryKey<PlacedFeature> PATCH_SMALL_CACTUS_VILLAGE_PLACED_KEY = registerKey("patch_small_cactus_village");
+
     public static List<PlacementModifier> modifiers(PlacementModifier countModifier, PlacementModifier heightModifier) {
         return List.of(countModifier, SquarePlacementModifier.of(), heightModifier, BiomePlacementModifier.of());
     }
@@ -156,6 +166,16 @@ public class ModPlacedFeatures {
         );
         register(context, MUSHROOM_ORE_RED_MUSHROOM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.PALE_GARDEN_ORE_MOSS_KEY),
                 modifiersWithCount(1, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(160)))
+        );
+
+        register(context, ORE_TUBERED_DIRT_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.ORE_TUBERED_DIRT_KEY),
+                modifiersWithCount(25, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.getTop()))
+        );
+        register(context, PATCH_QUEEN_ANNES_LACE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_QUEEN_ANNES_LACE_KEY),
+                modifiersWithRarity(6,  PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP)
+        );
+        register(context, PATCH_SEA_BEET_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_SEA_BEET_KEY),
+                modifiersWithRarity(2,  PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP)
         );
 
         register(context, PILE_GREEN_PUMPKIN_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.PILE_GREEN_PUMPKIN_KEY));
@@ -358,6 +378,21 @@ public class ModPlacedFeatures {
                 PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
                 BiomePlacementModifier.of()
         );
+
+        /* DESERT BIOME */
+        register(context, PATCH_SMALL_CACTUS_DESERT_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_SMALL_CACTUS_KEY),
+                RarityFilterPlacementModifier.of(10),
+                SquarePlacementModifier.of(),
+                PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
+                BiomePlacementModifier.of()
+        );
+        register(context, PATCH_SMALL_CACTUS_DECORATED_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_SMALL_CACTUS_KEY),
+                RarityFilterPlacementModifier.of(18),
+                SquarePlacementModifier.of(),
+                PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP,
+                BiomePlacementModifier.of()
+        );
+        register(context, PATCH_SMALL_CACTUS_VILLAGE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.PATCH_SMALL_CACTUS_KEY));
 
     }
 

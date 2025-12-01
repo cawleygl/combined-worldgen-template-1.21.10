@@ -1,5 +1,6 @@
 {
   "values": [
-    "combined-worldgen:loose_dirt"
+    "combined-worldgen:loose_dirt",
+    "combined-worldgen:tubered_dirt"
   ]
 }

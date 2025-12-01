@@ -1,5 +1,6 @@
 package bluesteel42.combinedworldgen;
 
+import bluesteel42.combinedworldgen.block.ModBlocks;
 import bluesteel42.combinedworldgen.block.flora.ModFloraBlocks;
 import bluesteel42.combinedworldgen.block.pumpkin.ModPumpkinBlocks;
 import bluesteel42.combinedworldgen.entity.ModEntities;
@@ -15,6 +16,7 @@ import bluesteel42.combinedworldgen.wood.AllWoodInitializer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.StemBlock;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.world.BiomeColors;
@@ -31,6 +33,8 @@ public class CombinedWorldgenClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         AllWoodInitializer.initializeWoodTypesClient();
+        // Color Grass
+        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> world != null && pos != null ? BiomeColors.getGrassColor(world, pos) : GrassColors.getDefaultColor(), ModBlocks.QUEEN_ANNES_LACE, ModBlocks.SEA_BEET);
 
         // Color Flowerbed Stems
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {

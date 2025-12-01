@@ -473,6 +473,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(ItemTags.BEE_FOOD).add(ModFloraBlocks.GIANT_PADMA.asItem());
 
         valueLookupBuilder(ItemTags.DIRT).add(ModBlocks.LOOSE_DIRT.asItem());
+        valueLookupBuilder(ItemTags.DIRT).add(ModBlocks.TUBERED_DIRT.asItem());
 
         valueLookupBuilder(ModTags.Items.WATER_LILIES).add(ModFloraBlocks.WHITE_WATER_LILY.asItem());
         valueLookupBuilder(ModTags.Items.WATER_LILIES).add(ModFloraBlocks.BLUE_WATER_LILY.asItem());
@@ -509,6 +510,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         valueLookupBuilder(ItemTags.EGGS).add(ModItems.SPOTTED_EGG);
         valueLookupBuilder(ItemTags.EGGS).add(ModItems.UMAMI_EGG);
+
+        valueLookupBuilder(ItemTags.CAMEL_FOOD).add(ModFloraBlocks.SMALL_CACTUS.asItem());
 
         valueLookupBuilder(ModTags.Items.FLORAL_MILK).add(ModItems.WITHER_FLORAL_MILK_BOTTLE);
         valueLookupBuilder(ModTags.Items.FLORAL_MILK).add(ModItems.HASTE_FLORAL_MILK_BOTTLE);

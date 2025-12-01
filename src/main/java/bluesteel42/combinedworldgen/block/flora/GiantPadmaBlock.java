@@ -4,41 +4,41 @@ import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.*;
 import net.minecraft.component.type.SuspiciousStewEffectsComponent;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityCollisionHandler;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.particle.TintedParticleEffect;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.Difficulty;
+import net.minecraft.world.World;
 
-import java.util.List;
-
-public class GiantPadmaBlock extends PlantBlock implements SuspiciousStewIngredient {
-    protected static final MapCodec<SuspiciousStewEffectsComponent> STEW_EFFECT_CODEC = SuspiciousStewEffectsComponent.CODEC.fieldOf("suspicious_stew_effects");
+public class GiantPadmaBlock extends FlowerBlock {
     public static final MapCodec<GiantPadmaBlock> CODEC = RecordCodecBuilder.mapCodec(
-            instance -> instance.group(STEW_EFFECT_CODEC.forGetter(GiantPadmaBlock::getStewEffects), createSettingsCodec()).apply(instance, GiantPadmaBlock::new)
+            instance -> instance.group(STEW_EFFECT_CODEC.forGetter(FlowerBlock::getStewEffects), createSettingsCodec()).apply(instance, GiantPadmaBlock::new)
     );
     private static final VoxelShape SHAPE = Block.createColumnShape(12.0, 0.0, 3.0);
-    private final SuspiciousStewEffectsComponent stewEffects;
 
     @Override
     public MapCodec<? extends GiantPadmaBlock> getCodec() {
         return CODEC;
     }
 
-    public GiantPadmaBlock(RegistryEntry<StatusEffect> stewEffect, float effectLengthInSeconds, Settings settings) {
-        this(createStewEffectList(stewEffect, effectLengthInSeconds), settings);
+    public GiantPadmaBlock(RegistryEntry<StatusEffect> registryEntry, float f, AbstractBlock.Settings settings) {
+        this(createStewEffectList(registryEntry, f), settings);
     }
 
-    public GiantPadmaBlock(SuspiciousStewEffectsComponent stewEffects, Settings settings) {
-        super(settings);
-        this.stewEffects = stewEffects;
-    }
-
-    protected static SuspiciousStewEffectsComponent createStewEffectList(RegistryEntry<StatusEffect> effect, float effectLengthInSeconds) {
-        return new SuspiciousStewEffectsComponent(List.of(new SuspiciousStewEffectsComponent.StewEffect(effect, MathHelper.floor(effectLengthInSeconds * 20.0F))));
+    public GiantPadmaBlock(SuspiciousStewEffectsComponent suspiciousStewEffectsComponent, AbstractBlock.Settings settings) {
+        super(suspiciousStewEffectsComponent, settings);
     }
 
     @Override
@@ -47,12 +47,37 @@ public class GiantPadmaBlock extends PlantBlock implements SuspiciousStewIngredi
     }
 
     @Override
-    public SuspiciousStewEffectsComponent getStewEffects() {
-        return this.stewEffects;
+    public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
+        VoxelShape voxelShape = this.getOutlineShape(state, world, pos, ShapeContext.absent());
+        Vec3d vec3d = voxelShape.getBoundingBox().getCenter();
+        double d = pos.getX() + vec3d.x;
+        double e = pos.getZ() + vec3d.z;
+
+        int j = 5578058;
+        float f = (j >> 16 & 0xFF) / 255.0F;
+        float g = (j >> 8 & 0xFF) / 255.0F;
+        float h = (j >> 0 & 0xFF) / 255.0F;
+
+        for (int i = 0; i < 3; i++) {
+            if (random.nextBoolean()) {
+                world.addParticleClient(
+                        TintedParticleEffect.create(ParticleTypes.ENTITY_EFFECT, f, g, h), d + random.nextDouble() / 5.0, pos.getY() + (0.5 - random.nextDouble()), e + random.nextDouble() / 5.0, 0.0, 0.0, 0.0
+                );
+            }
+        }
     }
 
-    @Nullable
+    @Override
+    protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity, EntityCollisionHandler handler, boolean bl) {
+        if (world instanceof ServerWorld serverWorld
+                && world.getDifficulty() != Difficulty.PEACEFUL
+                && entity instanceof LivingEntity livingEntity) {
+            livingEntity.addStatusEffect(this.getContactEffect());
+        }
+    }
+
+    @Override
     public StatusEffectInstance getContactEffect() {
-        return null;
+        return new StatusEffectInstance(StatusEffects.NAUSEA, 200, 0);
     }
 }

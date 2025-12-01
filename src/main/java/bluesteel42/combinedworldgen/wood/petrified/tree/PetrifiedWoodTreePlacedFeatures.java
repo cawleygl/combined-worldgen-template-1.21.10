@@ -30,13 +30,13 @@ public class PetrifiedWoodTreePlacedFeatures {
                 PlacedFeatures.wouldSurvive(Blocks.OAK_SAPLING)
         );
         ModPlacedFeatures.register(context, PETRIFIED_TREE_ORE_X_PLACED_KEY, configuredFeatures.getOrThrow(PetrifiedWoodTreeConfiguredFeatures.PETRIFIED_TREE_ORE_X_KEY),
-                ModPlacedFeatures.modifiersWithRarity(300, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.getTop()))
+                ModPlacedFeatures.modifiersWithRarity(64, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.getTop()))
         );
         ModPlacedFeatures.register(context, PETRIFIED_TREE_ORE_Y_PLACED_KEY, configuredFeatures.getOrThrow(PetrifiedWoodTreeConfiguredFeatures.PETRIFIED_TREE_ORE_Y_KEY),
-                ModPlacedFeatures.modifiersWithRarity(300, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.getTop()))
+                ModPlacedFeatures.modifiersWithRarity(64, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.getTop()))
         );
         ModPlacedFeatures.register(context, PETRIFIED_TREE_ORE_Z_PLACED_KEY, configuredFeatures.getOrThrow(PetrifiedWoodTreeConfiguredFeatures.PETRIFIED_TREE_ORE_Z_KEY),
-                ModPlacedFeatures.modifiersWithRarity(300, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.getTop()))
+                ModPlacedFeatures.modifiersWithRarity(64, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.getTop()))
         );
         ModPlacedFeatures.register(context, PETRIFIED_TREE_ORE_BADLANDS_X_PLACED_KEY, configuredFeatures.getOrThrow(PetrifiedWoodTreeConfiguredFeatures.PETRIFIED_TREE_ORE_X_KEY),
                 ModPlacedFeatures.modifiersWithCount(10, HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.getTop()))

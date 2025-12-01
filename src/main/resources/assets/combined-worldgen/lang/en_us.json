@@ -39,6 +39,9 @@
   "block.combined-worldgen.pink_water_lily": "Pink Water Lily",
   "block.combined-worldgen.purple_water_lily": "Purple Water Lily",
   "block.combined-worldgen.loose_dirt": "Loose Dirt",
+  "block.combined-worldgen.tubered_dirt": "Tubered Dirt",
+  "block.combined-worldgen.queen_annes_lace": "Queen Anne's Lace",
+  "block.combined-worldgen.sea_beet": "Sea Beet",
   "block.combined-worldgen.white_pumpkin": "White Pumpkin",
   "item.combined-worldgen.white_pumpkin_seeds": "White Pumpkin Seeds",
   "block.combined-worldgen.carved_white_pumpkin": "Carved White Pumpkin",
@@ -66,6 +69,7 @@
   "item.combined-worldgen.cactus_pad": "Cactus Pad",
   "item.combined-worldgen.cooked_cactus_pad": "Cooked Cactus Pad",
   "item.combined-worldgen.cactus_salad": "Cactus Salad",
+  "block.combined-worldgen.small_cactus": "Prickly Pear Cactus",
 
   "item.combined-worldgen.moobloom_spawn_egg": "Moobloom Spawn Egg",
   "item.combined-worldgen.floral_milk_bottle_remove_longest": "Floral Milk Bottle",

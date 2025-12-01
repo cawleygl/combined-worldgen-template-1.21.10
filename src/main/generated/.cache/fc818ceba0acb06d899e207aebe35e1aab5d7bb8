@@ -15,10 +15,11 @@ ce993777fdae071b494a76d83ca175047ff4df78 data/combined-worldgen/tags/item/water_
 55dd0887a5733f5a23e7c055f142c35ffd57ef2f data/combined-worldgen/tags/item/willow_logs.json
 3c68fd2c1418dcf862292dc106179b70ad27a78f data/minecraft/tags/item/bee_food.json
 804667ef376ba26af293c4aa081fedbea11988a9 data/minecraft/tags/item/boats.json
+0c527a772adace88cd23ef397f0274e9d8e2e804 data/minecraft/tags/item/camel_food.json
 47ac8966d6b6a7fff17d6af4c4444facec204747 data/minecraft/tags/item/chest_boats.json
 6656de4a05e08982e18be1131109f09f0b7b6165 data/minecraft/tags/item/chicken_food.json
 d970ea97637d09a625558fafa1b3ad4e9f5e2e20 data/minecraft/tags/item/completes_find_tree_tutorial.json
-c09f3d2e740a38732c388186f46fa03e241a76db data/minecraft/tags/item/dirt.json
+cc76db7c9cf026f1b82768953402cedbc71eba47 data/minecraft/tags/item/dirt.json
 12ccd57c2ba1c013dd650637269cb1089e9ee974 data/minecraft/tags/item/doors.json
 d103d3bbd0fd5c4984ab3f4d3a77c581a412231a data/minecraft/tags/item/eggs.json
 7684e1fd34bc4240b0fff4baff349e0571645a57 data/minecraft/tags/item/enchantable/equippable.json

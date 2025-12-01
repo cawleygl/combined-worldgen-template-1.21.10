@@ -495,6 +495,21 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTintedItemModel(combinedBlock, Identifier.of(CombinedWorldgen.MOD_ID, "block/flowering_orange_leaves_0"), ItemModels.constantTintSource(leavesTint));
     }
 
+    private static final Model TINTED_CROSS_WITH_OVERLAY = modBlock("tinted_cross_overlay", TextureKey.CROSS, OVERLAY);
+    private static TextureMap tintedCrossBlockWithOverlay(Block combinedBlock, Block tintedBlock) {
+        return new TextureMap().put(TextureKey.CROSS, getId(tintedBlock)).put(OVERLAY, getSubId(combinedBlock, "_overlay"));
+    }
+    private static void registerTintableCrossBlockStateWithOverlay(BlockStateModelGenerator blockStateModelGenerator, Block combinedBlock, Block tintedGrassBlock) {
+        TextureMap textureMap = tintedCrossBlockWithOverlay(combinedBlock, tintedGrassBlock);
+        WeightedVariant weightedVariant = createWeightedVariant(TINTED_CROSS_WITH_OVERLAY.upload(combinedBlock, textureMap, blockStateModelGenerator.modelCollector));
+        blockStateModelGenerator.blockStateCollector.accept(createSingletonBlockState(combinedBlock, weightedVariant));
+    }
+
+    private static void generateShortGrassModelsWithOverlay(BlockStateModelGenerator blockStateModelGenerator, Block combinedBlock, Block tintedGrassBlock) {
+        registerTintableCrossBlockStateWithOverlay(blockStateModelGenerator, combinedBlock, tintedGrassBlock);
+        blockStateModelGenerator.registerItemModel(combinedBlock.asItem());
+    }
+
     private static Model vanillaBlock(String parent, TextureKey... requiredTextureKeys) {
         return new Model(Optional.of(Identifier.ofVanilla("block/" + parent)), Optional.empty(), requiredTextureKeys);
     }
@@ -515,6 +530,12 @@ public class ModModelProvider extends FabricModelProvider {
         generatePineBlockModels(blockStateModelGenerator);
         generateWillowBlockModels(blockStateModelGenerator);
 
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LOOSE_DIRT);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TUBERED_DIRT);
+        generateShortGrassModelsWithOverlay(blockStateModelGenerator, ModBlocks.QUEEN_ANNES_LACE, Blocks.SHORT_GRASS);
+        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.SEA_BEET, BlockStateModelGenerator.CrossType.TINTED);
+        blockStateModelGenerator.registerGrassTinted(ModBlocks.SEA_BEET);
+
         generateBlockAndSlabModels(blockStateModelGenerator, ModBuildingBlocks.SMOOTH_DEEPSLATE, ModBuildingBlocks.SMOOTH_DEEPSLATE_SLAB);
 
         generateStoneBlockModels(blockStateModelGenerator, ModBuildingBlocks.MOSSY_BRICKS, ModBuildingBlocks.MOSSY_BRICK_STAIRS, ModBuildingBlocks.MOSSY_BRICK_SLAB, ModBuildingBlocks.MOSSY_BRICK_WALL);
@@ -528,8 +549,6 @@ public class ModModelProvider extends FabricModelProvider {
         generateWallFromVanillaBlock(blockStateModelGenerator, Blocks.POLISHED_ANDESITE, ModBuildingBlocks.POLISHED_ANDESITE_WALL);
         generateWallFromVanillaBlock(blockStateModelGenerator, Blocks.POLISHED_DIORITE, ModBuildingBlocks.POLISHED_DIORITE_WALL);
         generateWallFromVanillaBlock(blockStateModelGenerator, Blocks.POLISHED_GRANITE, ModBuildingBlocks.POLISHED_GRANITE_WALL);
-
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LOOSE_DIRT);
 
         generateWaterLilyModels(blockStateModelGenerator, ModFloraBlocks.WHITE_WATER_LILY);
         generateWaterLilyModels(blockStateModelGenerator, ModFloraBlocks.BLUE_WATER_LILY);
@@ -548,6 +567,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTintableCross(ModFloraBlocks.SNOWY_SHORT_GRASS, BlockStateModelGenerator.CrossType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlantAndItem(ModFloraBlocks.SNOWY_FERN, ModFloraBlocks.POTTED_SNOWY_FERN, BlockStateModelGenerator.CrossType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(ModFloraBlocks.SNOWY_BUSH, BlockStateModelGenerator.CrossType.NOT_TINTED);
+
+        blockStateModelGenerator.registerFlowerPotPlantAndItem(ModFloraBlocks.SMALL_CACTUS, ModFloraBlocks.POTTED_SMALL_CACTUS, BlockStateModelGenerator.CrossType.NOT_TINTED);
 
         blockStateModelGenerator.registerItemModel(ModItems.ORANGE);
         blockStateModelGenerator.registerItemModel(ModItems.CHOCOLATE_ORANGE);

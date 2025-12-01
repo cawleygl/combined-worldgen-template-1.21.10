@@ -447,13 +447,26 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         generatePineBlockTags();
         generateWillowBlockTags();
 
-        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModFloraBlocks.POTTED_CACTUS_FLOWER);
-        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModFloraBlocks.POTTED_ROSE);
-        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModFloraBlocks.POTTED_PEONY);
-        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModFloraBlocks.POTTED_LILAC);
-        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModFloraBlocks.POTTED_SUGAR_CANE);
-        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModFloraBlocks.POTTED_SUNFLOWER);
-        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModFloraBlocks.POTTED_MONSTERA);
+        valueLookupBuilder(BlockTags.DIRT).add(ModBlocks.LOOSE_DIRT);
+        valueLookupBuilder(BlockTags.SHOVEL_MINEABLE).add(ModBlocks.LOOSE_DIRT);
+        valueLookupBuilder(BlockTags.BIG_DRIPLEAF_PLACEABLE).add(ModBlocks.LOOSE_DIRT);
+        valueLookupBuilder(BlockTags.CONVERTABLE_TO_MUD).add(ModBlocks.LOOSE_DIRT);
+        valueLookupBuilder(BlockTags.FOXES_SPAWNABLE_ON).add(ModBlocks.LOOSE_DIRT);
+        valueLookupBuilder(BlockTags.SNIFFER_DIGGABLE_BLOCK).add(ModBlocks.LOOSE_DIRT);
+        valueLookupBuilder(BlockTags.WOLVES_SPAWNABLE_ON).add(ModBlocks.LOOSE_DIRT);
+        valueLookupBuilder(BlockTags.DIRT).add(ModBlocks.TUBERED_DIRT);
+        valueLookupBuilder(BlockTags.SHOVEL_MINEABLE).add(ModBlocks.TUBERED_DIRT);
+        valueLookupBuilder(BlockTags.BIG_DRIPLEAF_PLACEABLE).add(ModBlocks.TUBERED_DIRT);
+        valueLookupBuilder(BlockTags.CONVERTABLE_TO_MUD).add(ModBlocks.TUBERED_DIRT);
+        valueLookupBuilder(BlockTags.FOXES_SPAWNABLE_ON).add(ModBlocks.TUBERED_DIRT);
+        valueLookupBuilder(BlockTags.SNIFFER_DIGGABLE_BLOCK).add(ModBlocks.TUBERED_DIRT);
+        valueLookupBuilder(BlockTags.WOLVES_SPAWNABLE_ON).add(ModBlocks.TUBERED_DIRT);
+        valueLookupBuilder(BlockTags.REPLACEABLE_BY_MUSHROOMS).add(ModBlocks.QUEEN_ANNES_LACE);
+        valueLookupBuilder(BlockTags.REPLACEABLE_BY_TREES).add(ModBlocks.QUEEN_ANNES_LACE);
+        valueLookupBuilder(BlockTags.REPLACEABLE).add(ModBlocks.QUEEN_ANNES_LACE);
+        valueLookupBuilder(BlockTags.REPLACEABLE_BY_MUSHROOMS).add(ModBlocks.SEA_BEET);
+        valueLookupBuilder(BlockTags.REPLACEABLE_BY_TREES).add(ModBlocks.SEA_BEET);
+        valueLookupBuilder(BlockTags.REPLACEABLE).add(ModBlocks.SEA_BEET);
 
         valueLookupBuilder(BlockTags.PICKAXE_MINEABLE).add(ModBuildingBlocks.MOSSY_BRICKS);
         valueLookupBuilder(BlockTags.PICKAXE_MINEABLE).add(ModBuildingBlocks.MOSSY_BRICK_STAIRS);
@@ -501,6 +514,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         valueLookupBuilder(BlockTags.REPLACEABLE_BY_MUSHROOMS).add(ModFloraBlocks.TRUNK_ATTACHED_BROWN_MUSHROOM);
 
+        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModFloraBlocks.POTTED_CACTUS_FLOWER);
+        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModFloraBlocks.POTTED_ROSE);
+        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModFloraBlocks.POTTED_PEONY);
+        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModFloraBlocks.POTTED_LILAC);
+        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModFloraBlocks.POTTED_SUGAR_CANE);
+        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModFloraBlocks.POTTED_SUNFLOWER);
+        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModFloraBlocks.POTTED_MONSTERA);
+
         valueLookupBuilder(BlockTags.BEE_ATTRACTIVE).add(ModFloraBlocks.VIOLET);
         valueLookupBuilder(BlockTags.FLOWERS).add(ModFloraBlocks.VIOLET);
         valueLookupBuilder(BlockTags.INSIDE_STEP_SOUND_BLOCKS).add(ModFloraBlocks.VIOLET);
@@ -523,14 +544,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModFloraBlocks.POTTED_HELLEBORE);
         valueLookupBuilder(BlockTags.BEE_ATTRACTIVE).add(ModFloraBlocks.GIANT_PADMA);
         valueLookupBuilder(BlockTags.SMALL_FLOWERS).add(ModFloraBlocks.GIANT_PADMA);
-
-        valueLookupBuilder(BlockTags.DIRT).add(ModBlocks.LOOSE_DIRT);
-        valueLookupBuilder(BlockTags.SHOVEL_MINEABLE).add(ModBlocks.LOOSE_DIRT);
-        valueLookupBuilder(BlockTags.BIG_DRIPLEAF_PLACEABLE).add(ModBlocks.LOOSE_DIRT);
-        valueLookupBuilder(BlockTags.CONVERTABLE_TO_MUD).add(ModBlocks.LOOSE_DIRT);
-        valueLookupBuilder(BlockTags.FOXES_SPAWNABLE_ON).add(ModBlocks.LOOSE_DIRT);
-        valueLookupBuilder(BlockTags.SNIFFER_DIGGABLE_BLOCK).add(ModBlocks.LOOSE_DIRT);
-        valueLookupBuilder(BlockTags.WOLVES_SPAWNABLE_ON).add(ModBlocks.LOOSE_DIRT);
 
         valueLookupBuilder(ModTags.Blocks.WATER_LILIES).add(ModFloraBlocks.WHITE_WATER_LILY);
         valueLookupBuilder(ModTags.Blocks.WATER_LILIES).add(ModFloraBlocks.BLUE_WATER_LILY);
@@ -572,6 +585,19 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         valueLookupBuilder(BlockTags.REPLACEABLE_BY_MUSHROOMS).add(ModFloraBlocks.SNOWY_SHORT_GRASS);
         valueLookupBuilder(BlockTags.REPLACEABLE_BY_TREES).add(ModFloraBlocks.SNOWY_SHORT_GRASS);
         valueLookupBuilder(BlockTags.REPLACEABLE).add(ModFloraBlocks.SNOWY_SHORT_GRASS);
+        valueLookupBuilder(BlockTags.EDIBLE_FOR_SHEEP).add(ModFloraBlocks.SNOWY_FERN);
+        valueLookupBuilder(BlockTags.REPLACEABLE_BY_MUSHROOMS).add(ModFloraBlocks.SNOWY_FERN);
+        valueLookupBuilder(BlockTags.REPLACEABLE_BY_TREES).add(ModFloraBlocks.SNOWY_FERN);
+        valueLookupBuilder(BlockTags.REPLACEABLE).add(ModFloraBlocks.SNOWY_FERN);
+        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModFloraBlocks.POTTED_SNOWY_FERN);
+        valueLookupBuilder(BlockTags.REPLACEABLE_BY_MUSHROOMS).add(ModFloraBlocks.SNOWY_BUSH);
+        valueLookupBuilder(BlockTags.REPLACEABLE_BY_TREES).add(ModFloraBlocks.SNOWY_BUSH);
+        valueLookupBuilder(BlockTags.REPLACEABLE).add(ModFloraBlocks.SNOWY_BUSH);
+
+        valueLookupBuilder(BlockTags.ENDERMAN_HOLDABLE).add(ModFloraBlocks.SMALL_CACTUS);
+        valueLookupBuilder(BlockTags.HAPPY_GHAST_AVOIDS).add(ModFloraBlocks.SMALL_CACTUS);
+        valueLookupBuilder(BlockTags.FALL_DAMAGE_RESETTING).add(ModFloraBlocks.SMALL_CACTUS);
+        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ModFloraBlocks.POTTED_SMALL_CACTUS);
 
         valueLookupBuilder(ModTags.Blocks.MOOBLOOM_VARIANT_FLOWERS).add(Blocks.DANDELION);
         valueLookupBuilder(ModTags.Blocks.MOOBLOOM_VARIANT_FLOWERS).add(Blocks.POPPY);

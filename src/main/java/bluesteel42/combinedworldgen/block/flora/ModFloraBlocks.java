@@ -205,6 +205,22 @@ public class ModFloraBlocks {
             true
     );
 
+    /* DESERT BIOME */
+    public static final Block SMALL_CACTUS = ModBlocks.register(
+            "small_cactus",
+            SmallCactusBlock::new,
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.DARK_GREEN)
+                    .replaceable()
+                    .noCollision()
+                    .breakInstantly()
+                    .sounds(BlockSoundGroup.WOOL)
+                    .burnable()
+                    .pistonBehavior(PistonBehavior.DESTROY),
+            true, true
+    );
+    public static final Block POTTED_SMALL_CACTUS = ModBlocks.register("potted_small_cactus", settings -> new FlowerPotBlock(SMALL_CACTUS, settings), createFlowerPotSettings(), true, true);
+
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL)
                 .register((itemGroup) -> {
@@ -224,6 +240,7 @@ public class ModFloraBlocks {
                     itemGroup.addAfter(Items.SHORT_GRASS, ModFloraBlocks.SNOWY_SHORT_GRASS);
                     itemGroup.addAfter(Items.FERN, ModFloraBlocks.SNOWY_FERN);
                     itemGroup.addAfter(Items.BUSH, ModFloraBlocks.SNOWY_BUSH);
+                    itemGroup.addAfter(Items.CACTUS, ModFloraBlocks.SMALL_CACTUS);
                 });
     }
 

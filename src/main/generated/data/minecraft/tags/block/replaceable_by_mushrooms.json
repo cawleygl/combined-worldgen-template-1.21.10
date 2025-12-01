@@ -1,7 +1,11 @@
 {
   "values": [
+    "combined-worldgen:queen_annes_lace",
+    "combined-worldgen:sea_beet",
     "combined-worldgen:trunk_attached_brown_mushroom",
     "combined-worldgen:monstera",
-    "combined-worldgen:snowy_short_grass"
+    "combined-worldgen:snowy_short_grass",
+    "combined-worldgen:snowy_fern",
+    "combined-worldgen:snowy_bush"
   ]
 }
