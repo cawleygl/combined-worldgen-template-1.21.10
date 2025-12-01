@@ -1,6 +1,5 @@
 package bluesteel42.combinedworldgen.wood.pine.block;
 
-import bluesteel42.combinedworldgen.CombinedWorldgen;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.BlockState;
