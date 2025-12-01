@@ -1,0 +1,7 @@
+{
+  "parent": "combined-worldgen:block/tinted_cross_overlay",
+  "textures": {
+    "cross": "minecraft:block/short_grass",
+    "overlay": "combined-worldgen:block/queen_annes_lace_overlay"
+  }
+}
