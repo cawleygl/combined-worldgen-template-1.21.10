@@ -2,14 +2,17 @@
 382330427d895c0056982f36ce596e8351adbc75 data/combined-worldgen/tags/block/azalea_blocks.json
 35519367c713a511874bcdd960430af3fc1bac8a data/combined-worldgen/tags/block/azalea_stems.json
 49dcc7078302f1beff9dc7170724061faba80173 data/combined-worldgen/tags/block/baobab_logs.json
+c6e1ea5581efd91cafb761053d54f0a817a7d715 data/combined-worldgen/tags/block/carved_pumpkins.json
 d582efc39068b594bd4a2b6cd763044521e3ed48 data/combined-worldgen/tags/block/cholla_blocks.json
 3ced5f9b2be51734bd28cc936feaebc0f5541a89 data/combined-worldgen/tags/block/citrus_logs.json
 a6e192c123ca1abcd90445338ded1c023b97d751 data/combined-worldgen/tags/block/dogwood_logs.json
+2a2e31747b9feb2ff6e2bb0e0d0696c3abd268ad data/combined-worldgen/tags/block/jack_o_lanterns.json
 dbf3f4bed9ece60b8f920a12aa8f2c6d85a6a7ff data/combined-worldgen/tags/block/kapok_logs.json
 759c89820af10caf479348f3d0c09f45b53c8d3e data/combined-worldgen/tags/block/maple_logs.json
 9b8ae89b359aaa87b8f9c75b851aaf2815324c8c data/combined-worldgen/tags/block/moobloom_variant_flowers.json
 21609746536149cb54af1b3dd495e2fc75d6c630 data/combined-worldgen/tags/block/petrified_logs.json
 ecc80d2bd98bdd12a81bd1cc7cde59e15337a427 data/combined-worldgen/tags/block/pine_logs.json
+1c33ac99ab28e39f9b9f7a86e096fc37ff3075bb data/combined-worldgen/tags/block/pumpkins.json
 ce993777fdae071b494a76d83ca175047ff4df78 data/combined-worldgen/tags/block/water_lilies.json
 55dd0887a5733f5a23e7c055f142c35ffd57ef2f data/combined-worldgen/tags/block/willow_logs.json
 57716dd282b6d93749030a3a32f8524d9e65379e data/minecraft/tags/block/bee_attractive.json

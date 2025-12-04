@@ -11,6 +11,9 @@ public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> WATER_LILIES = createTag("water_lilies");
         public static final TagKey<Block> MOOBLOOM_VARIANT_FLOWERS = createTag("moobloom_variant_flowers");
+        public static final TagKey<Block> PUMPKINS = createTag("pumpkins");
+        public static final TagKey<Block> CARVED_PUMPKINS = createTag("carved_pumpkins");
+        public static final TagKey<Block> JACK_O_LANTERNS = createTag("jack_o_lanterns");
 
         public static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(CombinedWorldgen.MOD_ID, name));

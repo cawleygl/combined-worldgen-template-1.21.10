@@ -6,7 +6,6 @@ import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.item.ShovelItem;
@@ -26,11 +25,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Map;
 
 @Mixin(ShovelItem.class)
-public class LooseDirtToPathMixin {
+public class NewDirtsToPathMixin {
 	@Unique
 	private static final Map<Block, BlockState> PATH_STATES = Maps.<Block, BlockState>newHashMap(
 			new ImmutableMap.Builder<Block, BlockState>()
 					.put(ModBlocks.LOOSE_DIRT, Blocks.DIRT_PATH.getDefaultState())
+					.put(ModBlocks.TUBERED_DIRT, Blocks.DIRT_PATH.getDefaultState())
 					.build()
 	);
 

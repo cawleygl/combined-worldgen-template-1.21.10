@@ -5,12 +5,13 @@
   "mixins": [
     "HasCatAccessor",
     "HasWitchAccessor",
-    "LooseDirtToPathMixin",
+    "NewDirtsToPathMixin",
     "RegisterTreeBuildersMixin",
     "ShearLeafyAzaleaStemMixin",
     "StripBlockStateMixin",
     "STRIPPED_BLOCKSAccessor",
-    "SwampWoodHutMixin"
+    "SwampWoodHutMixin",
+    "PreventFenceConnectToPumpkinMixin"
   ],
   "injectors": {
     "defaultRequire": 1

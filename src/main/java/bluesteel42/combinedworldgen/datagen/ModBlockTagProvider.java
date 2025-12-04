@@ -555,6 +555,16 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         valueLookupBuilder(BlockTags.BEE_ATTRACTIVE).addTag(ModTags.Blocks.WATER_LILIES);
         valueLookupBuilder(BlockTags.FLOWERS).addTag(ModTags.Blocks.WATER_LILIES);
 
+        valueLookupBuilder(ModTags.Blocks.PUMPKINS).add(Blocks.PUMPKIN);
+        valueLookupBuilder(ModTags.Blocks.CARVED_PUMPKINS).add(Blocks.CARVED_PUMPKIN);
+        valueLookupBuilder(ModTags.Blocks.JACK_O_LANTERNS).add(Blocks.JACK_O_LANTERN);
+        valueLookupBuilder(ModTags.Blocks.PUMPKINS).add(ModPumpkinBlocks.WHITE_PUMPKIN);
+        valueLookupBuilder(ModTags.Blocks.CARVED_PUMPKINS).add(ModPumpkinBlocks.CARVED_WHITE_PUMPKIN);
+        valueLookupBuilder(ModTags.Blocks.JACK_O_LANTERNS).add(ModPumpkinBlocks.WHITE_JACK_O_LANTERN);
+        valueLookupBuilder(ModTags.Blocks.JACK_O_LANTERNS).add(ModPumpkinBlocks.SOUL_JACK_O_LANTERN);
+        valueLookupBuilder(ModTags.Blocks.PUMPKINS).add(ModPumpkinBlocks.GREEN_PUMPKIN);
+        valueLookupBuilder(ModTags.Blocks.CARVED_PUMPKINS).add(ModPumpkinBlocks.CARVED_GREEN_PUMPKIN);
+        valueLookupBuilder(ModTags.Blocks.JACK_O_LANTERNS).add(ModPumpkinBlocks.GREEN_JACK_O_LANTERN);
         valueLookupBuilder(BlockTags.AXE_MINEABLE).add(ModPumpkinBlocks.WHITE_PUMPKIN);
         valueLookupBuilder(BlockTags.AXE_MINEABLE).add(ModPumpkinBlocks.CARVED_WHITE_PUMPKIN);
         valueLookupBuilder(BlockTags.AXE_MINEABLE).add(ModPumpkinBlocks.WHITE_JACK_O_LANTERN);

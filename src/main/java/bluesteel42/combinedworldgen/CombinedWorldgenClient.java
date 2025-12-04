@@ -16,7 +16,6 @@ import bluesteel42.combinedworldgen.wood.AllWoodInitializer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.StemBlock;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.world.BiomeColors;
