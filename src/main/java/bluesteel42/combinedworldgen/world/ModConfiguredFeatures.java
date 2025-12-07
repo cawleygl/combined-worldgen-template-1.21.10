@@ -190,7 +190,7 @@ public class ModConfiguredFeatures {
         register(context, DESERT_ORE_SAND_KEY, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), Blocks.SAND.getDefaultState(),33));
         register(context, BADLANDS_ORE_RED_SAND_KEY, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), Blocks.RED_SAND.getDefaultState(),33));
         register(context, FROZEN_ORE_ICE_KEY, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), Blocks.ICE.getDefaultState(),33));
-        register(context, SNOWY_ORE_SNOW_KEY, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), Blocks.SNOW.getDefaultState(),33));
+        register(context, SNOWY_ORE_SNOW_KEY, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), Blocks.SNOW_BLOCK.getDefaultState(),33));
         register(context, OLD_GROWTH_ORE_MOSSY_COBBLESTONE_KEY, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), Blocks.MOSSY_COBBLESTONE.getDefaultState(),33));
         register(context, OLD_GROWTH_ORE_MOSS_KEY, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), Blocks.MOSS_BLOCK.getDefaultState(),33));
         register(context, PALE_GARDEN_ORE_MOSS_KEY, Feature.ORE, new OreFeatureConfig(new TagMatchRuleTest(BlockTags.BASE_STONE_OVERWORLD), Blocks.PALE_MOSS_BLOCK.getDefaultState(),33));
