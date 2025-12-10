@@ -1,5 +1,5 @@
 // 1.21.10	-999999999-01-01T00:00:00	Combined Worldgen/Block Loot Tables
-df904c50d964246ea611e36b08d15a45f2f4846c data/combined-worldgen/loot_table/blocks/attached_green_pumpkin_stem.json
+63ecd9136f4a9c1e96383c8dedf09e1ca96474dd data/combined-worldgen/loot_table/blocks/attached_green_pumpkin_stem.json
 df904c50d964246ea611e36b08d15a45f2f4846c data/combined-worldgen/loot_table/blocks/attached_white_pumpkin_stem.json
 41e0d2618b92d201bdbf36b9ee01afef12ec1a77 data/combined-worldgen/loot_table/blocks/azalea_block.json
 912e7d3b8694d0ce6459bd6acbf423b480885865 data/combined-worldgen/loot_table/blocks/azalea_button.json

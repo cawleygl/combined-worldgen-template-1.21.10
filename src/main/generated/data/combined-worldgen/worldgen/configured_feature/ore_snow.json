@@ -6,10 +6,7 @@
     "targets": [
       {
         "state": {
-          "Name": "minecraft:snow",
-          "Properties": {
-            "layers": "1"
-          }
+          "Name": "minecraft:snow_block"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",

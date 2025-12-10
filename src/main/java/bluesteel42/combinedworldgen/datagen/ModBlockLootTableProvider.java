@@ -44,9 +44,7 @@ import net.minecraft.loot.entry.LeafEntry;
 import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.ExplosionDecayLootFunction;
-import net.minecraft.loot.function.LimitCountLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
-import net.minecraft.loot.operator.BoundedIntUnaryOperator;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.predicate.StatePredicate;
@@ -588,7 +586,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModPumpkinBlocks.CARVED_GREEN_PUMPKIN);
         addDrop(ModPumpkinBlocks.GREEN_JACK_O_LANTERN);
         addDrop(ModPumpkinBlocks.GREEN_PUMPKIN_STEM, cropStemDrops(ModPumpkinBlocks.GREEN_PUMPKIN_STEM, ModItems.GREEN_PUMPKIN_SEEDS));
-        addDrop(ModPumpkinBlocks.ATTACHED_GREEN_PUMPKIN_STEM, attachedCropStemDrops(ModPumpkinBlocks.ATTACHED_WHITE_PUMPKIN_STEM, ModItems.WHITE_PUMPKIN_SEEDS));
+        addDrop(ModPumpkinBlocks.ATTACHED_GREEN_PUMPKIN_STEM, attachedCropStemDrops(ModPumpkinBlocks.ATTACHED_GREEN_PUMPKIN_STEM, ModItems.GREEN_PUMPKIN_SEEDS));
 
         addDrop(ModFloraBlocks.SNOWY_FERN, this::shortPlantDrops);
         addDrop(ModFloraBlocks.SNOWY_SHORT_GRASS, this::shortPlantDrops);
