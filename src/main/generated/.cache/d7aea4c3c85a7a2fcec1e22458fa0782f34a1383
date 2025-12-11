@@ -23,7 +23,7 @@ cc76db7c9cf026f1b82768953402cedbc71eba47 data/minecraft/tags/block/convertable_t
 e861d39758a92ce92b299f0acadac6e5af512c71 data/minecraft/tags/block/crops.json
 cc76db7c9cf026f1b82768953402cedbc71eba47 data/minecraft/tags/block/dirt.json
 12ccd57c2ba1c013dd650637269cb1089e9ee974 data/minecraft/tags/block/doors.json
-60458f12f3df80e60c265d4902840bb1c93fb729 data/minecraft/tags/block/edible_for_sheep.json
+eb8298125663643a3b1cb497ca8742d9a46448e2 data/minecraft/tags/block/edible_for_sheep.json
 27c767d78074ca13563d0af562498e79081873ed data/minecraft/tags/block/enderman_holdable.json
 0c527a772adace88cd23ef397f0274e9d8e2e804 data/minecraft/tags/block/fall_damage_resetting.json
 32f55994fb74d922ae3040470152c94b37dfc681 data/minecraft/tags/block/fence_gates.json
