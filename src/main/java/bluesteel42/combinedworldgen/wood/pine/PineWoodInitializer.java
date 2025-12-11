@@ -37,7 +37,7 @@ public class PineWoodInitializer {
     public static boolean TINTED_LEAVES = true;
     public static int MOD_LEAF_TINT_COLOR = FoliageColors.DEFAULT;
     public static boolean BIOME_LEAF_TINT = true && PineWoodInitializer.TINTED_LEAVES;
-    public static float[] MOD_SAPLING_DROP_CHANCE = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
+    public static float[] MOD_SAPLING_DROP_CHANCE = new float[]{0.1F, 0.125F, 0.166666667F, 0.2F};
 
     public static final BlockSetType MOD_BLOCK_SET_TYPE = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, PineWoodInitializer.MOD_WOOD_NAME));
     public static final WoodType MOD_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, PineWoodInitializer.MOD_WOOD_NAME), PineWoodInitializer.MOD_BLOCK_SET_TYPE);

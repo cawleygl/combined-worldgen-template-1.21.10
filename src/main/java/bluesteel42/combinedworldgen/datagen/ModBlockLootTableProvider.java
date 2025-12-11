@@ -390,7 +390,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
 
         /* ADDITIONAL BLOCKS */
         addDrop(PineWoodModBlocks.SPRUCE_LEAVES_FALLING_NEEDLES, leavesDrops(PineWoodModBlocks.SPRUCE_LEAVES_FALLING_NEEDLES, Blocks.SPRUCE_SAPLING, SAPLING_DROP_CHANCE));
-        addDrop(PineWoodModBlocks.SNOWY_PINE_LEAVES, leavesDrops(PineWoodModBlocks.SNOWY_PINE_LEAVES, PineWoodModBlocks.SNOWY_PINE_SAPLING, SAPLING_DROP_CHANCE));
+        addDrop(PineWoodModBlocks.SNOWY_PINE_LEAVES, leavesDrops(PineWoodModBlocks.SNOWY_PINE_LEAVES, PineWoodModBlocks.SNOWY_PINE_SAPLING, PineWoodInitializer.MOD_SAPLING_DROP_CHANCE));
         addDrop(PineWoodModBlocks.SNOWY_SPRUCE_LEAVES, leavesDrops(PineWoodModBlocks.SNOWY_SPRUCE_LEAVES, PineWoodModBlocks.SNOWY_SPRUCE_SAPLING, SAPLING_DROP_CHANCE));
         addDrop(PineWoodModBlocks.SNOWY_PINE_SAPLING);
         addDrop(PineWoodModBlocks.POTTED_SNOWY_PINE_SAPLING, pottedPlantDrops(PineWoodModBlocks.SNOWY_PINE_SAPLING));
