@@ -461,6 +461,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         valueLookupBuilder(ItemTags.SHEEP_FOOD).add(ModFloraBlocks.CLOVER.asItem());
 
+        valueLookupBuilder(ItemTags.SHEEP_FOOD).add(ModFloraBlocks.SNOWY_SHORT_GRASS.asItem());
+        valueLookupBuilder(ItemTags.SHEEP_FOOD).add(ModFloraBlocks.SNOWY_FERN.asItem());
+
         valueLookupBuilder(ItemTags.FLOWERS).add(ModFloraBlocks.VIOLET.asItem());
         valueLookupBuilder(ItemTags.BEE_FOOD).add(ModFloraBlocks.VIOLET.asItem());
         valueLookupBuilder(ItemTags.FLOWERS).add(ModFloraBlocks.FORGET_ME_NOT.asItem());

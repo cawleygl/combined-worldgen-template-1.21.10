@@ -1,5 +1,7 @@
 {
   "values": [
-    "combined-worldgen:clover"
+    "combined-worldgen:clover",
+    "combined-worldgen:snowy_short_grass",
+    "combined-worldgen:snowy_fern"
   ]
 }
