@@ -528,6 +528,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         valueLookupBuilder(BlockTags.BEE_ATTRACTIVE).add(ModFloraBlocks.FORGET_ME_NOT);
         valueLookupBuilder(BlockTags.FLOWERS).add(ModFloraBlocks.FORGET_ME_NOT);
         valueLookupBuilder(BlockTags.INSIDE_STEP_SOUND_BLOCKS).add(ModFloraBlocks.FORGET_ME_NOT);
+        valueLookupBuilder(BlockTags.EDIBLE_FOR_SHEEP).add(ModFloraBlocks.CLOVER);
         valueLookupBuilder(BlockTags.INSIDE_STEP_SOUND_BLOCKS).add(ModFloraBlocks.CLOVER);
         valueLookupBuilder(BlockTags.BEE_ATTRACTIVE).add(ModFloraBlocks.MONSTERA);
         valueLookupBuilder(BlockTags.FLOWERS).add(ModFloraBlocks.MONSTERA);
