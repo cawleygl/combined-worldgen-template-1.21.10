@@ -37,7 +37,6 @@ public class WillowWoodInitializer {
     public static final BlockSetType MOD_BLOCK_SET_TYPE = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, WillowWoodInitializer.MOD_WOOD_NAME));
     public static final WoodType MOD_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, WillowWoodInitializer.MOD_WOOD_NAME), WillowWoodInitializer.MOD_BLOCK_SET_TYPE);
 
-
     public static float MOD_SAPLING_RARE_VARIANT_CHANCE = 0.4F;
     public static Optional<RegistryKey<ConfiguredFeature<?, ?>>> MOD_SAPLING_STANDARD_TREE = Optional.of(WillowWoodTreeConfiguredFeatures.WILLOW_TREE_KEY);
     public static Optional<RegistryKey<ConfiguredFeature<?, ?>>> MOD_SAPLING_RARE_TREE = Optional.of(WillowWoodTreeConfiguredFeatures.WEEPING_WILLOW_KEY);
