@@ -16,7 +16,7 @@ import net.minecraft.sound.BlockSoundGroup;
 public class ModPumpkinBlocks {
     public static final Block WHITE_PUMPKIN_STEM = ModBlocks.register(
             ModPumpkinBlockKeys.WHITE_PUMPKIN_STEM_PATH,
-            settings -> new StemBlock(ModPumpkinBlockKeys.WHITE_PUMPKIN_KEY, ModPumpkinBlockKeys.ATTACHED_WHITE_PUMPKIN_STEM_KEY, ModItemKeys.WHITE_PUMPKIN_SEEDS_KEY, settings),
+            settings -> new FertilizableStemBlock(ModPumpkinBlockKeys.WHITE_PUMPKIN_KEY, ModPumpkinBlockKeys.ATTACHED_WHITE_PUMPKIN_STEM_KEY, ModItemKeys.WHITE_PUMPKIN_SEEDS_KEY, settings),
             AbstractBlock.Settings.create()
                     .mapColor(MapColor.DARK_GREEN)
                     .noCollision()
@@ -91,7 +91,7 @@ public class ModPumpkinBlocks {
     );
     public static final Block GREEN_PUMPKIN_STEM = ModBlocks.register(
             ModPumpkinBlockKeys.GREEN_PUMPKIN_STEM_PATH,
-            settings -> new StemBlock(ModPumpkinBlockKeys.GREEN_PUMPKIN_KEY, ModPumpkinBlockKeys.ATTACHED_GREEN_PUMPKIN_STEM_KEY, ModItemKeys.GREEN_PUMPKIN_SEEDS_KEY, settings),
+            settings -> new FertilizableStemBlock(ModPumpkinBlockKeys.GREEN_PUMPKIN_KEY, ModPumpkinBlockKeys.ATTACHED_GREEN_PUMPKIN_STEM_KEY, ModItemKeys.GREEN_PUMPKIN_SEEDS_KEY, settings),
             AbstractBlock.Settings.create()
                     .mapColor(MapColor.DARK_GREEN)
                     .noCollision()
