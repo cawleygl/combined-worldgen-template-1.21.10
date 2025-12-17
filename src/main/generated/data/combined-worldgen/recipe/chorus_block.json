@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:chorus_plant",
+    "minecraft:chorus_plant",
+    "minecraft:chorus_plant",
+    "minecraft:chorus_plant",
+    "minecraft:chorus_plant",
+    "minecraft:chorus_plant",
+    "minecraft:chorus_plant",
+    "minecraft:chorus_plant",
+    "minecraft:chorus_plant"
+  ],
+  "result": {
+    "count": 1,
+    "id": "combined-worldgen:chorus_block"
+  }
+}

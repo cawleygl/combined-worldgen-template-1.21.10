@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/fence_post",
+  "parent": "minecraft:block/custom_fence_post",
   "textures": {
-    "texture": "combined-worldgen:block/cholla_planks"
+    "particle": "combined-worldgen:block/cholla_fence_particle",
+    "texture": "combined-worldgen:block/cholla_fence"
   }
 }

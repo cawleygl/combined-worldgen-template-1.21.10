@@ -13,6 +13,8 @@ import bluesteel42.combinedworldgen.wood.baobab.block.BaobabWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.baobab.entity.BaobabWoodModBoats;
 import bluesteel42.combinedworldgen.wood.cholla.block.ChollaWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.cholla.entity.ChollaWoodModRafts;
+import bluesteel42.combinedworldgen.wood.chorus.block.ChorusWoodModBlocks;
+import bluesteel42.combinedworldgen.wood.chorus.entity.ChorusWoodModRafts;
 import bluesteel42.combinedworldgen.wood.citrus.CitrusWoodInitializer;
 import bluesteel42.combinedworldgen.wood.citrus.block.CitrusWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.citrus.entity.CitrusWoodModBoats;
@@ -168,6 +170,21 @@ public class ModModelProvider extends FabricModelProvider {
                 ChollaWoodModRafts.MOD_RAFT,
                 ChollaWoodModRafts.MOD_CHEST_RAFT,
                 ChollaWoodModBlocks.MOD_SHELF
+        );
+    }
+    private void generateChorusBlockModels(BlockStateModelGenerator blockStateModelGenerator) {
+        generateCombinedWoodBlockModels(blockStateModelGenerator,
+                ChorusWoodModBlocks.MOD_BLOCK_FAMILY,
+                ChorusWoodModBlocks.MOD_BLOCK,
+                ChorusWoodModBlocks.STRIPPED_MOD_BLOCK,
+                ChorusWoodModBlocks.MOD_MOSAIC,
+                ChorusWoodModBlocks.MOD_MOSAIC_STAIRS,
+                ChorusWoodModBlocks.MOD_MOSAIC_SLAB,
+                ChorusWoodModBlocks.MOD_HANGING_SIGN,
+                ChorusWoodModBlocks.MOD_WALL_HANGING_SIGN,
+                ChorusWoodModRafts.MOD_RAFT,
+                ChorusWoodModRafts.MOD_CHEST_RAFT,
+                ChorusWoodModBlocks.MOD_SHELF
         );
     }
     private void generateCitrusBlockModels(BlockStateModelGenerator blockStateModelGenerator) {
@@ -522,6 +539,7 @@ public class ModModelProvider extends FabricModelProvider {
         generateAzaleaBlockModels(blockStateModelGenerator);
         generateBaobabBlockModels(blockStateModelGenerator);
         generateChollaBlockModels(blockStateModelGenerator);
+        generateChorusBlockModels(blockStateModelGenerator);
         generateCitrusBlockModels(blockStateModelGenerator);
         generateDogwoodBlockModels(blockStateModelGenerator);
         generateKapokBlockModels(blockStateModelGenerator);

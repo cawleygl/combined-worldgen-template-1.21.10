@@ -10,6 +10,7 @@ import bluesteel42.combinedworldgen.wood.azalea.block.AzaleaWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.baobab.BaobabWoodInitializer;
 import bluesteel42.combinedworldgen.wood.baobab.block.BaobabWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.cholla.block.ChollaWoodModBlocks;
+import bluesteel42.combinedworldgen.wood.chorus.block.ChorusWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.citrus.CitrusWoodInitializer;
 import bluesteel42.combinedworldgen.wood.citrus.block.CitrusWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.citrus.block.FloweringOrangeLeavesBlock;
@@ -46,6 +47,7 @@ import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.ExplosionDecayLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.loot.provider.number.LootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.predicate.StatePredicate;
 import net.minecraft.registry.RegistryKeys;
@@ -69,6 +71,17 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
 //                                .apply(ApplyBonusLootFunction.oreDrops(impl.getOrThrow(Enchantments.FORTUNE)))
 //                )
 //        );
+//    }
+
+//    public LootTable.Builder chorusPlantDrops(ItemConvertible block, ItemConvertible drop, LootNumberProvider count) {
+//        return this.dropsWithSilkTouch(
+//                        (Block) block,
+//                        (LootPoolEntry.Builder<?>)this.applyExplosionDecay(
+//                                drop,
+//                                ItemEntry.builder(drop)
+//                                        .apply(SetCountLootFunction.builder(count))
+//                        )
+//                );
 //    }
 
     public void generateNaturalWoodBlockLootTables(
@@ -246,6 +259,30 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         );
         /* ADDITIONAL BLOCKS */
         addDrop(ChollaWoodModBlocks.DRIED_CHOLLA);
+    }
+    public void generateChorusWoodLootTables() {
+        generateCombinedWoodBlockLootTables(
+                ChorusWoodModBlocks.MOD_BLOCK,
+                ChorusWoodModBlocks.STRIPPED_MOD_BLOCK,
+                ChorusWoodModBlocks.MOD_PLANKS,
+                ChorusWoodModBlocks.MOD_MOSAIC,
+                ChorusWoodModBlocks.MOD_STAIRS,
+                ChorusWoodModBlocks.MOD_MOSAIC_STAIRS,
+                ChorusWoodModBlocks.MOD_SLAB,
+                ChorusWoodModBlocks.MOD_MOSAIC_SLAB,
+                ChorusWoodModBlocks.MOD_BUTTON,
+                ChorusWoodModBlocks.MOD_FENCE,
+                ChorusWoodModBlocks.MOD_FENCE_GATE,
+                ChorusWoodModBlocks.MOD_PRESSURE_PLATE,
+                ChorusWoodModBlocks.MOD_DOOR,
+                ChorusWoodModBlocks.MOD_TRAPDOOR,
+                ChorusWoodModBlocks.MOD_STANDING_SIGN,
+                ChorusWoodModBlocks.MOD_WALL_SIGN,
+                ChorusWoodModBlocks.MOD_HANGING_SIGN,
+                ChorusWoodModBlocks.MOD_WALL_HANGING_SIGN,
+                ChorusWoodModBlocks.MOD_SHELF
+        );
+//        addDrop(Blocks.CHORUS_PLANT, chorusPlantDrops(Blocks.CHORUS_PLANT, Items.CHORUS_FRUIT, UniformLootNumberProvider.create(0.0F, 1.0F)));
     }
     public void generateCitrusWoodLootTables() {
         generateNaturalWoodBlockLootTables(
@@ -499,6 +536,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         generateAzaleaWoodLootTables();
         generateBaobabWoodLootTables();
         generateChollaWoodLootTables();
+        generateChorusWoodLootTables();
         generateCitrusWoodLootTables();
         generateDogwoodWoodLootTables();
         generateKapokWoodLootTables();

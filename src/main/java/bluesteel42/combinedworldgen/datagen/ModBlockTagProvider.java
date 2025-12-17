@@ -11,6 +11,8 @@ import bluesteel42.combinedworldgen.wood.baobab.block.BaobabWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.baobab.util.BaobabWoodModTags;
 import bluesteel42.combinedworldgen.wood.cholla.block.ChollaWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.cholla.util.ChollaWoodModTags;
+import bluesteel42.combinedworldgen.wood.chorus.block.ChorusWoodModBlocks;
+import bluesteel42.combinedworldgen.wood.chorus.util.ChorusWoodModTags;
 import bluesteel42.combinedworldgen.wood.citrus.block.CitrusWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.citrus.util.CitrusWoodModTags;
 import bluesteel42.combinedworldgen.wood.dogwood.block.DogwoodWoodModBlocks;
@@ -215,6 +217,30 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         /* ADDITIONAL BLOCKS */
         valueLookupBuilder(BlockTags.AXE_MINEABLE).add(ChollaWoodModBlocks.DRIED_CHOLLA);
         valueLookupBuilder(BlockTags.FLOWER_POTS).add(ChollaWoodModBlocks.POTTED_DRIED_CHOLLA);
+    }
+    public void generateChorusBlockTags() {
+        generateCombinedWoodBlockTags(
+                ChorusWoodModTags.Blocks.MOD_BLOCKS,
+                ChorusWoodModBlocks.MOD_BLOCK,
+                ChorusWoodModBlocks.STRIPPED_MOD_BLOCK,
+                ChorusWoodModBlocks.MOD_PLANKS,
+                ChorusWoodModBlocks.MOD_MOSAIC,
+                ChorusWoodModBlocks.MOD_STAIRS,
+                ChorusWoodModBlocks.MOD_MOSAIC_STAIRS,
+                ChorusWoodModBlocks.MOD_SLAB,
+                ChorusWoodModBlocks.MOD_MOSAIC_SLAB,
+                ChorusWoodModBlocks.MOD_BUTTON,
+                ChorusWoodModBlocks.MOD_FENCE,
+                ChorusWoodModBlocks.MOD_FENCE_GATE,
+                ChorusWoodModBlocks.MOD_PRESSURE_PLATE,
+                ChorusWoodModBlocks.MOD_DOOR,
+                ChorusWoodModBlocks.MOD_TRAPDOOR,
+                ChorusWoodModBlocks.MOD_STANDING_SIGN,
+                ChorusWoodModBlocks.MOD_WALL_SIGN,
+                ChorusWoodModBlocks.MOD_HANGING_SIGN,
+                ChorusWoodModBlocks.MOD_WALL_HANGING_SIGN,
+                ChorusWoodModBlocks.MOD_SHELF
+        );
     }
     public void generateCitrusBlockTags() {
         generateNaturalWoodBlockTags(
@@ -439,6 +465,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         generateAzaleaBlockTags();
         generateBaobabBlockTags();
         generateChollaBlockTags();
+        generateChorusBlockTags();
         generateCitrusBlockTags();
         generateDogwoodBlockTags();
         generateKapokBlockTags();

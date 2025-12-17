@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/fence_inventory",
+  "parent": "minecraft:block/custom_fence_inventory",
   "textures": {
-    "texture": "combined-worldgen:block/azalea_planks"
+    "texture": "combined-worldgen:block/azalea_fence"
   }
 }

@@ -7,8 +7,7 @@
     },
     {
       "apply": {
-        "model": "combined-worldgen:block/cholla_fence_side",
-        "uvlock": true
+        "model": "combined-worldgen:block/cholla_fence_side_north"
       },
       "when": {
         "north": "true"
@@ -16,9 +15,7 @@
     },
     {
       "apply": {
-        "model": "combined-worldgen:block/cholla_fence_side",
-        "uvlock": true,
-        "y": 90
+        "model": "combined-worldgen:block/cholla_fence_side_east"
       },
       "when": {
         "east": "true"
@@ -26,9 +23,7 @@
     },
     {
       "apply": {
-        "model": "combined-worldgen:block/cholla_fence_side",
-        "uvlock": true,
-        "y": 180
+        "model": "combined-worldgen:block/cholla_fence_side_south"
       },
       "when": {
         "south": "true"
@@ -36,9 +31,7 @@
     },
     {
       "apply": {
-        "model": "combined-worldgen:block/cholla_fence_side",
-        "uvlock": true,
-        "y": 270
+        "model": "combined-worldgen:block/cholla_fence_side_west"
       },
       "when": {
         "west": "true"

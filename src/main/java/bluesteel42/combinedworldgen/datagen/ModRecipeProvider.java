@@ -18,6 +18,10 @@ import bluesteel42.combinedworldgen.wood.cholla.block.ChollaWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.cholla.entity.ChollaWoodModRafts;
 import bluesteel42.combinedworldgen.wood.cholla.item.ChollaWoodModItems;
 import bluesteel42.combinedworldgen.wood.cholla.util.ChollaWoodModTags;
+import bluesteel42.combinedworldgen.wood.chorus.block.ChorusWoodModBlocks;
+import bluesteel42.combinedworldgen.wood.chorus.entity.ChorusWoodModRafts;
+import bluesteel42.combinedworldgen.wood.chorus.item.ChorusWoodModItems;
+import bluesteel42.combinedworldgen.wood.chorus.util.ChorusWoodModTags;
 import bluesteel42.combinedworldgen.wood.citrus.block.CitrusWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.citrus.entity.CitrusWoodModBoats;
 import bluesteel42.combinedworldgen.wood.citrus.item.CitrusWoodModItems;
@@ -319,6 +323,32 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 offerStickFromCombinedWoodOriginItemRecipe(ChollaWoodModBlocks.MOD_BLOCK, ChollaWoodModBlocks.DRIED_CHOLLA);
                 offer2x2CompactingRecipe(RecipeCategory.BUILDING_BLOCKS, ChollaWoodModBlocks.MOD_BLOCK, ChollaWoodModBlocks.DRIED_CHOLLA);
             }
+            private void generateChorusRecipes() {
+                generateCombinedWoodRecipes(
+                        ChorusWoodModTags.Items.MOD_BLOCKS,
+                        ChorusWoodModBlocks.STRIPPED_MOD_BLOCK,
+                        ChorusWoodModBlocks.MOD_PLANKS,
+                        ChorusWoodModBlocks.MOD_MOSAIC,
+                        ChorusWoodModBlocks.MOD_STAIRS,
+                        ChorusWoodModBlocks.MOD_MOSAIC_STAIRS,
+                        ChorusWoodModBlocks.MOD_SLAB,
+                        ChorusWoodModBlocks.MOD_MOSAIC_SLAB,
+                        ChorusWoodModBlocks.MOD_BUTTON,
+                        ChorusWoodModBlocks.MOD_FENCE,
+                        ChorusWoodModBlocks.MOD_FENCE_GATE,
+                        ChorusWoodModBlocks.MOD_PRESSURE_PLATE,
+                        ChorusWoodModBlocks.MOD_DOOR,
+                        ChorusWoodModBlocks.MOD_TRAPDOOR,
+                        ChorusWoodModItems.MOD_SIGN,
+                        ChorusWoodModItems.MOD_HANGING_SIGN,
+                        ChorusWoodModRafts.MOD_RAFT,
+                        ChorusWoodModRafts.MOD_CHEST_RAFT,
+                        ChorusWoodModBlocks.MOD_SHELF
+                );
+                /*  ADDITIONAL BLOCKS */
+                offerStickFromCombinedWoodOriginItemRecipe(ChorusWoodModBlocks.MOD_BLOCK, Blocks.CHORUS_PLANT);
+                offerCompactingRecipe(RecipeCategory.BUILDING_BLOCKS, ChorusWoodModBlocks.MOD_BLOCK, Blocks.CHORUS_PLANT);
+            }
             private void generateCitrusRecipes() {
                 generateNaturalWoodRecipes(
                         CitrusWoodModTags.Items.MOD_LOGS,
@@ -497,6 +527,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 generateAzaleaRecipes();
                 generateBaobabRecipes();
                 generateChollaRecipes();
+                generateChorusRecipes();
                 generateCitrusRecipes();
                 generateDogwoodRecipes();
                 generateKapokRecipes();

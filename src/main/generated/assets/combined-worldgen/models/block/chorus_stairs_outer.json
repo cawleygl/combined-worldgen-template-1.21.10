@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "combined-worldgen:block/chorus_planks",
+    "side": "combined-worldgen:block/chorus_planks",
+    "top": "combined-worldgen:block/chorus_planks"
+  }
+}

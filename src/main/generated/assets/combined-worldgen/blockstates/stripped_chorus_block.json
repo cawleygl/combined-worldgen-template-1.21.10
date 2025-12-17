@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "combined-worldgen:block/stripped_chorus_block_x"
+    },
+    "axis=y": {
+      "model": "combined-worldgen:block/stripped_chorus_block_y"
+    },
+    "axis=z": {
+      "model": "combined-worldgen:block/stripped_chorus_block_z"
+    }
+  }
+}

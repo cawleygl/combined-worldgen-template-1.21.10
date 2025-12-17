@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "combined-worldgen:block/chorus_slab"
+    },
+    "type=double": {
+      "model": "combined-worldgen:block/chorus_planks"
+    },
+    "type=top": {
+      "model": "combined-worldgen:block/chorus_slab_top"
+    }
+  }
+}
