@@ -27,15 +27,17 @@ public class WillowWoodInitializer {
     public static MapColor MOD_BARK_COLOR = MapColor.GREEN;
     public static MapColor MOD_FIBER_COLOR = MapColor.LIGHT_GRAY;
     public static MapColor MOD_LEAF_COLOR = MapColor.DARK_GREEN;
+    
     public static BlockSoundGroup MOD_BLOCK_SOUND = BlockSoundGroup.WOOD;
+    public static final BlockSetType MOD_BLOCK_SET = BlockSetTypeBuilder.copyOf(WillowWoodInitializer.MOD_BLOCK_SOUND == BlockSoundGroup.CHERRY_WOOD ? BlockSetType.CHERRY : BlockSetType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, WillowWoodInitializer.MOD_WOOD_NAME));
+    public static final WoodType MOD_WOOD_TYPE = WoodTypeBuilder.copyOf(WillowWoodInitializer.MOD_BLOCK_SOUND == BlockSoundGroup.CHERRY_WOOD ? WoodType.CHERRY : WoodType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, WillowWoodInitializer.MOD_WOOD_NAME), WillowWoodInitializer.MOD_BLOCK_SET);
+    
     public static BlockSoundGroup MOD_LEAF_SOUND = BlockSoundGroup.GRASS;
+    public static BlockSoundGroup MOD_SAPLING_SOUND = WillowWoodInitializer.MOD_LEAF_SOUND == BlockSoundGroup.CHERRY_LEAVES ? BlockSoundGroup.CHERRY_SAPLING : BlockSoundGroup.GRASS;
     public static boolean TINTED_LEAVES = true;
     public static int MOD_LEAF_TINT_COLOR = FoliageColors.MANGROVE;
     public static boolean BIOME_LEAF_TINT = true && WillowWoodInitializer.TINTED_LEAVES;
     public static float[] MOD_SAPLING_DROP_CHANCE = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
-
-    public static final BlockSetType MOD_BLOCK_SET_TYPE = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, WillowWoodInitializer.MOD_WOOD_NAME));
-    public static final WoodType MOD_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, WillowWoodInitializer.MOD_WOOD_NAME), WillowWoodInitializer.MOD_BLOCK_SET_TYPE);
 
     public static float MOD_SAPLING_RARE_VARIANT_CHANCE = 0.4F;
     public static Optional<RegistryKey<ConfiguredFeature<?, ?>>> MOD_SAPLING_STANDARD_TREE = Optional.of(WillowWoodTreeConfiguredFeatures.WILLOW_TREE_KEY);

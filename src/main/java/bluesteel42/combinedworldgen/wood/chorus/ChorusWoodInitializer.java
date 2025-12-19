@@ -19,10 +19,10 @@ public class ChorusWoodInitializer {
     public static String MOD_WOOD_NAME = "chorus";
     public static MapColor MOD_UNSTRIPPED_COLOR = MapColor.TERRACOTTA_PURPLE;
     public static MapColor MOD_STRIPPED_COLOR = MapColor.PINK;
-    public static BlockSoundGroup MOD_BLOCK_SOUND = BlockSoundGroup.BAMBOO_WOOD;
 
-    public static final BlockSetType MOD_BLOCK_SET_TYPE = BlockSetTypeBuilder.copyOf(BlockSetType.BAMBOO).register(Identifier.of(CombinedWorldgen.MOD_ID, ChorusWoodInitializer.MOD_WOOD_NAME));
-    public static final WoodType MOD_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.BAMBOO).register(Identifier.of(CombinedWorldgen.MOD_ID, ChorusWoodInitializer.MOD_WOOD_NAME), ChorusWoodInitializer.MOD_BLOCK_SET_TYPE);
+    public static BlockSoundGroup MOD_BLOCK_SOUND = BlockSoundGroup.WOOD;
+    public static final BlockSetType MOD_BLOCK_SET = BlockSetTypeBuilder.copyOf(ChorusWoodInitializer.MOD_BLOCK_SOUND == BlockSoundGroup.BAMBOO_WOOD ? BlockSetType.BAMBOO : BlockSetType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, ChorusWoodInitializer.MOD_WOOD_NAME));
+    public static final WoodType MOD_WOOD_TYPE = WoodTypeBuilder.copyOf(ChorusWoodInitializer.MOD_BLOCK_SOUND == BlockSoundGroup.BAMBOO_WOOD ? WoodType.BAMBOO : WoodType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, ChorusWoodInitializer.MOD_WOOD_NAME), ChorusWoodInitializer.MOD_BLOCK_SET);
 
     public static void initializeWood() {
         ChorusWoodModBlocks.initialize();

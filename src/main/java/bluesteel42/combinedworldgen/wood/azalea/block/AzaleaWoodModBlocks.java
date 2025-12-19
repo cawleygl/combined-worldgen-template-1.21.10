@@ -2,12 +2,9 @@ package bluesteel42.combinedworldgen.wood.azalea.block;
 
 import bluesteel42.combinedworldgen.block.ModBlocks;
 import bluesteel42.combinedworldgen.wood.azalea.AzaleaWoodInitializer;
-import bluesteel42.combinedworldgen.wood.cholla.item.ChollaWoodModItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
-import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
@@ -16,194 +13,28 @@ import net.minecraft.particle.TintedParticleEffect;
 import net.minecraft.sound.BlockSoundGroup;
 
 public class AzaleaWoodModBlocks {
-    public static final Block MOD_BLOCK = ModBlocks.register(AzaleaWoodInitializer.MOD_WOOD_NAME + "_block", PillarBlock::new, Blocks.createLogSettings(AzaleaWoodInitializer.MOD_STRIPPED_COLOR, AzaleaWoodInitializer.MOD_UNSTRIPPED_COLOR, AzaleaWoodInitializer.MOD_BLOCK_SOUND), true, false);
-    public static final Block STRIPPED_MOD_BLOCK = ModBlocks.register("stripped_" + AzaleaWoodInitializer.MOD_WOOD_NAME + "_block", PillarBlock::new, Blocks.createLogSettings(AzaleaWoodInitializer.MOD_STRIPPED_COLOR, AzaleaWoodInitializer.MOD_STRIPPED_COLOR, AzaleaWoodInitializer.MOD_BLOCK_SOUND), true, false);
-    public static final Block MOD_PLANKS = ModBlocks.register(
-            AzaleaWoodInitializer.MOD_WOOD_NAME + "_planks",
-            Block::new,
-            AbstractBlock.Settings.create()
-                    .mapColor(AzaleaWoodInitializer.MOD_STRIPPED_COLOR)
-                    .instrument(NoteBlockInstrument.BASS)
-                    .strength(2.0F, 3.0F)
-                    .sounds(AzaleaWoodInitializer.MOD_BLOCK_SOUND)
-                    .burnable(),
-            true,
-            false
-    );
-    public static final Block MOD_MOSAIC = ModBlocks.register(
-            AzaleaWoodInitializer.MOD_WOOD_NAME + "_mosaic",
-            Block::new,
-            AbstractBlock.Settings.create()
-                    .mapColor(AzaleaWoodInitializer.MOD_STRIPPED_COLOR)
-                    .instrument(NoteBlockInstrument.BASS)
-                    .strength(2.0F, 3.0F)
-                    .sounds(AzaleaWoodInitializer.MOD_BLOCK_SOUND)
-                    .burnable(),
-            true,
-            false
-    );
-    public static final Block MOD_STAIRS = ModBlocks.register(
-            AzaleaWoodInitializer.MOD_WOOD_NAME + "_stairs",
-            settings -> new StairsBlock(MOD_PLANKS.getDefaultState(), settings),
-            AbstractBlock.Settings.copy(MOD_PLANKS),
-            true,
-            false
-    );
-    public static final Block MOD_MOSAIC_STAIRS = ModBlocks.register(
-            AzaleaWoodInitializer.MOD_WOOD_NAME + "_mosaic_stairs",
-            settings -> new StairsBlock(MOD_MOSAIC.getDefaultState(), settings),
-            AbstractBlock.Settings.copy(MOD_MOSAIC),
-            true,
-            false
-    );
-    public static final Block MOD_SLAB = ModBlocks.register(
-            AzaleaWoodInitializer.MOD_WOOD_NAME + "_slab",
-            SlabBlock::new,
-            AbstractBlock.Settings.create()
-                    .mapColor(AzaleaWoodInitializer.MOD_STRIPPED_COLOR)
-                    .instrument(NoteBlockInstrument.BASS)
-                    .strength(2.0F, 3.0F)
-                    .sounds(AzaleaWoodInitializer.MOD_BLOCK_SOUND)
-                    .burnable(),
-            true,
-            false
-    );
-    public static final Block MOD_MOSAIC_SLAB = ModBlocks.register(
-            AzaleaWoodInitializer.MOD_WOOD_NAME + "_mosaic_slab",
-            SlabBlock::new,
-            AbstractBlock.Settings.create()
-                    .mapColor(AzaleaWoodInitializer.MOD_STRIPPED_COLOR)
-                    .instrument(NoteBlockInstrument.BASS)
-                    .strength(2.0F, 3.0F)
-                    .sounds(AzaleaWoodInitializer.MOD_BLOCK_SOUND)
-                    .burnable(),
-            true,
-            false
-    );
-    public static final Block MOD_BUTTON = ModBlocks.register(
-            AzaleaWoodInitializer.MOD_WOOD_NAME + "_button",
-            settings -> new ButtonBlock(BlockSetType.BAMBOO, 30, settings),
-            AbstractBlock.Settings.create()
-                    .noCollision()
-                    .strength(0.5F)
-                    .pistonBehavior(PistonBehavior.DESTROY),
-            true,
-            false
-    );
-    public static final Block MOD_PRESSURE_PLATE = ModBlocks.register(
-            AzaleaWoodInitializer.MOD_WOOD_NAME + "_pressure_plate",
-            settings -> new PressurePlateBlock(BlockSetType.BAMBOO, settings),
-            AbstractBlock.Settings.create()
-                    .mapColor(AzaleaWoodInitializer.MOD_STRIPPED_COLOR)
-                    .solid()
-                    .instrument(NoteBlockInstrument.BASS)
-                    .noCollision()
-                    .strength(0.5F)
-                    .burnable()
-                    .pistonBehavior(PistonBehavior.DESTROY),
-            true,
-            false
-    );
-    public static final Block MOD_FENCE = ModBlocks.register(
-            AzaleaWoodInitializer.MOD_WOOD_NAME + "_fence",
-            FenceBlock::new,
-            AbstractBlock.Settings.create()
-                    .mapColor(AzaleaWoodInitializer.MOD_STRIPPED_COLOR)
-                    .instrument(NoteBlockInstrument.BASS)
-                    .strength(2.0F, 3.0F)
-                    .sounds(AzaleaWoodInitializer.MOD_BLOCK_SOUND)
-                    .burnable(),
-            true,
-            false
-    );
-    public static final Block MOD_FENCE_GATE = ModBlocks.register(
-            AzaleaWoodInitializer.MOD_WOOD_NAME + "_fence_gate",
-            settings -> new FenceGateBlock(AzaleaWoodInitializer.MOD_WOOD_TYPE, settings),
-            AbstractBlock.Settings.create()
-                    .mapColor(AzaleaWoodInitializer.MOD_STRIPPED_COLOR)
-                    .solid()
-                    .instrument(NoteBlockInstrument.BASS)
-                    .strength(2.0F, 3.0F)
-                    .burnable(),
-            true,
-            false
-    );
-    public static final Block MOD_DOOR = ModBlocks.register(
-            AzaleaWoodInitializer.MOD_WOOD_NAME + "_door",
-            settings -> new DoorBlock(BlockSetType.BAMBOO, settings),
-            AbstractBlock.Settings.create()
-                    .mapColor(AzaleaWoodInitializer.MOD_STRIPPED_COLOR)
-                    .instrument(NoteBlockInstrument.BASS)
-                    .strength(3.0F)
-                    .nonOpaque()
-                    .burnable()
-                    .pistonBehavior(PistonBehavior.DESTROY),
-            true,
-            true
-    );
-    public static final Block MOD_TRAPDOOR = ModBlocks.register(
-            AzaleaWoodInitializer.MOD_WOOD_NAME + "_trapdoor",
-            settings -> new TrapdoorBlock(BlockSetType.BAMBOO, settings),
-            AbstractBlock.Settings.create()
-                    .mapColor(AzaleaWoodInitializer.MOD_STRIPPED_COLOR)
-                    .instrument(NoteBlockInstrument.BASS)
-                    .strength(3.0F)
-                    .nonOpaque()
-                    .allowsSpawning(Blocks::never)
-                    .burnable(),
-            true,
-            true
-    );
+    public static final Block MOD_BLOCK = ModBlocks.registerCombinedBlock(AzaleaWoodInitializer.MOD_WOOD_NAME, AzaleaWoodInitializer.MOD_STRIPPED_COLOR, AzaleaWoodInitializer.MOD_UNSTRIPPED_COLOR, AzaleaWoodInitializer.MOD_BLOCK_SOUND);
+    public static final Block STRIPPED_MOD_BLOCK = ModBlocks.registerStrippedCombinedBlock(AzaleaWoodInitializer.MOD_WOOD_NAME, AzaleaWoodInitializer.MOD_STRIPPED_COLOR, AzaleaWoodInitializer.MOD_BLOCK_SOUND);
+    public static final Block MOD_PLANKS = ModBlocks.registerPlanks(AzaleaWoodInitializer.MOD_WOOD_NAME, AzaleaWoodInitializer.MOD_STRIPPED_COLOR, AzaleaWoodInitializer.MOD_BLOCK_SOUND);
+    public static final Block MOD_MOSAIC = ModBlocks.registerMosaic(AzaleaWoodInitializer.MOD_WOOD_NAME, AzaleaWoodInitializer.MOD_STRIPPED_COLOR, AzaleaWoodInitializer.MOD_BLOCK_SOUND);
+    public static final Block MOD_STAIRS = ModBlocks.registerStairs(AzaleaWoodInitializer.MOD_WOOD_NAME, MOD_PLANKS);
+    public static final Block MOD_MOSAIC_STAIRS = ModBlocks.registerMosaicStairs(AzaleaWoodInitializer.MOD_WOOD_NAME, MOD_PLANKS);
+    public static final Block MOD_SLAB = ModBlocks.registerSlab(AzaleaWoodInitializer.MOD_WOOD_NAME, AzaleaWoodInitializer.MOD_STRIPPED_COLOR, AzaleaWoodInitializer.MOD_BLOCK_SOUND);
+    public static final Block MOD_MOSAIC_SLAB = ModBlocks.registerMosaicSlab(AzaleaWoodInitializer.MOD_WOOD_NAME, AzaleaWoodInitializer.MOD_STRIPPED_COLOR, AzaleaWoodInitializer.MOD_BLOCK_SOUND);
+    public static final Block MOD_BUTTON = ModBlocks.registerButton(AzaleaWoodInitializer.MOD_WOOD_NAME, AzaleaWoodInitializer.MOD_BLOCK_SET);
+    public static final Block MOD_PRESSURE_PLATE = ModBlocks.registerPressurePlate(AzaleaWoodInitializer.MOD_WOOD_NAME, AzaleaWoodInitializer.MOD_STRIPPED_COLOR, AzaleaWoodInitializer.MOD_BLOCK_SET);
+    public static final Block MOD_FENCE = ModBlocks.registerFence(AzaleaWoodInitializer.MOD_WOOD_NAME, AzaleaWoodInitializer.MOD_STRIPPED_COLOR, AzaleaWoodInitializer.MOD_BLOCK_SOUND);
+    public static final Block MOD_FENCE_GATE = ModBlocks.registerFenceGate(AzaleaWoodInitializer.MOD_WOOD_NAME, AzaleaWoodInitializer.MOD_WOOD_TYPE, AzaleaWoodInitializer.MOD_STRIPPED_COLOR);
+    public static final Block MOD_DOOR = ModBlocks.registerDoor(AzaleaWoodInitializer.MOD_WOOD_NAME, AzaleaWoodInitializer.MOD_STRIPPED_COLOR, AzaleaWoodInitializer.MOD_BLOCK_SET);
+    public static final Block MOD_TRAPDOOR = ModBlocks.registerTrapdoor(AzaleaWoodInitializer.MOD_WOOD_NAME, AzaleaWoodInitializer.MOD_STRIPPED_COLOR, AzaleaWoodInitializer.MOD_BLOCK_SET);
 
-    public static final Block MOD_STANDING_SIGN = ModBlocks.register(
-            AzaleaWoodInitializer.MOD_WOOD_NAME + "_sign",
-            settings -> new SignBlock(AzaleaWoodInitializer.MOD_WOOD_TYPE, settings),
-            AbstractBlock.Settings.copy(Blocks.BAMBOO_SIGN).mapColor(AzaleaWoodInitializer.MOD_STRIPPED_COLOR),
-            false,
-            false
-    );
-    public static final Block MOD_WALL_SIGN = ModBlocks.register(
-            AzaleaWoodInitializer.MOD_WOOD_NAME + "_wall_sign",
-            settings -> new WallSignBlock(AzaleaWoodInitializer.MOD_WOOD_TYPE, settings),
-            AbstractBlock.Settings.copy(Blocks.BAMBOO_SIGN).mapColor(AzaleaWoodInitializer.MOD_STRIPPED_COLOR).lootTable(MOD_STANDING_SIGN.getLootTableKey()).overrideTranslationKey(MOD_STANDING_SIGN.getTranslationKey()),
-            false,
-            false
-    );
-    public static final Block MOD_HANGING_SIGN = ModBlocks.register(
-            AzaleaWoodInitializer.MOD_WOOD_NAME + "_hanging_sign",
-            settings -> new HangingSignBlock(AzaleaWoodInitializer.MOD_WOOD_TYPE, settings),
-            AbstractBlock.Settings.copy(Blocks.BAMBOO_HANGING_SIGN).mapColor(AzaleaWoodInitializer.MOD_STRIPPED_COLOR),
-            false,
-            false
-    );
-    public static final Block MOD_WALL_HANGING_SIGN = ModBlocks.register(
-            AzaleaWoodInitializer.MOD_WOOD_NAME + "_wall_hanging_sign",
-            settings -> new WallHangingSignBlock(AzaleaWoodInitializer.MOD_WOOD_TYPE, settings),
-            AbstractBlock.Settings.copy(Blocks.BAMBOO_HANGING_SIGN).mapColor(AzaleaWoodInitializer.MOD_STRIPPED_COLOR).lootTable(MOD_HANGING_SIGN.getLootTableKey()).overrideTranslationKey(MOD_HANGING_SIGN.getTranslationKey()),
-            false,
-            false
-    );
+    public static final Block MOD_STANDING_SIGN = ModBlocks.registerStandingSign(AzaleaWoodInitializer.MOD_WOOD_NAME, AzaleaWoodInitializer.MOD_STRIPPED_COLOR, AzaleaWoodInitializer.MOD_WOOD_TYPE);
+    public static final Block MOD_WALL_SIGN = ModBlocks.registerWallSign(AzaleaWoodInitializer.MOD_WOOD_NAME, AzaleaWoodInitializer.MOD_STRIPPED_COLOR, AzaleaWoodInitializer.MOD_WOOD_TYPE, MOD_STANDING_SIGN);
+    public static final Block MOD_HANGING_SIGN = ModBlocks.registerHangingSign(AzaleaWoodInitializer.MOD_WOOD_NAME, AzaleaWoodInitializer.MOD_STRIPPED_COLOR, AzaleaWoodInitializer.MOD_WOOD_TYPE);
+    public static final Block MOD_WALL_HANGING_SIGN = ModBlocks.registerWallHangingSign(AzaleaWoodInitializer.MOD_WOOD_NAME, AzaleaWoodInitializer.MOD_STRIPPED_COLOR, AzaleaWoodInitializer.MOD_WOOD_TYPE, MOD_HANGING_SIGN);
 
-    public static final Block MOD_SHELF = ModBlocks.register(
-            AzaleaWoodInitializer.MOD_WOOD_NAME + "_shelf",
-            ShelfBlock::new,
-            AbstractBlock.Settings.create().mapColor(MapColor.OAK_TAN).instrument(NoteBlockInstrument.BASS).sounds(BlockSoundGroup.SHELF).burnable().strength(2.0F, 3.0F),
-            true,
-            false
-    );
-
-    public static final BlockFamily MOD_BLOCK_FAMILY = BlockFamilies.register(AzaleaWoodModBlocks.MOD_PLANKS)
-            .button(AzaleaWoodModBlocks.MOD_BUTTON)
-            .mosaic(AzaleaWoodModBlocks.MOD_MOSAIC)
-            .door(AzaleaWoodModBlocks.MOD_DOOR)
-            .customFence(AzaleaWoodModBlocks.MOD_FENCE)
-            .customFenceGate(AzaleaWoodModBlocks.MOD_FENCE_GATE)
-            .sign(AzaleaWoodModBlocks.MOD_STANDING_SIGN, AzaleaWoodModBlocks.MOD_WALL_SIGN)
-            .slab(AzaleaWoodModBlocks.MOD_SLAB)
-            .stairs(AzaleaWoodModBlocks.MOD_STAIRS)
-            .pressurePlate(AzaleaWoodModBlocks.MOD_PRESSURE_PLATE)
-            .trapdoor(AzaleaWoodModBlocks.MOD_TRAPDOOR)
-            .group("wooden").unlockCriterionName("has_planks").build();
+    public static final Block MOD_SHELF = ModBlocks.registerShelf(AzaleaWoodInitializer.MOD_WOOD_NAME);
+    public static final BlockFamily MOD_BLOCK_FAMILY = ModBlocks.registerCombinedBlockFamily(MOD_PLANKS, MOD_BUTTON, MOD_MOSAIC, MOD_DOOR, MOD_FENCE, MOD_FENCE_GATE, MOD_STANDING_SIGN, MOD_WALL_SIGN, MOD_SLAB, MOD_STAIRS, MOD_PRESSURE_PLATE, MOD_TRAPDOOR);
 
     /* ADDITIONAL BLOCKS */
     public static final Block AZALEA_STEM = ModBlocks.register(

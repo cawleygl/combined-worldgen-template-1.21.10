@@ -5,206 +5,37 @@ import bluesteel42.combinedworldgen.wood.willow.WillowWoodInitializer;
 import bluesteel42.combinedworldgen.wood.willow.item.WillowWoodModSaplingGenerators;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
-import net.minecraft.block.enums.NoteBlockInstrument;
-import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
-import net.minecraft.sound.BlockSoundGroup;
 
 public class WillowWoodModBlocks {
-    public static final Block MOD_LOG = ModBlocks.register(WillowWoodInitializer.MOD_WOOD_NAME + "_log", PillarBlock::new, Blocks.createLogSettings(WillowWoodInitializer.MOD_FIBER_COLOR, WillowWoodInitializer.MOD_BARK_COLOR, WillowWoodInitializer.MOD_BLOCK_SOUND), true, false);
-    public static final Block MOD_WOOD = ModBlocks.register(WillowWoodInitializer.MOD_WOOD_NAME + "_wood", PillarBlock::new, Blocks.createLogSettings(WillowWoodInitializer.MOD_BARK_COLOR, WillowWoodInitializer.MOD_BARK_COLOR, WillowWoodInitializer.MOD_BLOCK_SOUND), true, false);
-    public static final Block STRIPPED_MOD_LOG = ModBlocks.register("stripped_" + WillowWoodInitializer.MOD_WOOD_NAME + "_log", PillarBlock::new, Blocks.createLogSettings(WillowWoodInitializer.MOD_FIBER_COLOR, WillowWoodInitializer.MOD_FIBER_COLOR, WillowWoodInitializer.MOD_BLOCK_SOUND), true, false);
-    public static final Block STRIPPED_MOD_WOOD = ModBlocks.register("stripped_" + WillowWoodInitializer.MOD_WOOD_NAME + "_wood", PillarBlock::new, Blocks.createLogSettings(WillowWoodInitializer.MOD_FIBER_COLOR, WillowWoodInitializer.MOD_FIBER_COLOR, WillowWoodInitializer.MOD_BLOCK_SOUND), true, false);
-    public static final Block MOD_PLANKS = ModBlocks.register(
-            WillowWoodInitializer.MOD_WOOD_NAME + "_planks",
-            Block::new,
-            AbstractBlock.Settings.create()
-                    .mapColor(WillowWoodInitializer.MOD_FIBER_COLOR)
-                    .instrument(NoteBlockInstrument.BASS)
-                    .strength(2.0F, 3.0F)
-                    .sounds(WillowWoodInitializer.MOD_BLOCK_SOUND)
-                    .burnable(),
-            true,
-            false
-    );
-    public static final Block MOD_STAIRS = ModBlocks.register(
-            WillowWoodInitializer.MOD_WOOD_NAME + "_stairs",
-            settings -> new StairsBlock(MOD_PLANKS.getDefaultState(), settings),
-            AbstractBlock.Settings.copy(MOD_PLANKS),
-            true,
-            false
-    );
-    public static final Block MOD_SLAB = ModBlocks.register(
-            WillowWoodInitializer.MOD_WOOD_NAME + "_slab",
-            SlabBlock::new,
-            AbstractBlock.Settings.create()
-                    .mapColor(WillowWoodInitializer.MOD_FIBER_COLOR)
-                    .instrument(NoteBlockInstrument.BASS)
-                    .strength(2.0F, 3.0F)
-                    .sounds(WillowWoodInitializer.MOD_BLOCK_SOUND)
-                    .burnable(),
-            true,
-            false
-    );
-    public static final Block MOD_BUTTON = ModBlocks.register(
-            WillowWoodInitializer.MOD_WOOD_NAME + "_button",
-            settings -> new ButtonBlock(WillowWoodInitializer.MOD_BLOCK_SOUND == BlockSoundGroup.CHERRY_WOOD ? BlockSetType.CHERRY : BlockSetType.OAK, 30, settings),
-            AbstractBlock.Settings.create()
-                    .noCollision()
-                    .strength(0.5F)
-                    .pistonBehavior(PistonBehavior.DESTROY),
-            true,
-            false
-    );
-    public static final Block MOD_PRESSURE_PLATE = ModBlocks.register(
-            WillowWoodInitializer.MOD_WOOD_NAME + "_pressure_plate",
-            settings -> new PressurePlateBlock(WillowWoodInitializer.MOD_BLOCK_SOUND == BlockSoundGroup.CHERRY_WOOD ? BlockSetType.CHERRY : BlockSetType.OAK, settings),
-            AbstractBlock.Settings.create()
-                    .mapColor(WillowWoodInitializer.MOD_FIBER_COLOR)
-                    .solid()
-                    .instrument(NoteBlockInstrument.BASS)
-                    .noCollision()
-                    .strength(0.5F)
-                    .burnable()
-                    .pistonBehavior(PistonBehavior.DESTROY),
-            true,
-            false
-    );
-    public static final Block MOD_FENCE = ModBlocks.register(
-            WillowWoodInitializer.MOD_WOOD_NAME + "_fence",
-            FenceBlock::new,
-            AbstractBlock.Settings.create()
-                    .mapColor(WillowWoodInitializer.MOD_FIBER_COLOR)
-                    .instrument(NoteBlockInstrument.BASS)
-                    .strength(2.0F, 3.0F)
-                    .sounds(WillowWoodInitializer.MOD_BLOCK_SOUND)
-                    .burnable(),
-            true,
-            false
-    );
-    public static final Block MOD_FENCE_GATE = ModBlocks.register(
-            WillowWoodInitializer.MOD_WOOD_NAME + "_fence_gate",
-            settings -> new FenceGateBlock(WillowWoodInitializer.MOD_WOOD_TYPE, settings),
-            AbstractBlock.Settings.create()
-                    .mapColor(WillowWoodInitializer.MOD_FIBER_COLOR)
-                    .solid()
-                    .instrument(NoteBlockInstrument.BASS)
-                    .strength(2.0F, 3.0F)
-                    .burnable(),
-            true,
-            false
-    );
-    public static final Block MOD_DOOR = ModBlocks.register(
-            WillowWoodInitializer.MOD_WOOD_NAME + "_door",
-            settings -> new DoorBlock(WillowWoodInitializer.MOD_BLOCK_SOUND == BlockSoundGroup.CHERRY_WOOD ? BlockSetType.CHERRY : BlockSetType.OAK, settings),
-            AbstractBlock.Settings.create()
-                    .mapColor(WillowWoodInitializer.MOD_FIBER_COLOR)
-                    .instrument(NoteBlockInstrument.BASS)
-                    .strength(3.0F)
-                    .nonOpaque()
-                    .burnable()
-                    .pistonBehavior(PistonBehavior.DESTROY),
-            true,
-            true
-    );
-    public static final Block MOD_TRAPDOOR = ModBlocks.register(
-            WillowWoodInitializer.MOD_WOOD_NAME + "_trapdoor",
-            settings -> new TrapdoorBlock(WillowWoodInitializer.MOD_BLOCK_SOUND == BlockSoundGroup.CHERRY_WOOD ? BlockSetType.CHERRY : BlockSetType.OAK, settings),
-            AbstractBlock.Settings.create()
-                    .mapColor(WillowWoodInitializer.MOD_FIBER_COLOR)
-                    .instrument(NoteBlockInstrument.BASS)
-                    .strength(3.0F)
-                    .nonOpaque()
-                    .allowsSpawning(Blocks::never)
-                    .burnable(),
-            true,
-            true
-    );
-    
-    public static final Block MOD_STANDING_SIGN = ModBlocks.register(
-            WillowWoodInitializer.MOD_WOOD_NAME + "_sign",
-            settings -> new SignBlock(WillowWoodInitializer.MOD_WOOD_TYPE, settings),
-            AbstractBlock.Settings.copy(Blocks.OAK_SIGN).mapColor(WillowWoodInitializer.MOD_FIBER_COLOR),
-            false,
-            false
-    );
-    public static final Block MOD_WALL_SIGN = ModBlocks.register(
-            WillowWoodInitializer.MOD_WOOD_NAME + "_wall_sign",
-            settings -> new WallSignBlock(WillowWoodInitializer.MOD_WOOD_TYPE, settings),
-            AbstractBlock.Settings.copy(Blocks.OAK_SIGN).mapColor(WillowWoodInitializer.MOD_FIBER_COLOR).lootTable(MOD_STANDING_SIGN.getLootTableKey()).overrideTranslationKey(MOD_STANDING_SIGN.getTranslationKey()),
-            false,
-            false
-    );
-    public static final Block MOD_HANGING_SIGN = ModBlocks.register(
-            WillowWoodInitializer.MOD_WOOD_NAME + "_hanging_sign",
-            settings -> new HangingSignBlock(WillowWoodInitializer.MOD_WOOD_TYPE, settings),
-            AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN).mapColor(WillowWoodInitializer.MOD_FIBER_COLOR),
-            false,
-            false
-    );
-    public static final Block MOD_WALL_HANGING_SIGN = ModBlocks.register(
-            WillowWoodInitializer.MOD_WOOD_NAME + "_wall_hanging_sign",
-            settings -> new WallHangingSignBlock(WillowWoodInitializer.MOD_WOOD_TYPE, settings),
-            AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN).mapColor(WillowWoodInitializer.MOD_FIBER_COLOR).lootTable(MOD_HANGING_SIGN.getLootTableKey()).overrideTranslationKey(MOD_HANGING_SIGN.getTranslationKey()),
-            false,
-            false
-    );
+    public static final Block MOD_LOG = ModBlocks.registerLog(WillowWoodInitializer.MOD_WOOD_NAME, WillowWoodInitializer.MOD_FIBER_COLOR, WillowWoodInitializer.MOD_BARK_COLOR, WillowWoodInitializer.MOD_BLOCK_SOUND);
+    public static final Block MOD_WOOD = ModBlocks.registerWood(WillowWoodInitializer.MOD_WOOD_NAME, WillowWoodInitializer.MOD_BARK_COLOR, WillowWoodInitializer.MOD_BLOCK_SOUND);
+    public static final Block STRIPPED_MOD_LOG = ModBlocks.registerStrippedLog(WillowWoodInitializer.MOD_WOOD_NAME, WillowWoodInitializer.MOD_FIBER_COLOR, WillowWoodInitializer.MOD_BLOCK_SOUND);
+    public static final Block STRIPPED_MOD_WOOD = ModBlocks.registerStrippedWood(WillowWoodInitializer.MOD_WOOD_NAME, WillowWoodInitializer.MOD_FIBER_COLOR, WillowWoodInitializer.MOD_BLOCK_SOUND);
+    public static final Block MOD_PLANKS = ModBlocks.registerPlanks(WillowWoodInitializer.MOD_WOOD_NAME, WillowWoodInitializer.MOD_FIBER_COLOR, WillowWoodInitializer.MOD_BLOCK_SOUND);
+    public static final Block MOD_STAIRS = ModBlocks.registerStairs(WillowWoodInitializer.MOD_WOOD_NAME, MOD_PLANKS);
+    public static final Block MOD_SLAB = ModBlocks.registerSlab(WillowWoodInitializer.MOD_WOOD_NAME, WillowWoodInitializer.MOD_FIBER_COLOR, WillowWoodInitializer.MOD_BLOCK_SOUND);
+    public static final Block MOD_BUTTON = ModBlocks.registerButton(WillowWoodInitializer.MOD_WOOD_NAME, WillowWoodInitializer.MOD_BLOCK_SET);
+    public static final Block MOD_PRESSURE_PLATE = ModBlocks.registerPressurePlate(WillowWoodInitializer.MOD_WOOD_NAME, WillowWoodInitializer.MOD_FIBER_COLOR, WillowWoodInitializer.MOD_BLOCK_SET);
+    public static final Block MOD_FENCE = ModBlocks.registerFence(WillowWoodInitializer.MOD_WOOD_NAME, WillowWoodInitializer.MOD_FIBER_COLOR, WillowWoodInitializer.MOD_BLOCK_SOUND);
+    public static final Block MOD_FENCE_GATE = ModBlocks.registerFenceGate(WillowWoodInitializer.MOD_WOOD_NAME, WillowWoodInitializer.MOD_WOOD_TYPE, WillowWoodInitializer.MOD_FIBER_COLOR);
+    public static final Block MOD_DOOR = ModBlocks.registerDoor(WillowWoodInitializer.MOD_WOOD_NAME, WillowWoodInitializer.MOD_FIBER_COLOR, WillowWoodInitializer.MOD_BLOCK_SET);
+    public static final Block MOD_TRAPDOOR = ModBlocks.registerTrapdoor(WillowWoodInitializer.MOD_WOOD_NAME, WillowWoodInitializer.MOD_FIBER_COLOR, WillowWoodInitializer.MOD_BLOCK_SET);
 
-    public static final Block MOD_SHELF = ModBlocks.register(
-            WillowWoodInitializer.MOD_WOOD_NAME + "_shelf",
-            ShelfBlock::new,
-            AbstractBlock.Settings.create().mapColor(MapColor.OAK_TAN).instrument(NoteBlockInstrument.BASS).sounds(BlockSoundGroup.SHELF).burnable().strength(2.0F, 3.0F),
-            true,
-            false
-    );
+    public static final Block MOD_STANDING_SIGN = ModBlocks.registerStandingSign(WillowWoodInitializer.MOD_WOOD_NAME, WillowWoodInitializer.MOD_FIBER_COLOR, WillowWoodInitializer.MOD_WOOD_TYPE);
+    public static final Block MOD_WALL_SIGN = ModBlocks.registerWallSign(WillowWoodInitializer.MOD_WOOD_NAME, WillowWoodInitializer.MOD_FIBER_COLOR, WillowWoodInitializer.MOD_WOOD_TYPE, MOD_STANDING_SIGN);
+    public static final Block MOD_HANGING_SIGN = ModBlocks.registerHangingSign(WillowWoodInitializer.MOD_WOOD_NAME, WillowWoodInitializer.MOD_FIBER_COLOR, WillowWoodInitializer.MOD_WOOD_TYPE);
+    public static final Block MOD_WALL_HANGING_SIGN = ModBlocks.registerWallHangingSign(WillowWoodInitializer.MOD_WOOD_NAME, WillowWoodInitializer.MOD_FIBER_COLOR, WillowWoodInitializer.MOD_WOOD_TYPE, MOD_HANGING_SIGN);
 
-    public static final BlockFamily MOD_BLOCK_FAMILY = BlockFamilies.register(WillowWoodModBlocks.MOD_PLANKS)
-            .button(WillowWoodModBlocks.MOD_BUTTON)
-            .door(WillowWoodModBlocks.MOD_DOOR)
-            .fence(WillowWoodModBlocks.MOD_FENCE)
-            .fenceGate(WillowWoodModBlocks.MOD_FENCE_GATE)
-            .sign(WillowWoodModBlocks.MOD_STANDING_SIGN, WillowWoodModBlocks.MOD_WALL_SIGN)
-            .slab(WillowWoodModBlocks.MOD_SLAB)
-            .stairs(WillowWoodModBlocks.MOD_STAIRS)
-            .pressurePlate(WillowWoodModBlocks.MOD_PRESSURE_PLATE)
-            .trapdoor(WillowWoodModBlocks.MOD_TRAPDOOR)
-            .group("wooden").unlockCriterionName("has_planks").build();
+    public static final Block MOD_SHELF = ModBlocks.registerShelf(WillowWoodInitializer.MOD_WOOD_NAME);
 
-    public static final Block MOD_LEAVES = ModBlocks.register(
-            WillowWoodInitializer.MOD_WOOD_NAME + "_leaves",
-            settings -> new TintedParticleLeavesBlock(0.01F, settings),
-            AbstractBlock.Settings.create()
-                    .mapColor(WillowWoodInitializer.MOD_LEAF_COLOR)
-                    .strength(0.2F)
-                    .ticksRandomly()
-                    .sounds(WillowWoodInitializer.MOD_LEAF_SOUND)
-                    .nonOpaque()
-                    .allowsSpawning(Blocks::canSpawnOnLeaves)
-                    .suffocates(Blocks::never)
-                    .blockVision(Blocks::never)
-                    .burnable()
-                    .pistonBehavior(PistonBehavior.DESTROY)
-                    .solidBlock(Blocks::never),
-            true,
-            true
-    );
-    public static final Block MOD_SAPLING = ModBlocks.register(
-            WillowWoodInitializer.MOD_WOOD_NAME + "_sapling",
-            settings -> new SaplingBlock(WillowWoodModSaplingGenerators.MOD_SAPLING_GENERATOR, settings),
-            AbstractBlock.Settings.copy(WillowWoodInitializer.MOD_LEAF_SOUND == BlockSoundGroup.CHERRY_LEAVES ? Blocks.CHERRY_SAPLING : Blocks.OAK_SAPLING),
-            true,
-            true
-    );
-    public static final Block POTTED_MOD_SAPLING = ModBlocks.register(
-            "potted_" + WillowWoodInitializer.MOD_WOOD_NAME + "_sapling",
-            settings -> new FlowerPotBlock(MOD_SAPLING, settings),
-            Blocks.createFlowerPotSettings(),
-            true,
-            true
-    );
+    public static final BlockFamily MOD_BLOCK_FAMILY = ModBlocks.registerNaturalBlockFamily(MOD_PLANKS, MOD_BUTTON, MOD_DOOR, MOD_FENCE, MOD_FENCE_GATE, MOD_STANDING_SIGN, MOD_WALL_SIGN, MOD_SLAB, MOD_STAIRS, MOD_PRESSURE_PLATE, MOD_TRAPDOOR);
+
+    public static final Block MOD_LEAVES = ModBlocks.registerTintedLeaves(WillowWoodInitializer.MOD_WOOD_NAME, WillowWoodInitializer.MOD_LEAF_COLOR, WillowWoodInitializer.MOD_LEAF_SOUND);
+    public static final Block MOD_SAPLING = ModBlocks.registerSapling(WillowWoodInitializer.MOD_WOOD_NAME, WillowWoodModSaplingGenerators.MOD_SAPLING_GENERATOR, WillowWoodInitializer.MOD_LEAF_COLOR, WillowWoodInitializer.MOD_SAPLING_SOUND);
+    public static final Block POTTED_MOD_SAPLING = ModBlocks.registerPottedSapling(WillowWoodInitializer.MOD_WOOD_NAME, MOD_SAPLING);
 
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS)

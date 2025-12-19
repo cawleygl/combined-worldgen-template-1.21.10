@@ -27,16 +27,18 @@ public class CitrusWoodInitializer {
     public static MapColor MOD_BARK_COLOR = MapColor.TERRACOTTA_ORANGE;
     public static MapColor MOD_FIBER_COLOR = MapColor.PALE_GREEN;
     public static MapColor MOD_LEAF_COLOR = MapColor.DARK_GREEN;
-    public static BlockSoundGroup MOD_BLOCK_SOUND = BlockSoundGroup.CHERRY_WOOD;
+    
+    public static BlockSoundGroup MOD_BLOCK_SOUND = BlockSoundGroup.CHERRY_WOOD; 
+    public static final BlockSetType MOD_BLOCK_SET = BlockSetTypeBuilder.copyOf(CitrusWoodInitializer.MOD_BLOCK_SOUND == BlockSoundGroup.CHERRY_WOOD ? BlockSetType.CHERRY : BlockSetType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, CitrusWoodInitializer.MOD_WOOD_NAME));
+    public static final WoodType MOD_WOOD_TYPE = WoodTypeBuilder.copyOf(CitrusWoodInitializer.MOD_BLOCK_SOUND == BlockSoundGroup.CHERRY_WOOD ? WoodType.CHERRY : WoodType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, CitrusWoodInitializer.MOD_WOOD_NAME), CitrusWoodInitializer.MOD_BLOCK_SET);
+
     public static BlockSoundGroup MOD_LEAF_SOUND = BlockSoundGroup.GRASS;
+    public static BlockSoundGroup MOD_SAPLING_SOUND = CitrusWoodInitializer.MOD_LEAF_SOUND == BlockSoundGroup.CHERRY_LEAVES ? BlockSoundGroup.CHERRY_SAPLING : BlockSoundGroup.GRASS;
     public static boolean TINTED_LEAVES = true;
     public static int MOD_LEAF_TINT_COLOR = FoliageColors.DEFAULT;
     public static boolean BIOME_LEAF_TINT = true && CitrusWoodInitializer.TINTED_LEAVES;
     public static float[] MOD_SAPLING_DROP_CHANCE = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
-
-    public static final BlockSetType MOD_BLOCK_SET_TYPE = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, CitrusWoodInitializer.MOD_WOOD_NAME));
-    public static final WoodType MOD_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, CitrusWoodInitializer.MOD_WOOD_NAME), CitrusWoodInitializer.MOD_BLOCK_SET_TYPE);
-
+    
     public static float MOD_SAPLING_RARE_VARIANT_CHANCE = 0.3F;
     public static Optional<RegistryKey<ConfiguredFeature<?, ?>>> MOD_SAPLING_STANDARD_TREE = Optional.of(CitrusWoodTreeConfiguredFeatures.ORANGE_TREE);
     public static Optional<RegistryKey<ConfiguredFeature<?, ?>>> MOD_SAPLING_RARE_TREE = Optional.of(CitrusWoodTreeConfiguredFeatures.ORANGE_BUSH);
