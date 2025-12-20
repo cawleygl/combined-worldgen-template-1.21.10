@@ -1,0 +1,7 @@
+{
+  "parent": "combined-worldgen:block/template_potted_dried_cholla",
+  "textures": {
+    "side": "combined-worldgen:block/stripped_dried_cholla_side",
+    "top": "combined-worldgen:block/stripped_dried_cholla_top"
+  }
+}
