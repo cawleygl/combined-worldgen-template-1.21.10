@@ -2,11 +2,9 @@
 	"credit": "Made with Blockbench",
 	"ambientocclusion": false,
 	"textures": {
-		"inside": "combined-worldgen:block/dried_cholla_inside",
+		"inside": "combined-worldgen:block/stripped_dried_cholla_side",
 		"particle": "minecraft:block/flower_pot",
 		"flowerpot": "minecraft:block/flower_pot",
-		"top": "combined-worldgen:block/dried_cholla_top",
-		"side": "combined-worldgen:block/dried_cholla_side",
 		"dirt": "minecraft:block/dirt"
 	},
 	"elements": [

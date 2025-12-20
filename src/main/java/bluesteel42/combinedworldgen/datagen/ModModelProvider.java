@@ -171,6 +171,10 @@ public class ModModelProvider extends FabricModelProvider {
                 ChollaWoodModRafts.MOD_CHEST_RAFT,
                 ChollaWoodModBlocks.MOD_SHELF
         );
+        generateDriedChollaModels(blockStateModelGenerator, ChollaWoodModBlocks.DRIED_CHOLLA);
+        generateDriedChollaModels(blockStateModelGenerator, ChollaWoodModBlocks.STRIPPED_DRIED_CHOLLA);
+        generatePottedDriedChollaModels(blockStateModelGenerator, ChollaWoodModBlocks.POTTED_DRIED_CHOLLA, ChollaWoodModBlocks.DRIED_CHOLLA);
+        generatePottedDriedChollaModels(blockStateModelGenerator, ChollaWoodModBlocks.POTTED_STRIPPED_DRIED_CHOLLA, ChollaWoodModBlocks.STRIPPED_DRIED_CHOLLA);
     }
     private void generateChorusBlockModels(BlockStateModelGenerator blockStateModelGenerator) {
         generateCombinedWoodBlockModels(blockStateModelGenerator,
@@ -477,6 +481,23 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.blockStateCollector.accept(createAzaleaStemBlockState(stemBlock, weightedVariant, weightedVariant2));
         Identifier identifier = TEMPLATE_AZALEA_STEM_INVENTORY.upload(stemBlock, stemTop(stemBlock), blockStateModelGenerator.modelCollector);
         blockStateModelGenerator.registerParentedItemModel(stemBlock, identifier);
+    }
+
+    private static final Model TEMPLATE_DRIED_CHOLLA = modBlock("template_dried_cholla", TextureKey.SIDE, TextureKey.TOP);
+    private static TextureMap driedCholla(Block block) {
+        return new TextureMap()
+                .put(TextureKey.SIDE, getSubId(block, "_side"))
+                .put(TextureKey.TOP, getSubId(block, "_top"));
+    }
+    private static void generateDriedChollaModels(BlockStateModelGenerator blockStateModelGenerator, Block chollaBlock) {
+        WeightedVariant weightedVariant = BlockStateModelGenerator.createWeightedVariant(
+                TEMPLATE_DRIED_CHOLLA.upload(chollaBlock, driedCholla(chollaBlock), blockStateModelGenerator.modelCollector)
+        );
+        blockStateModelGenerator.blockStateCollector.accept(createAxisRotatedBlockState(chollaBlock, weightedVariant));
+    }
+
+    private static void generatePottedDriedChollaModels(BlockStateModelGenerator blockStateModelGenerator, Block pottedBlock, Block chollaBlock) {
+        blockStateModelGenerator.registerSingleton(pottedBlock, makeFactory((block) -> driedCholla(chollaBlock), modBlock("template_potted_dried_cholla", TextureKey.TOP, TextureKey.SIDE)));
     }
 
     private static final TextureKey LEAVES = TextureKey.of("leaves");

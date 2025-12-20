@@ -131,7 +131,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(shelf);
 
         addDrop(sapling);
-        addDrop(pottedSapling, pottedPlantDrops(sapling));
+        addPottedPlantDrops(pottedSapling);
         addDrop(leaves, leavesDrops(leaves, sapling, saplingDropChance));
 
     }
@@ -206,7 +206,9 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         );
         /* ADDITIONAL BLOCKS */
         addDrop(AzaleaWoodModBlocks.AZALEA_STEM);
+        addPottedPlantDrops(AzaleaWoodModBlocks.POTTED_AZALEA_STEM);
         addDrop(AzaleaWoodModBlocks.STRIPPED_AZALEA_STEM);
+        addPottedPlantDrops(AzaleaWoodModBlocks.POTTED_STRIPPED_AZALEA_STEM);
         addDrop(AzaleaWoodModBlocks.LEAFY_AZALEA_STEM, block -> this.drops(AzaleaWoodModBlocks.LEAFY_AZALEA_STEM, AzaleaWoodModBlocks.AZALEA_STEM));
     }
     public void generateBaobabWoodLootTables() {
@@ -259,6 +261,9 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         );
         /* ADDITIONAL BLOCKS */
         addDrop(ChollaWoodModBlocks.DRIED_CHOLLA);
+        addPottedPlantDrops(ChollaWoodModBlocks.POTTED_DRIED_CHOLLA);
+        addDrop(ChollaWoodModBlocks.STRIPPED_DRIED_CHOLLA);
+        addPottedPlantDrops(ChollaWoodModBlocks.POTTED_STRIPPED_DRIED_CHOLLA);
     }
     public void generateChorusWoodLootTables() {
         generateCombinedWoodBlockLootTables(
@@ -430,9 +435,9 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(PineWoodModBlocks.SNOWY_PINE_LEAVES, leavesDrops(PineWoodModBlocks.SNOWY_PINE_LEAVES, PineWoodModBlocks.SNOWY_PINE_SAPLING, PineWoodInitializer.MOD_SAPLING_DROP_CHANCE));
         addDrop(PineWoodModBlocks.SNOWY_SPRUCE_LEAVES, leavesDrops(PineWoodModBlocks.SNOWY_SPRUCE_LEAVES, PineWoodModBlocks.SNOWY_SPRUCE_SAPLING, SAPLING_DROP_CHANCE));
         addDrop(PineWoodModBlocks.SNOWY_PINE_SAPLING);
-        addDrop(PineWoodModBlocks.POTTED_SNOWY_PINE_SAPLING, pottedPlantDrops(PineWoodModBlocks.SNOWY_PINE_SAPLING));
+        addPottedPlantDrops(PineWoodModBlocks.POTTED_SNOWY_PINE_SAPLING);
         addDrop(PineWoodModBlocks.SNOWY_SPRUCE_SAPLING);
-        addDrop(PineWoodModBlocks.POTTED_SNOWY_SPRUCE_SAPLING, pottedPlantDrops(PineWoodModBlocks.SNOWY_SPRUCE_SAPLING));
+        addPottedPlantDrops(PineWoodModBlocks.POTTED_SNOWY_SPRUCE_SAPLING);
     }
     public void generateWillowWoodLootTables() {
         generateNaturalWoodBlockLootTables(
@@ -601,13 +606,13 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModFloraBlocks.GIANT_PADMA);
         addDrop(ModFloraBlocks.MONSTERA, block -> this.dropsWithProperty(block, TallPlantBlock.HALF, DoubleBlockHalf.LOWER));
 
-        addDrop(ModFloraBlocks.POTTED_CACTUS_FLOWER, pottedPlantDrops(Blocks.CACTUS_FLOWER));
-        addDrop(ModFloraBlocks.POTTED_ROSE, pottedPlantDrops(Blocks.ROSE_BUSH));
-        addDrop(ModFloraBlocks.POTTED_PEONY, pottedPlantDrops(Blocks.PEONY));
-        addDrop(ModFloraBlocks.POTTED_LILAC, pottedPlantDrops(Blocks.LILAC));
-        addDrop(ModFloraBlocks.POTTED_SUGAR_CANE, pottedPlantDrops(Blocks.SUGAR_CANE));
-        addDrop(ModFloraBlocks.POTTED_SUNFLOWER, pottedPlantDrops(Blocks.SUNFLOWER));
-        addDrop(ModFloraBlocks.POTTED_MONSTERA, pottedPlantDrops(ModFloraBlocks.MONSTERA));
+        addPottedPlantDrops(ModFloraBlocks.POTTED_CACTUS_FLOWER);
+        addPottedPlantDrops(ModFloraBlocks.POTTED_ROSE);
+        addPottedPlantDrops(ModFloraBlocks.POTTED_PEONY);
+        addPottedPlantDrops(ModFloraBlocks.POTTED_LILAC);
+        addPottedPlantDrops(ModFloraBlocks.POTTED_SUGAR_CANE);
+        addPottedPlantDrops(ModFloraBlocks.POTTED_SUNFLOWER);
+        addPottedPlantDrops(ModFloraBlocks.POTTED_MONSTERA);
 
         addDrop(ModFloraBlocks.WHITE_WATER_LILY);
         addDrop(ModFloraBlocks.BLUE_WATER_LILY);

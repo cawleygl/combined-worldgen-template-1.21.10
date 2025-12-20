@@ -17,6 +17,8 @@ public class ChollaWoodModRegistries {
 
     public static void registerStrippables() {
         StrippableBlockRegistry.register(ChollaWoodModBlocks.MOD_BLOCK, ChollaWoodModBlocks.STRIPPED_MOD_BLOCK);
+        /* ADDITIONAL BLOCKS */
+        StrippableBlockRegistry.register(ChollaWoodModBlocks.DRIED_CHOLLA, ChollaWoodModBlocks.STRIPPED_DRIED_CHOLLA);
     }
 
     public static void registerFlammables() {
@@ -32,6 +34,7 @@ public class ChollaWoodModRegistries {
         FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.MOD_MOSAIC_STAIRS, 5, 20);
         /* ADDITIONAL BLOCKS */
         FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.DRIED_CHOLLA, 60, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.STRIPPED_DRIED_CHOLLA, 60, 60);
     }
 
     public static void registerTrades() {
@@ -55,6 +58,7 @@ public class ChollaWoodModRegistries {
 
             /* ADDITIONAL BLOCKS*/
             builder.add(ChollaWoodModBlocks.DRIED_CHOLLA, 50);
+            builder.add(ChollaWoodModBlocks.STRIPPED_DRIED_CHOLLA, 50);
         });
     }
 }

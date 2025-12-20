@@ -217,6 +217,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         /* ADDITIONAL BLOCKS */
         valueLookupBuilder(BlockTags.AXE_MINEABLE).add(ChollaWoodModBlocks.DRIED_CHOLLA);
         valueLookupBuilder(BlockTags.FLOWER_POTS).add(ChollaWoodModBlocks.POTTED_DRIED_CHOLLA);
+        valueLookupBuilder(BlockTags.AXE_MINEABLE).add(ChollaWoodModBlocks.STRIPPED_DRIED_CHOLLA);
+        valueLookupBuilder(BlockTags.FLOWER_POTS).add(ChollaWoodModBlocks.POTTED_STRIPPED_DRIED_CHOLLA);
     }
     public void generateChorusBlockTags() {
         generateCombinedWoodBlockTags(

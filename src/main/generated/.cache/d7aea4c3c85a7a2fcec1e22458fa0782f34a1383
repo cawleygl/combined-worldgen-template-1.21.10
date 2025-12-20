@@ -29,7 +29,7 @@ eb8298125663643a3b1cb497ca8742d9a46448e2 data/minecraft/tags/block/edible_for_sh
 0c527a772adace88cd23ef397f0274e9d8e2e804 data/minecraft/tags/block/fall_damage_resetting.json
 c320ae95340d7a9611ebebe82bbfeca01c18675c data/minecraft/tags/block/fence_gates.json
 820a03046f17d4bea36de08777be69a5c23b8386 data/minecraft/tags/block/fences.json
-86e9b1e6011756529d26c627a31cdf854007a72a data/minecraft/tags/block/flower_pots.json
+f19d80141cbabe71bd4d51890b227f171112bc5b data/minecraft/tags/block/flower_pots.json
 84be3ca0c84df0e98880944b69c2c1f538553a8b data/minecraft/tags/block/flowers.json
 cc76db7c9cf026f1b82768953402cedbc71eba47 data/minecraft/tags/block/foxes_spawnable_on.json
 7a529e0d5c20ddac22049ba77e7582040e588761 data/minecraft/tags/block/frog_prefer_jump_to.json
@@ -40,7 +40,7 @@ cfff823e3bbd109fc81ff9f23020b4107d6f6007 data/minecraft/tags/block/leaves.json
 459d006e19a1750b24c42ec82758048a205593e5 data/minecraft/tags/block/logs.json
 a5938125dd6304742b25938e213618ee4e90969b data/minecraft/tags/block/logs_that_burn.json
 87396f0312c36655dd30506674f81c933f2b5092 data/minecraft/tags/block/maintains_farmland.json
-07686f1014d961f8523d45a67df7eca57dc386d7 data/minecraft/tags/block/mineable/axe.json
+db55a95945eec69af3becba081ba9292eea5a9ce data/minecraft/tags/block/mineable/axe.json
 ebe6acad4f4b40dcc51a9ed84e0a9fdb7652193b data/minecraft/tags/block/mineable/pickaxe.json
 cc76db7c9cf026f1b82768953402cedbc71eba47 data/minecraft/tags/block/mineable/shovel.json
 12ccd57c2ba1c013dd650637269cb1089e9ee974 data/minecraft/tags/block/mob_interactable_doors.json

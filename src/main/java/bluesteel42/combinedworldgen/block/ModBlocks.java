@@ -169,14 +169,12 @@ public class ModBlocks {
         return register("potted_" + woodName + "_sapling",settings -> new FlowerPotBlock(sapling, settings), Blocks.createFlowerPotSettings(), true, true);
     }
 
-    private static Block register(String id, AbstractBlock.Settings settings) {
+    public static Block register(String id, AbstractBlock.Settings settings) {
         return register(id, Block::new, settings, true, false);
     }
-
-    private static Block register(String id, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
+    public static Block register(String id, Function<AbstractBlock.Settings, Block> factory, AbstractBlock.Settings settings) {
         return register(id, factory, settings, true, false);
     }
-
     public static Block register(
             String path,
             Function<AbstractBlock.Settings, Block> factory,

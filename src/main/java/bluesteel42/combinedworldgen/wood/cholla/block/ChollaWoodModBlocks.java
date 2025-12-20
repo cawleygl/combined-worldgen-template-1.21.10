@@ -37,13 +37,23 @@ public class ChollaWoodModBlocks {
     public static final Block DRIED_CHOLLA = ModBlocks.register(
             "dried_" + ChollaWoodInitializer.MOD_WOOD_NAME,
             DriedChollaBlock::new,
-            Blocks.createLogSettings(ChollaWoodInitializer.MOD_UNSTRIPPED_COLOR, ChollaWoodInitializer.MOD_UNSTRIPPED_COLOR, BlockSoundGroup.BAMBOO_WOOD),
-            true,
-            false
+            Blocks.createLogSettings(ChollaWoodInitializer.MOD_UNSTRIPPED_COLOR, ChollaWoodInitializer.MOD_UNSTRIPPED_COLOR, BlockSoundGroup.BAMBOO_WOOD)
+    );
+    public static final Block STRIPPED_DRIED_CHOLLA = ModBlocks.register(
+            "stripped_dried_" + ChollaWoodInitializer.MOD_WOOD_NAME,
+            DriedChollaBlock::new,
+            Blocks.createLogSettings(ChollaWoodInitializer.MOD_STRIPPED_COLOR, ChollaWoodInitializer.MOD_STRIPPED_COLOR, BlockSoundGroup.BAMBOO_WOOD)
     );
     public static final Block POTTED_DRIED_CHOLLA = ModBlocks.register(
             "potted_dried_" + ChollaWoodInitializer.MOD_WOOD_NAME,
             settings -> new FlowerPotBlock(DRIED_CHOLLA, settings),
+            Blocks.createFlowerPotSettings(),
+            true,
+            true
+    );
+    public static final Block POTTED_STRIPPED_DRIED_CHOLLA = ModBlocks.register(
+            "potted_stripped_dried_" + ChollaWoodInitializer.MOD_WOOD_NAME,
+            settings -> new FlowerPotBlock(STRIPPED_DRIED_CHOLLA, settings),
             Blocks.createFlowerPotSettings(),
             true,
             true
@@ -69,6 +79,7 @@ public class ChollaWoodModBlocks {
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL)
                 .register((itemGroup) -> {
+                    itemGroup.addAfter(Items.CACTUS, ChollaWoodModBlocks.STRIPPED_DRIED_CHOLLA);
                     itemGroup.addAfter(Items.CACTUS, ChollaWoodModBlocks.DRIED_CHOLLA);
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL)
