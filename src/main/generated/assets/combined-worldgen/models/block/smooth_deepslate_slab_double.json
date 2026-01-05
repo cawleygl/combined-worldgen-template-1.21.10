@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "combined-worldgen:block/smooth_deepslate",
+    "side": "combined-worldgen:block/smooth_deepslate_slab_side"
+  }
+}

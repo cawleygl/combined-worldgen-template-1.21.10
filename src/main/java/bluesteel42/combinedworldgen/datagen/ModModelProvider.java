@@ -390,9 +390,21 @@ public class ModModelProvider extends FabricModelProvider {
         plankPool.wall(wall);
     }
 
-    private void generateBlockAndSlabModels(BlockStateModelGenerator blockStateModelGenerator, Block block, Block slab) {
+    private void generateBlockAndConsistentSlabModels(BlockStateModelGenerator blockStateModelGenerator, Block block, Block slab) {
         BlockStateModelGenerator.BlockTexturePool plankPool = blockStateModelGenerator.registerCubeAllModelTexturePool(block);
         plankPool.slab(slab);
+    }
+    private void generateBlockAndUniqueSlabModels(BlockStateModelGenerator blockStateModelGenerator, Block block, Block slab) {
+        TextureMap textureMap = TextureMap.all(block);
+        TextureMap textureMap2 = TextureMap.sideEnd(TextureMap.getSubId(slab, "_side"), textureMap.getTexture(TextureKey.TOP));
+        WeightedVariant weightedVariant = createWeightedVariant(Models.SLAB.upload(slab, textureMap2, blockStateModelGenerator.modelCollector));
+        WeightedVariant weightedVariant2 = createWeightedVariant(Models.SLAB_TOP.upload(slab, textureMap2, blockStateModelGenerator.modelCollector));
+        WeightedVariant weightedVariant3 = createWeightedVariant(
+                Models.CUBE_COLUMN.uploadWithoutVariant(slab, "_double", textureMap2, blockStateModelGenerator.modelCollector)
+        );
+        blockStateModelGenerator.blockStateCollector.accept(createSlabBlockState(slab, weightedVariant, weightedVariant2, weightedVariant3));
+        blockStateModelGenerator.blockStateCollector
+                .accept(createSingletonBlockState(block, createWeightedVariant(Models.CUBE_ALL.upload(block, textureMap, blockStateModelGenerator.modelCollector))));
     }
 
     private static void generateWallFromVanillaBlock(BlockStateModelGenerator blockStateModelGenerator, Block block, Block wall) {
@@ -575,7 +587,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.SEA_BEET, BlockStateModelGenerator.CrossType.TINTED);
         blockStateModelGenerator.registerGrassTinted(ModBlocks.SEA_BEET);
 
-        generateBlockAndSlabModels(blockStateModelGenerator, ModBuildingBlocks.SMOOTH_DEEPSLATE, ModBuildingBlocks.SMOOTH_DEEPSLATE_SLAB);
+        generateBlockAndUniqueSlabModels(blockStateModelGenerator, ModBuildingBlocks.SMOOTH_DEEPSLATE, ModBuildingBlocks.SMOOTH_DEEPSLATE_SLAB);
 
         generateStoneBlockModels(blockStateModelGenerator, ModBuildingBlocks.MOSSY_BRICKS, ModBuildingBlocks.MOSSY_BRICK_STAIRS, ModBuildingBlocks.MOSSY_BRICK_SLAB, ModBuildingBlocks.MOSSY_BRICK_WALL);
         generateStoneBlockModels(blockStateModelGenerator, ModBuildingBlocks.MOSSY_TUFF_BRICKS, ModBuildingBlocks.MOSSY_TUFF_BRICK_STAIRS, ModBuildingBlocks.MOSSY_TUFF_BRICK_SLAB, ModBuildingBlocks.MOSSY_TUFF_BRICK_WALL);

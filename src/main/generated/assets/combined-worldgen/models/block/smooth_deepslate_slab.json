@@ -2,7 +2,7 @@
   "parent": "minecraft:block/slab",
   "textures": {
     "bottom": "combined-worldgen:block/smooth_deepslate",
-    "side": "combined-worldgen:block/smooth_deepslate",
+    "side": "combined-worldgen:block/smooth_deepslate_slab_side",
     "top": "combined-worldgen:block/smooth_deepslate"
   }
 }
