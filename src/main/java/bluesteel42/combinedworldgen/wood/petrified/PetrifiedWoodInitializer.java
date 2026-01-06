@@ -1,6 +1,7 @@
 package bluesteel42.combinedworldgen.wood.petrified;
 
 import bluesteel42.combinedworldgen.wood.petrified.block.PetrifiedWoodModBlocks;
+import bluesteel42.combinedworldgen.wood.petrified.registries.PetrifiedWoodModRegistries;
 import net.minecraft.block.MapColor;
 import net.minecraft.sound.BlockSoundGroup;
 
@@ -13,6 +14,7 @@ public class PetrifiedWoodInitializer {
 
     public static void initializeWood() {
         PetrifiedWoodModBlocks.initialize();
+        PetrifiedWoodModRegistries.registerStrippables();
     }
 
     public static void initializeWoodClient() {}

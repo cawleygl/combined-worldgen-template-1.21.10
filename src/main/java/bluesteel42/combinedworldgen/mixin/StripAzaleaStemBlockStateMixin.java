@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Optional;
 
 @Mixin(AxeItem.class)
-public class StripBlockStateMixin {
+public class StripAzaleaStemBlockStateMixin {
 
     @Inject(at = @At("HEAD"), method = "getStrippedState", cancellable = true)
     private void init(

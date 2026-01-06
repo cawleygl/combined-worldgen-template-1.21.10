@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "combined-worldgen:petrified_log",
+  "result": {
+    "count": 8,
+    "id": "combined-worldgen:petrified_slab"
+  }
+}

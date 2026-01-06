@@ -469,6 +469,8 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
     public void generatePetrifiedWoodLootTables() {
         addDrop(PetrifiedWoodModBlocks.MOD_LOG);
         addDrop(PetrifiedWoodModBlocks.MOD_WOOD);
+        addDrop(PetrifiedWoodModBlocks.STRIPPED_MOD_LOG);
+        addDrop(PetrifiedWoodModBlocks.STRIPPED_MOD_WOOD);
 
         addDrop(PetrifiedWoodModBlocks.MOD_PLANKS);
         addDrop(PetrifiedWoodModBlocks.MOD_STAIRS);

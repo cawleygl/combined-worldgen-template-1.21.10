@@ -12,7 +12,7 @@ public class ModBuildingBlocks {
 
     /* SMOOTH DEEPSLATE */
     public static final Block SMOOTH_DEEPSLATE = ModBlocks.register("smooth_deepslate", Block::new, AbstractBlock.Settings.copy(Blocks.DEEPSLATE).strength(3.5F, 6.0F), true, false);
-    public static final Block SMOOTH_DEEPSLATE_SLAB = ModBlocks.register("smooth_deepslate_slab", SlabBlock::new,AbstractBlock.Settings.copy(Blocks.DEEPSLATE).strength(3.5F, 6.0F), true, false);
+    public static final Block SMOOTH_DEEPSLATE_SLAB = ModBlocks.register("smooth_deepslate_slab", SlabBlock::new, AbstractBlock.Settings.copy(Blocks.DEEPSLATE).strength(3.5F, 6.0F), true, false);
 
     /* MOSSY BRICKS AND COBBLE */
     public static final Block MOSSY_BRICKS = ModBlocks.register("mossy_bricks", Block::new, AbstractBlock.Settings.copy(Blocks.BRICKS), true, false);

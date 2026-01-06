@@ -1,6 +1,7 @@
 package bluesteel42.combinedworldgen.wood.petrified.block;
 
 import bluesteel42.combinedworldgen.block.ModBlocks;
+import bluesteel42.combinedworldgen.wood.maple.block.MapleWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.petrified.PetrifiedWoodInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
@@ -24,6 +25,26 @@ public class PetrifiedWoodModBlocks {
     public static final Block MOD_WOOD = ModBlocks.register(PetrifiedWoodInitializer.MOD_WOOD_TYPE + "_wood", PillarBlock::new,
             AbstractBlock.Settings.create()
                     .mapColor(PetrifiedWoodInitializer.MOD_BARK_COLOR)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresTool()
+                    .strength(1.5F, 6.0F)
+                    .sounds(PetrifiedWoodInitializer.MOD_BLOCK_SOUND),
+            true,
+            false
+    );
+    public static final Block STRIPPED_MOD_LOG = ModBlocks.register("stripped_" + PetrifiedWoodInitializer.MOD_WOOD_TYPE + "_log", PillarBlock::new,
+            AbstractBlock.Settings.create()
+                    .mapColor(PetrifiedWoodInitializer.MOD_FIBER_COLOR)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresTool()
+                    .strength(1.5F, 6.0F)
+                    .sounds(PetrifiedWoodInitializer.MOD_BLOCK_SOUND),
+            true,
+            false
+    );
+    public static final Block STRIPPED_MOD_WOOD = ModBlocks.register("stripped_" + PetrifiedWoodInitializer.MOD_WOOD_TYPE + "_wood", PillarBlock::new,
+            AbstractBlock.Settings.create()
+                    .mapColor(PetrifiedWoodInitializer.MOD_FIBER_COLOR)
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresTool()
                     .strength(1.5F, 6.0F)
@@ -136,6 +157,8 @@ public class PetrifiedWoodModBlocks {
                     itemGroup.addAfter(Items.CHISELED_TUFF_BRICKS, PetrifiedWoodModBlocks.MOD_SLAB);
                     itemGroup.addAfter(Items.CHISELED_TUFF_BRICKS, PetrifiedWoodModBlocks.MOD_STAIRS);
                     itemGroup.addAfter(Items.CHISELED_TUFF_BRICKS, PetrifiedWoodModBlocks.MOD_PLANKS);
+                    itemGroup.addAfter(Items.CHISELED_TUFF_BRICKS, PetrifiedWoodModBlocks.STRIPPED_MOD_WOOD);
+                    itemGroup.addAfter(Items.CHISELED_TUFF_BRICKS, PetrifiedWoodModBlocks.STRIPPED_MOD_LOG);
                     itemGroup.addAfter(Items.CHISELED_TUFF_BRICKS, PetrifiedWoodModBlocks.MOD_WOOD);
                     itemGroup.addAfter(Items.CHISELED_TUFF_BRICKS, PetrifiedWoodModBlocks.MOD_LOG);
                 });

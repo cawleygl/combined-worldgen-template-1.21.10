@@ -424,7 +424,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         /* NON-FLAMMABLE + PICKAXE MINEABLE */
         valueLookupBuilder(PetrifiedWoodModTags.Items.MOD_LOGS)
                 .add(PetrifiedWoodModBlocks.MOD_LOG.asItem())
-                .add(PetrifiedWoodModBlocks.MOD_WOOD.asItem());
+                .add(PetrifiedWoodModBlocks.MOD_WOOD.asItem())
+                .add(PetrifiedWoodModBlocks.STRIPPED_MOD_LOG.asItem())
+                .add(PetrifiedWoodModBlocks.STRIPPED_MOD_WOOD.asItem());
 
         valueLookupBuilder(ItemTags.COMPLETES_FIND_TREE_TUTORIAL).addTag(PetrifiedWoodModTags.Items.MOD_LOGS);
         valueLookupBuilder(ItemTags.STONE_TOOL_MATERIALS).add(PetrifiedWoodModBlocks.MOD_PLANKS.asItem());

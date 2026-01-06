@@ -6,12 +6,13 @@
     "HasCatAccessor",
     "HasWitchAccessor",
     "NewDirtsToPathMixin",
+    "PreventFenceConnectToPumpkinMixin",
     "RegisterTreeBuildersMixin",
     "ShearLeafyAzaleaStemMixin",
-    "StripBlockStateMixin",
+    "StripAzaleaStemBlockStateMixin",
     "STRIPPED_BLOCKSAccessor",
-    "SwampWoodHutMixin",
-    "PreventFenceConnectToPumpkinMixin"
+    "StripPetrifiedWoodSoundMixin",
+    "SwampWoodHutMixin"
   ],
   "injectors": {
     "defaultRequire": 1

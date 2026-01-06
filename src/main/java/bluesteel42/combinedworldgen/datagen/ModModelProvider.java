@@ -322,6 +322,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     private void generatePetrifiedBlockModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.createLogTexturePool(PetrifiedWoodModBlocks.MOD_LOG).log(PetrifiedWoodModBlocks.MOD_LOG).wood(PetrifiedWoodModBlocks.MOD_WOOD);
+        blockStateModelGenerator.createLogTexturePool(PetrifiedWoodModBlocks.STRIPPED_MOD_LOG).log(PetrifiedWoodModBlocks.STRIPPED_MOD_LOG).wood(PetrifiedWoodModBlocks.STRIPPED_MOD_WOOD);
         BlockStateModelGenerator.BlockTexturePool plankPool = blockStateModelGenerator.registerCubeAllModelTexturePool(PetrifiedWoodModBlocks.MOD_PLANKS);
         plankPool.stairs(PetrifiedWoodModBlocks.MOD_STAIRS);
         plankPool.slab(PetrifiedWoodModBlocks.MOD_SLAB);

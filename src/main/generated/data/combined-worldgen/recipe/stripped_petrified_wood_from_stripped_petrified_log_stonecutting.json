@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "combined-worldgen:stripped_petrified_log",
+  "result": {
+    "count": 1,
+    "id": "combined-worldgen:stripped_petrified_wood"
+  }
+}

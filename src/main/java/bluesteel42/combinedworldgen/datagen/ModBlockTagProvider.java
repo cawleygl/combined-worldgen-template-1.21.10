@@ -430,7 +430,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         /* NON-FLAMMABLE + PICKAXE MINEABLE */
         valueLookupBuilder(PetrifiedWoodModTags.Blocks.MOD_LOGS)
                 .add(PetrifiedWoodModBlocks.MOD_LOG)
-                .add(PetrifiedWoodModBlocks.MOD_WOOD);
+                .add(PetrifiedWoodModBlocks.MOD_WOOD)
+                .add(PetrifiedWoodModBlocks.STRIPPED_MOD_LOG)
+                .add(PetrifiedWoodModBlocks.STRIPPED_MOD_WOOD);
 
         valueLookupBuilder(BlockTags.PICKAXE_MINEABLE).addTag(PetrifiedWoodModTags.Blocks.MOD_LOGS);
         valueLookupBuilder(BlockTags.COMPLETES_FIND_TREE_TUTORIAL).addTag(PetrifiedWoodModTags.Blocks.MOD_LOGS);

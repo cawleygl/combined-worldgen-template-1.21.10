@@ -512,6 +512,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
             private void generatePetrifiedRecipes() {
                 offerBarkBlockRecipe(PetrifiedWoodModBlocks.MOD_WOOD, PetrifiedWoodModBlocks.MOD_LOG);
+                offerBarkBlockRecipe(PetrifiedWoodModBlocks.STRIPPED_MOD_WOOD, PetrifiedWoodModBlocks.STRIPPED_MOD_LOG);
                 offerPlanksRecipe(PetrifiedWoodModBlocks.MOD_PLANKS, PetrifiedWoodModTags.Items.MOD_LOGS, 4);
                 createShaped(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_STAIRS, 4).pattern("#  ").pattern("## ").pattern("###").input('#', PetrifiedWoodModBlocks.MOD_PLANKS).group("wooden_stairs").criterion("has_planks", conditionsFromItem(PetrifiedWoodModBlocks.MOD_PLANKS)).offerTo(exporter);
                 createShaped(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_SLAB, 6).pattern("###").input('#', PetrifiedWoodModBlocks.MOD_PLANKS).group("wooden_slab").criterion("has_planks", conditionsFromItem(PetrifiedWoodModBlocks.MOD_PLANKS)).offerTo(exporter);
@@ -520,6 +521,36 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 createShaped(RecipeCategory.DECORATIONS, PetrifiedWoodModBlocks.MOD_FENCE, 3).pattern("W#W").pattern("W#W").input('#', Items.STONE).input('W', PetrifiedWoodModBlocks.MOD_PLANKS).group("wooden_fence").criterion("has_planks", conditionsFromItem(PetrifiedWoodModBlocks.MOD_PLANKS)).offerTo(exporter);
                 createShaped(RecipeCategory.REDSTONE, PetrifiedWoodModBlocks.MOD_DOOR, 3).pattern("##").pattern("##").pattern("##").input('#', PetrifiedWoodModBlocks.MOD_PLANKS).group("wooden_door").criterion("has_planks", conditionsFromItem(PetrifiedWoodModBlocks.MOD_PLANKS)).offerTo(exporter);
                 createShaped(RecipeCategory.REDSTONE, PetrifiedWoodModBlocks.MOD_TRAPDOOR, 2).pattern("###").pattern("###").input('#', PetrifiedWoodModBlocks.MOD_PLANKS).group("wooden_trapdoor").criterion("has_planks", conditionsFromItem(PetrifiedWoodModBlocks.MOD_PLANKS)).offerTo(exporter);
+
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_WOOD, PetrifiedWoodModBlocks.MOD_LOG);
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.STRIPPED_MOD_LOG, PetrifiedWoodModBlocks.MOD_LOG);
+
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.STRIPPED_MOD_WOOD, PetrifiedWoodModBlocks.MOD_LOG);
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.STRIPPED_MOD_WOOD, PetrifiedWoodModBlocks.MOD_WOOD);
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.STRIPPED_MOD_WOOD, PetrifiedWoodModBlocks.STRIPPED_MOD_LOG);
+
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_PLANKS, PetrifiedWoodModBlocks.MOD_LOG, 4);
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_PLANKS, PetrifiedWoodModBlocks.MOD_WOOD, 4);
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_PLANKS, PetrifiedWoodModBlocks.STRIPPED_MOD_LOG, 4);
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_PLANKS, PetrifiedWoodModBlocks.STRIPPED_MOD_WOOD, 4);
+
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_STAIRS, PetrifiedWoodModBlocks.MOD_PLANKS);
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_STAIRS, PetrifiedWoodModBlocks.MOD_LOG, 4);
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_STAIRS, PetrifiedWoodModBlocks.MOD_WOOD, 4);
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_STAIRS, PetrifiedWoodModBlocks.STRIPPED_MOD_LOG, 4);
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_STAIRS, PetrifiedWoodModBlocks.STRIPPED_MOD_WOOD, 4);
+
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_SLAB, PetrifiedWoodModBlocks.MOD_PLANKS, 2);
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_SLAB, PetrifiedWoodModBlocks.MOD_LOG, 8);
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_SLAB, PetrifiedWoodModBlocks.MOD_WOOD, 8);
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_SLAB, PetrifiedWoodModBlocks.STRIPPED_MOD_LOG, 8);
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_SLAB, PetrifiedWoodModBlocks.STRIPPED_MOD_WOOD, 8);
+
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_FENCE, PetrifiedWoodModBlocks.MOD_PLANKS);
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_FENCE, PetrifiedWoodModBlocks.MOD_LOG, 4);
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_FENCE, PetrifiedWoodModBlocks.MOD_WOOD, 4);
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_FENCE, PetrifiedWoodModBlocks.STRIPPED_MOD_LOG, 4);
+                offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PetrifiedWoodModBlocks.MOD_FENCE, PetrifiedWoodModBlocks.STRIPPED_MOD_WOOD, 4);
             }
 
             @Override
