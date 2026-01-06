@@ -35,8 +35,8 @@ public class DogwoodWoodModBoats {
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)
                 .register((itemGroup) -> {
-                    itemGroup.addBefore(Items.DARK_OAK_CHEST_BOAT, DogwoodWoodModBoats.MOD_BOAT);
-                    itemGroup.addBefore(Items.DARK_OAK_CHEST_BOAT, DogwoodWoodModBoats.MOD_CHEST_BOAT);
+                    itemGroup.addAfter(Items.DARK_OAK_CHEST_BOAT, DogwoodWoodModBoats.MOD_CHEST_BOAT);
+                    itemGroup.addAfter(Items.DARK_OAK_CHEST_BOAT, DogwoodWoodModBoats.MOD_BOAT);
                 });
 
     }

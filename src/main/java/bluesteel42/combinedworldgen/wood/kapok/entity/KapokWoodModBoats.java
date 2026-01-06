@@ -35,8 +35,8 @@ public class KapokWoodModBoats {
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)
                 .register((itemGroup) -> {
-                    itemGroup.addBefore(Items.JUNGLE_BOAT, KapokWoodModBoats.MOD_CHEST_BOAT);
                     itemGroup.addBefore(Items.JUNGLE_BOAT, KapokWoodModBoats.MOD_BOAT);
+                    itemGroup.addBefore(Items.JUNGLE_BOAT, KapokWoodModBoats.MOD_CHEST_BOAT);
                 });
 
     }
