@@ -1,7 +1,6 @@
 package bluesteel42.combinedworldgen.wood.petrified.block;
 
 import bluesteel42.combinedworldgen.block.ModBlocks;
-import bluesteel42.combinedworldgen.wood.maple.block.MapleWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.petrified.PetrifiedWoodInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
