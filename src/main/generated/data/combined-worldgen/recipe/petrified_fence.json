@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "group": "wooden_fence",
+  "group": "fence",
   "key": {
-    "#": "minecraft:stone",
+    "#": "#minecraft:stone_crafting_materials",
     "W": "combined-worldgen:petrified_planks"
   },
   "pattern": [

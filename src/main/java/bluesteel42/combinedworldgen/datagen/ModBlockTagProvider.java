@@ -458,9 +458,22 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         valueLookupBuilder(BlockTags.FENCES).add(PetrifiedWoodModBlocks.MOD_FENCE);
         valueLookupBuilder(BlockTags.PICKAXE_MINEABLE).add(PetrifiedWoodModBlocks.MOD_FENCE);
 
+        valueLookupBuilder(BlockTags.FENCES).add(PetrifiedWoodModBlocks.MOD_FENCE_GATE);
+        valueLookupBuilder(BlockTags.PICKAXE_MINEABLE).add(PetrifiedWoodModBlocks.MOD_FENCE_GATE);
+
         valueLookupBuilder(BlockTags.STONE_BUTTONS).add(PetrifiedWoodModBlocks.MOD_BUTTON);
 
         valueLookupBuilder(BlockTags.STONE_PRESSURE_PLATES).add(PetrifiedWoodModBlocks.MOD_PRESSURE_PLATE);
+
+        valueLookupBuilder(BlockTags.PICKAXE_MINEABLE).add(PetrifiedWoodModBlocks.MOD_STANDING_SIGN);
+        valueLookupBuilder(BlockTags.PICKAXE_MINEABLE).add(PetrifiedWoodModBlocks.MOD_WALL_SIGN);
+        valueLookupBuilder(BlockTags.WALL_POST_OVERRIDE).add(PetrifiedWoodModBlocks.MOD_STANDING_SIGN);
+        valueLookupBuilder(BlockTags.WALL_POST_OVERRIDE).add(PetrifiedWoodModBlocks.MOD_WALL_SIGN);
+
+        valueLookupBuilder(BlockTags.PICKAXE_MINEABLE).add(PetrifiedWoodModBlocks.MOD_HANGING_SIGN);
+        valueLookupBuilder(BlockTags.PICKAXE_MINEABLE).add(PetrifiedWoodModBlocks.MOD_WALL_HANGING_SIGN);
+
+        valueLookupBuilder(BlockTags.PICKAXE_MINEABLE).add(PetrifiedWoodModBlocks.MOD_SHELF);
 
     }
 

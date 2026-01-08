@@ -63,6 +63,22 @@ public class ModModelProvider extends FabricModelProvider {
         super(output);
     }
 
+    private void generateNaturalWoodSolidBlockModels(BlockStateModelGenerator blockStateModelGenerator,
+             BlockFamily blockFamily,
+             Block log,
+             Block wood,
+             Block strippedLog,
+             Block strippedWood,
+             Block hangingSign,
+             Block wallHangingSign,
+             Block shelf
+    ) {
+        blockStateModelGenerator.createLogTexturePool(log).log(log).wood(wood);
+        blockStateModelGenerator.createLogTexturePool(strippedLog).log(strippedLog).wood(strippedWood);
+        blockStateModelGenerator.registerCubeAllModelTexturePool(blockFamily.getBaseBlock()).family(blockFamily);
+        blockStateModelGenerator.registerHangingSign(strippedLog, hangingSign, wallHangingSign);
+        blockStateModelGenerator.registerShelf(shelf, strippedLog);
+    }
     public void generateNaturalWoodBlockModels(BlockStateModelGenerator blockStateModelGenerator,
             BlockFamily blockFamily,
             Block log,
@@ -80,13 +96,9 @@ public class ModModelProvider extends FabricModelProvider {
             Block pottedSapling,
             Block shelf
     ) {
-        blockStateModelGenerator.createLogTexturePool(log).log(log).wood(wood);
-        blockStateModelGenerator.createLogTexturePool(strippedLog).log(strippedLog).wood(strippedWood);
-        blockStateModelGenerator.registerCubeAllModelTexturePool(blockFamily.getBaseBlock()).family(blockFamily);
-        blockStateModelGenerator.registerHangingSign(strippedLog, hangingSign, wallHangingSign);
+        generateNaturalWoodSolidBlockModels(blockStateModelGenerator, blockFamily, log, wood, strippedLog, strippedWood, hangingSign, wallHangingSign, shelf);
         blockStateModelGenerator.registerItemModel(boat);
         blockStateModelGenerator.registerItemModel(chestBoat);
-        blockStateModelGenerator.registerShelf(shelf, strippedLog);
         blockStateModelGenerator.registerFlowerPotPlantAndItem(sapling, pottedSapling, BlockStateModelGenerator.CrossType.NOT_TINTED);
         if (tintedLeaves) {
             blockStateModelGenerator.registerTintedBlockAndItem(leaves, TexturedModel.LEAVES, leavesTintColor);
@@ -321,16 +333,16 @@ public class ModModelProvider extends FabricModelProvider {
     }
 
     private void generatePetrifiedBlockModels(BlockStateModelGenerator blockStateModelGenerator) {
-        blockStateModelGenerator.createLogTexturePool(PetrifiedWoodModBlocks.MOD_LOG).log(PetrifiedWoodModBlocks.MOD_LOG).wood(PetrifiedWoodModBlocks.MOD_WOOD);
-        blockStateModelGenerator.createLogTexturePool(PetrifiedWoodModBlocks.STRIPPED_MOD_LOG).log(PetrifiedWoodModBlocks.STRIPPED_MOD_LOG).wood(PetrifiedWoodModBlocks.STRIPPED_MOD_WOOD);
-        BlockStateModelGenerator.BlockTexturePool plankPool = blockStateModelGenerator.registerCubeAllModelTexturePool(PetrifiedWoodModBlocks.MOD_PLANKS);
-        plankPool.stairs(PetrifiedWoodModBlocks.MOD_STAIRS);
-        plankPool.slab(PetrifiedWoodModBlocks.MOD_SLAB);
-        plankPool.button(PetrifiedWoodModBlocks.MOD_BUTTON);
-        plankPool.fence(PetrifiedWoodModBlocks.MOD_FENCE);
-        plankPool.pressurePlate(PetrifiedWoodModBlocks.MOD_PRESSURE_PLATE);
-        blockStateModelGenerator.registerDoor(PetrifiedWoodModBlocks.MOD_DOOR);
-        blockStateModelGenerator.registerOrientableTrapdoor(PetrifiedWoodModBlocks.MOD_TRAPDOOR);
+        generateNaturalWoodSolidBlockModels(blockStateModelGenerator,
+                PetrifiedWoodModBlocks.MOD_BLOCK_FAMILY,
+                PetrifiedWoodModBlocks.MOD_LOG,
+                PetrifiedWoodModBlocks.MOD_WOOD,
+                PetrifiedWoodModBlocks.STRIPPED_MOD_LOG,
+                PetrifiedWoodModBlocks.STRIPPED_MOD_WOOD,
+                PetrifiedWoodModBlocks.MOD_HANGING_SIGN,
+                PetrifiedWoodModBlocks.MOD_WALL_HANGING_SIGN,
+                PetrifiedWoodModBlocks.MOD_SHELF
+        );
     }
 
     private static final TextureKey FLOWER = TextureKey.of("flower");

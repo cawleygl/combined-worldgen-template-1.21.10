@@ -5,6 +5,7 @@ import bluesteel42.combinedworldgen.wood.chorus.block.ChorusWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.chorus.entity.ChorusWoodModRafts;
 import bluesteel42.combinedworldgen.wood.chorus.item.ChorusWoodModItems;
 import bluesteel42.combinedworldgen.wood.chorus.registries.ChorusWoodModRegistries;
+import bluesteel42.combinedworldgen.wood.petrified.PetrifiedWoodInitializer;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
@@ -12,6 +13,7 @@ import net.minecraft.block.BlockSetType;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.WoodType;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 
 public class ChorusWoodInitializer {
@@ -21,8 +23,20 @@ public class ChorusWoodInitializer {
     public static MapColor MOD_STRIPPED_COLOR = MapColor.PINK;
 
     public static BlockSoundGroup MOD_BLOCK_SOUND = BlockSoundGroup.WOOD;
-    public static final BlockSetType MOD_BLOCK_SET = BlockSetTypeBuilder.copyOf(ChorusWoodInitializer.MOD_BLOCK_SOUND == BlockSoundGroup.BAMBOO_WOOD ? BlockSetType.BAMBOO : BlockSetType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, ChorusWoodInitializer.MOD_WOOD_NAME));
-    public static final WoodType MOD_WOOD_TYPE = WoodTypeBuilder.copyOf(ChorusWoodInitializer.MOD_BLOCK_SOUND == BlockSoundGroup.BAMBOO_WOOD ? WoodType.BAMBOO : WoodType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, ChorusWoodInitializer.MOD_WOOD_NAME), ChorusWoodInitializer.MOD_BLOCK_SET);
+    public static final BlockSetType MOD_BLOCK_SET = BlockSetTypeBuilder
+            .copyOf(BlockSetType.OAK)
+            .doorOpenSound(SoundEvents.BLOCK_ENDER_CHEST_OPEN)
+            .doorCloseSound(SoundEvents.BLOCK_ENDER_CHEST_CLOSE)
+            .trapdoorOpenSound(SoundEvents.BLOCK_ENDER_CHEST_OPEN)
+            .trapdoorCloseSound(SoundEvents.BLOCK_ENDER_CHEST_CLOSE)
+            .register(Identifier.of(CombinedWorldgen.MOD_ID, ChorusWoodInitializer.MOD_WOOD_NAME));
+
+    public static final WoodType MOD_WOOD_TYPE = new WoodTypeBuilder()
+            .soundGroup(BlockSoundGroup.WOOD)
+            .hangingSignSoundGroup(BlockSoundGroup.HANGING_SIGN)
+            .fenceGateCloseSound(SoundEvents.BLOCK_ENDER_CHEST_CLOSE)
+            .fenceGateOpenSound(SoundEvents.BLOCK_ENDER_CHEST_OPEN)
+            .register(Identifier.of(CombinedWorldgen.MOD_ID, ChorusWoodInitializer.MOD_WOOD_NAME), ChorusWoodInitializer.MOD_BLOCK_SET);
 
     public static void initializeWood() {
         ChorusWoodModBlocks.initialize();

@@ -7,7 +7,11 @@
     "combined-worldgen:petrified_door",
     "combined-worldgen:petrified_trapdoor",
     "combined-worldgen:petrified_fence",
+    "combined-worldgen:petrified_fence_gate",
     "combined-worldgen:petrified_button",
-    "combined-worldgen:petrified_pressure_plate"
+    "combined-worldgen:petrified_pressure_plate",
+    "combined-worldgen:petrified_sign",
+    "combined-worldgen:petrified_hanging_sign",
+    "combined-worldgen:petrified_shelf"
   ]
 }

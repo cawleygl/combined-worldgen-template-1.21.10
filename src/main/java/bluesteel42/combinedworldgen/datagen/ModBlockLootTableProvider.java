@@ -475,10 +475,16 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(PetrifiedWoodModBlocks.MOD_STAIRS);
         addDrop(PetrifiedWoodModBlocks.MOD_BUTTON);
         addDrop(PetrifiedWoodModBlocks.MOD_FENCE);
+        addDrop(PetrifiedWoodModBlocks.MOD_FENCE_GATE);
         addDrop(PetrifiedWoodModBlocks.MOD_PRESSURE_PLATE);
         addDrop(PetrifiedWoodModBlocks.MOD_TRAPDOOR);
         addDrop(PetrifiedWoodModBlocks.MOD_DOOR, doorDrops(PetrifiedWoodModBlocks.MOD_DOOR));
         addDrop(PetrifiedWoodModBlocks.MOD_SLAB, slabDrops(PetrifiedWoodModBlocks.MOD_SLAB));
+        addDrop(PetrifiedWoodModBlocks.MOD_STANDING_SIGN);
+        addDrop(PetrifiedWoodModBlocks.MOD_WALL_SIGN);
+        addDrop(PetrifiedWoodModBlocks.MOD_HANGING_SIGN);
+        addDrop(PetrifiedWoodModBlocks.MOD_WALL_HANGING_SIGN);
+        addDrop(PetrifiedWoodModBlocks.MOD_SHELF);
     }
 
     public <T extends Comparable<T> & StringIdentifiable> LootTable.Builder trunkAttachedMushroomBlockDrops(Block attachedMushroom, Block mushroomItem) {

@@ -39,6 +39,7 @@ import bluesteel42.combinedworldgen.wood.maple.entity.MapleWoodModBoats;
 import bluesteel42.combinedworldgen.wood.maple.item.MapleWoodModItems;
 import bluesteel42.combinedworldgen.wood.maple.util.MapleWoodModTags;
 import bluesteel42.combinedworldgen.wood.petrified.block.PetrifiedWoodModBlocks;
+import bluesteel42.combinedworldgen.wood.petrified.item.PetrifiedWoodModItems;
 import bluesteel42.combinedworldgen.wood.petrified.util.PetrifiedWoodModTags;
 import bluesteel42.combinedworldgen.wood.pine.block.PineWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.pine.entity.PineWoodModBoats;
@@ -435,7 +436,11 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(ItemTags.DOORS).add(PetrifiedWoodModBlocks.MOD_DOOR.asItem());
         valueLookupBuilder(ItemTags.TRAPDOORS).add(PetrifiedWoodModBlocks.MOD_TRAPDOOR.asItem());
         valueLookupBuilder(ItemTags.FENCES).add(PetrifiedWoodModBlocks.MOD_FENCE.asItem());
+        valueLookupBuilder(ItemTags.FENCE_GATES).add(PetrifiedWoodModBlocks.MOD_FENCE_GATE.asItem());
         valueLookupBuilder(ItemTags.STONE_BUTTONS).add(PetrifiedWoodModBlocks.MOD_BUTTON.asItem());
+        valueLookupBuilder(ItemTags.SIGNS).add(PetrifiedWoodModItems.MOD_SIGN);
+        valueLookupBuilder(ItemTags.HANGING_SIGNS).add(PetrifiedWoodModItems.MOD_HANGING_SIGN);
+        valueLookupBuilder(ItemTags.WOODEN_SHELVES).add(PetrifiedWoodModBlocks.MOD_SHELF.asItem());
 
         valueLookupBuilder(ItemTags.NON_FLAMMABLE_WOOD)
                 .addTag(PetrifiedWoodModTags.Items.MOD_LOGS)
@@ -445,8 +450,12 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(PetrifiedWoodModBlocks.MOD_DOOR.asItem())
                 .add(PetrifiedWoodModBlocks.MOD_TRAPDOOR.asItem())
                 .add(PetrifiedWoodModBlocks.MOD_FENCE.asItem())
+                .add(PetrifiedWoodModBlocks.MOD_FENCE_GATE.asItem())
                 .add(PetrifiedWoodModBlocks.MOD_BUTTON.asItem())
-                .add(PetrifiedWoodModBlocks.MOD_PRESSURE_PLATE.asItem());
+                .add(PetrifiedWoodModBlocks.MOD_PRESSURE_PLATE.asItem())
+                .add(PetrifiedWoodModItems.MOD_SIGN.asItem())
+                .add(PetrifiedWoodModItems.MOD_HANGING_SIGN.asItem())
+                .add(PetrifiedWoodModBlocks.MOD_SHELF.asItem());
     }
 
     @Override

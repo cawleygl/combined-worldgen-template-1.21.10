@@ -28,7 +28,7 @@ eb8298125663643a3b1cb497ca8742d9a46448e2 data/minecraft/tags/block/edible_for_sh
 27c767d78074ca13563d0af562498e79081873ed data/minecraft/tags/block/enderman_holdable.json
 0c527a772adace88cd23ef397f0274e9d8e2e804 data/minecraft/tags/block/fall_damage_resetting.json
 c320ae95340d7a9611ebebe82bbfeca01c18675c data/minecraft/tags/block/fence_gates.json
-820a03046f17d4bea36de08777be69a5c23b8386 data/minecraft/tags/block/fences.json
+e2d9aa10d1b6c83707e1891847d7e1ed228bb139 data/minecraft/tags/block/fences.json
 f19d80141cbabe71bd4d51890b227f171112bc5b data/minecraft/tags/block/flower_pots.json
 84be3ca0c84df0e98880944b69c2c1f538553a8b data/minecraft/tags/block/flowers.json
 cc76db7c9cf026f1b82768953402cedbc71eba47 data/minecraft/tags/block/foxes_spawnable_on.json
@@ -41,7 +41,7 @@ cfff823e3bbd109fc81ff9f23020b4107d6f6007 data/minecraft/tags/block/leaves.json
 a5938125dd6304742b25938e213618ee4e90969b data/minecraft/tags/block/logs_that_burn.json
 87396f0312c36655dd30506674f81c933f2b5092 data/minecraft/tags/block/maintains_farmland.json
 db55a95945eec69af3becba081ba9292eea5a9ce data/minecraft/tags/block/mineable/axe.json
-ebe6acad4f4b40dcc51a9ed84e0a9fdb7652193b data/minecraft/tags/block/mineable/pickaxe.json
+35c5a5e369953226ee993d246b4d5c9779dd1130 data/minecraft/tags/block/mineable/pickaxe.json
 cc76db7c9cf026f1b82768953402cedbc71eba47 data/minecraft/tags/block/mineable/shovel.json
 12ccd57c2ba1c013dd650637269cb1089e9ee974 data/minecraft/tags/block/mob_interactable_doors.json
 d970ea97637d09a625558fafa1b3ad4e9f5e2e20 data/minecraft/tags/block/parrots_spawnable_on.json
@@ -62,6 +62,7 @@ cc76db7c9cf026f1b82768953402cedbc71eba47 data/minecraft/tags/block/sniffer_digga
 8dea211ae77d052123293f27e38503e076f3c75e data/minecraft/tags/block/sword_efficient.json
 5c56399850af3c188f705d6f388bf747698110c3 data/minecraft/tags/block/trapdoors.json
 9b50d35cc8df990b4dc806a56eb35cf1d1397630 data/minecraft/tags/block/wall_hanging_signs.json
+66f8df092d017a2827e6e751ab0fc5b698e6b91d data/minecraft/tags/block/wall_post_override.json
 5122d97ba3590ad774af0d2c572e170c2eca1257 data/minecraft/tags/block/wall_signs.json
 1b5b02802b7f204a39f81fb9ff8db72a7fe671df data/minecraft/tags/block/walls.json
 cc76db7c9cf026f1b82768953402cedbc71eba47 data/minecraft/tags/block/wolves_spawnable_on.json
