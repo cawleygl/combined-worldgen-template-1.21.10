@@ -1,10 +1,6 @@
 package bluesteel42.combinedworldgen.wood.petrified;
 
 import bluesteel42.combinedworldgen.CombinedWorldgen;
-import bluesteel42.combinedworldgen.wood.baobab.block.BaobabWoodModBlocks;
-import bluesteel42.combinedworldgen.wood.baobab.entity.BaobabWoodModBoats;
-import bluesteel42.combinedworldgen.wood.baobab.item.BaobabWoodModItems;
-import bluesteel42.combinedworldgen.wood.baobab.registries.BaobabWoodModRegistries;
 import bluesteel42.combinedworldgen.wood.petrified.block.PetrifiedWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.petrified.item.PetrifiedWoodModItems;
 import bluesteel42.combinedworldgen.wood.petrified.registries.PetrifiedWoodModRegistries;
