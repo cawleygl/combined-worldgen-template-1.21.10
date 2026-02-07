@@ -40,29 +40,29 @@ public class WillowWoodModBlocks {
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.DARK_OAK_BUTTON, WillowWoodModBlocks.MOD_BUTTON);
-                    itemGroup.addAfter(Items.DARK_OAK_BUTTON, WillowWoodModBlocks.MOD_PRESSURE_PLATE);
-                    itemGroup.addAfter(Items.DARK_OAK_BUTTON, WillowWoodModBlocks.MOD_TRAPDOOR);
-                    itemGroup.addAfter(Items.DARK_OAK_BUTTON, WillowWoodModBlocks.MOD_DOOR);
-                    itemGroup.addAfter(Items.DARK_OAK_BUTTON, WillowWoodModBlocks.MOD_FENCE_GATE);
-                    itemGroup.addAfter(Items.DARK_OAK_BUTTON, WillowWoodModBlocks.MOD_FENCE);
-                    itemGroup.addAfter(Items.DARK_OAK_BUTTON, WillowWoodModBlocks.MOD_SLAB);
-                    itemGroup.addAfter(Items.DARK_OAK_BUTTON, WillowWoodModBlocks.MOD_STAIRS);
-                    itemGroup.addAfter(Items.DARK_OAK_BUTTON, WillowWoodModBlocks.MOD_PLANKS);
-                    itemGroup.addAfter(Items.DARK_OAK_BUTTON, WillowWoodModBlocks.STRIPPED_MOD_WOOD);
-                    itemGroup.addAfter(Items.DARK_OAK_BUTTON, WillowWoodModBlocks.STRIPPED_MOD_LOG);
-                    itemGroup.addAfter(Items.DARK_OAK_BUTTON, WillowWoodModBlocks.MOD_WOOD);
-                    itemGroup.addAfter(Items.DARK_OAK_BUTTON, WillowWoodModBlocks.MOD_LOG);
+                    itemGroup.addBefore(Items.MANGROVE_LOG, WillowWoodModBlocks.MOD_LOG);
+                    itemGroup.addBefore(Items.MANGROVE_LOG, WillowWoodModBlocks.MOD_WOOD);
+                    itemGroup.addBefore(Items.MANGROVE_LOG, WillowWoodModBlocks.STRIPPED_MOD_LOG);
+                    itemGroup.addBefore(Items.MANGROVE_LOG, WillowWoodModBlocks.STRIPPED_MOD_WOOD);
+                    itemGroup.addBefore(Items.MANGROVE_LOG, WillowWoodModBlocks.MOD_PLANKS);
+                    itemGroup.addBefore(Items.MANGROVE_LOG, WillowWoodModBlocks.MOD_STAIRS);
+                    itemGroup.addBefore(Items.MANGROVE_LOG, WillowWoodModBlocks.MOD_SLAB);
+                    itemGroup.addBefore(Items.MANGROVE_LOG, WillowWoodModBlocks.MOD_FENCE);
+                    itemGroup.addBefore(Items.MANGROVE_LOG, WillowWoodModBlocks.MOD_FENCE_GATE);
+                    itemGroup.addBefore(Items.MANGROVE_LOG, WillowWoodModBlocks.MOD_DOOR);
+                    itemGroup.addBefore(Items.MANGROVE_LOG, WillowWoodModBlocks.MOD_TRAPDOOR);
+                    itemGroup.addBefore(Items.MANGROVE_LOG, WillowWoodModBlocks.MOD_PRESSURE_PLATE);
+                    itemGroup.addBefore(Items.MANGROVE_LOG, WillowWoodModBlocks.MOD_BUTTON);
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.DARK_OAK_LOG, WillowWoodModBlocks.MOD_LOG);
-                    itemGroup.addAfter(Items.DARK_OAK_LEAVES, WillowWoodModBlocks.MOD_LEAVES);
-                    itemGroup.addAfter(Items.DARK_OAK_SAPLING, WillowWoodModBlocks.MOD_SAPLING);
+                    itemGroup.addAfter(Items.MANGROVE_LOG, WillowWoodModBlocks.MOD_LOG);
+                    itemGroup.addAfter(Items.MANGROVE_LEAVES, WillowWoodModBlocks.MOD_LEAVES);
+                    itemGroup.addAfter(Items.MANGROVE_PROPAGULE, WillowWoodModBlocks.MOD_SAPLING);
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.DARK_OAK_SHELF, WillowWoodModBlocks.MOD_SHELF);
+                    itemGroup.addAfter(Items.MANGROVE_SHELF, WillowWoodModBlocks.MOD_SHELF);
                 });
     }
 }

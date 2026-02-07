@@ -15,30 +15,30 @@ import bluesteel42.combinedworldgen.wood.willow.WillowWoodInitializer;
 public class AllWoodInitializer {
 
     public static void initalizeWoodTypes() {
-        ChorusWoodInitializer.initializeWood();
-        AzaleaWoodInitializer.initializeWood();
-        BaobabWoodInitializer.initializeWood();
-        ChollaWoodInitializer.initializeWood();
-        CitrusWoodInitializer.initializeWood();
-        DogwoodWoodInitializer.initializeWood();
-        KapokWoodInitializer.initializeWood();
         MapleWoodInitializer.initializeWood();
-        PetrifiedWoodInitializer.initializeWood();
         PineWoodInitializer.initializeWood();
+        KapokWoodInitializer.initializeWood();
+        CitrusWoodInitializer.initializeWood();
+        BaobabWoodInitializer.initializeWood();
         WillowWoodInitializer.initializeWood();
+        DogwoodWoodInitializer.initializeWood();
+        ChollaWoodInitializer.initializeWood();
+        AzaleaWoodInitializer.initializeWood();
+        ChorusWoodInitializer.initializeWood();
+        PetrifiedWoodInitializer.initializeWood();
     }
 
     public static void initializeWoodTypesClient() {
-        ChorusWoodInitializer.initializeWoodClient();
-        AzaleaWoodInitializer.initializeWoodClient();
-        BaobabWoodInitializer.initializeWoodClient();
-        ChollaWoodInitializer.initializeWoodClient();
-        CitrusWoodInitializer.initializeWoodClient();
-        DogwoodWoodInitializer.initializeWoodClient();
-        KapokWoodInitializer.initializeWoodClient();
         MapleWoodInitializer.initializeWoodClient();
-        PetrifiedWoodInitializer.initializeWoodClient();
         PineWoodInitializer.initializeWoodClient();
+        KapokWoodInitializer.initializeWoodClient();
+        CitrusWoodInitializer.initializeWoodClient();
+        BaobabWoodInitializer.initializeWoodClient();
         WillowWoodInitializer.initializeWoodClient();
+        DogwoodWoodInitializer.initializeWoodClient();
+        ChollaWoodInitializer.initializeWoodClient();
+        AzaleaWoodInitializer.initializeWoodClient();
+        ChorusWoodInitializer.initializeWoodClient();
+        PetrifiedWoodInitializer.initializeWoodClient();
     }
 }

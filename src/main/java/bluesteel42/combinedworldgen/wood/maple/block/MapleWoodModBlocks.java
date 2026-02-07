@@ -48,25 +48,25 @@ public class MapleWoodModBlocks {
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.OAK_BUTTON, MapleWoodModBlocks.MOD_BUTTON);
-                    itemGroup.addAfter(Items.OAK_BUTTON, MapleWoodModBlocks.MOD_PRESSURE_PLATE);
-                    itemGroup.addAfter(Items.OAK_BUTTON, MapleWoodModBlocks.MOD_TRAPDOOR);
-                    itemGroup.addAfter(Items.OAK_BUTTON, MapleWoodModBlocks.MOD_DOOR);
-                    itemGroup.addAfter(Items.OAK_BUTTON, MapleWoodModBlocks.MOD_FENCE_GATE);
-                    itemGroup.addAfter(Items.OAK_BUTTON, MapleWoodModBlocks.MOD_FENCE);
-                    itemGroup.addAfter(Items.OAK_BUTTON, MapleWoodModBlocks.MOD_SLAB);
-                    itemGroup.addAfter(Items.OAK_BUTTON, MapleWoodModBlocks.MOD_STAIRS);
-                    itemGroup.addAfter(Items.OAK_BUTTON, MapleWoodModBlocks.MOD_PLANKS);
-                    itemGroup.addAfter(Items.OAK_BUTTON, MapleWoodModBlocks.STRIPPED_MOD_WOOD);
-                    itemGroup.addAfter(Items.OAK_BUTTON, MapleWoodModBlocks.STRIPPED_MOD_LOG);
-                    itemGroup.addAfter(Items.OAK_BUTTON, MapleWoodModBlocks.MOD_WOOD);
-                    itemGroup.addAfter(Items.OAK_BUTTON, MapleWoodModBlocks.MOD_LOG);
+                    itemGroup.addBefore(Items.SPRUCE_LOG, MapleWoodModBlocks.MOD_LOG);
+                    itemGroup.addBefore(Items.SPRUCE_LOG, MapleWoodModBlocks.MOD_WOOD);
+                    itemGroup.addBefore(Items.SPRUCE_LOG, MapleWoodModBlocks.STRIPPED_MOD_LOG);
+                    itemGroup.addBefore(Items.SPRUCE_LOG, MapleWoodModBlocks.STRIPPED_MOD_WOOD);
+                    itemGroup.addBefore(Items.SPRUCE_LOG, MapleWoodModBlocks.MOD_PLANKS);
+                    itemGroup.addBefore(Items.SPRUCE_LOG, MapleWoodModBlocks.MOD_STAIRS);
+                    itemGroup.addBefore(Items.SPRUCE_LOG, MapleWoodModBlocks.MOD_SLAB);
+                    itemGroup.addBefore(Items.SPRUCE_LOG, MapleWoodModBlocks.MOD_FENCE);
+                    itemGroup.addBefore(Items.SPRUCE_LOG, MapleWoodModBlocks.MOD_FENCE_GATE);
+                    itemGroup.addBefore(Items.SPRUCE_LOG, MapleWoodModBlocks.MOD_DOOR);
+                    itemGroup.addBefore(Items.SPRUCE_LOG, MapleWoodModBlocks.MOD_TRAPDOOR);
+                    itemGroup.addBefore(Items.SPRUCE_LOG, MapleWoodModBlocks.MOD_PRESSURE_PLATE);
+                    itemGroup.addBefore(Items.SPRUCE_LOG, MapleWoodModBlocks.MOD_BUTTON);
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.OAK_LOG, MapleWoodModBlocks.MOD_LOG);
-                    itemGroup.addAfter(Items.OAK_LEAVES, MapleWoodModBlocks.MOD_LEAVES);
-                    itemGroup.addAfter(Items.OAK_SAPLING, MapleWoodModBlocks.MOD_SAPLING);
+                    itemGroup.addBefore(Items.SPRUCE_LOG, MapleWoodModBlocks.MOD_LOG);
+                    itemGroup.addBefore(Items.SPRUCE_LEAVES, MapleWoodModBlocks.MOD_LEAVES);
+                    itemGroup.addBefore(Items.SPRUCE_SAPLING, MapleWoodModBlocks.MOD_SAPLING);
 
                     /* ADDITIONAL BLOCKS */
                     itemGroup.addAfter(MapleWoodModBlocks.MOD_LEAVES, MapleWoodModBlocks.MIXED_MAPLE_LEAVES);
@@ -75,7 +75,7 @@ public class MapleWoodModBlocks {
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.OAK_SHELF, MapleWoodModBlocks.MOD_SHELF);
+                    itemGroup.addBefore(Items.SPRUCE_SHELF, MapleWoodModBlocks.MOD_SHELF);
                 });
     }
 }

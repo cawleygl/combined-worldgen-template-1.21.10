@@ -6,9 +6,6 @@ import bluesteel42.combinedworldgen.wood.pine.item.PineWoodModSaplingGenerators;
 import bluesteel42.combinedworldgen.wood.pine.particle.PineWoodModParticles;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
-import net.minecraft.block.enums.NoteBlockInstrument;
-import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
@@ -56,25 +53,25 @@ public class PineWoodModBlocks {
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.SPRUCE_BUTTON, PineWoodModBlocks.MOD_BUTTON);
-                    itemGroup.addAfter(Items.SPRUCE_BUTTON, PineWoodModBlocks.MOD_PRESSURE_PLATE);
-                    itemGroup.addAfter(Items.SPRUCE_BUTTON, PineWoodModBlocks.MOD_TRAPDOOR);
-                    itemGroup.addAfter(Items.SPRUCE_BUTTON, PineWoodModBlocks.MOD_DOOR);
-                    itemGroup.addAfter(Items.SPRUCE_BUTTON, PineWoodModBlocks.MOD_FENCE_GATE);
-                    itemGroup.addAfter(Items.SPRUCE_BUTTON, PineWoodModBlocks.MOD_FENCE);
-                    itemGroup.addAfter(Items.SPRUCE_BUTTON, PineWoodModBlocks.MOD_SLAB);
-                    itemGroup.addAfter(Items.SPRUCE_BUTTON, PineWoodModBlocks.MOD_STAIRS);
-                    itemGroup.addAfter(Items.SPRUCE_BUTTON, PineWoodModBlocks.MOD_PLANKS);
-                    itemGroup.addAfter(Items.SPRUCE_BUTTON, PineWoodModBlocks.STRIPPED_MOD_WOOD);
-                    itemGroup.addAfter(Items.SPRUCE_BUTTON, PineWoodModBlocks.STRIPPED_MOD_LOG);
-                    itemGroup.addAfter(Items.SPRUCE_BUTTON, PineWoodModBlocks.MOD_WOOD);
-                    itemGroup.addAfter(Items.SPRUCE_BUTTON, PineWoodModBlocks.MOD_LOG);
+                    itemGroup.addBefore(Items.BIRCH_LOG, PineWoodModBlocks.MOD_LOG);
+                    itemGroup.addBefore(Items.BIRCH_LOG, PineWoodModBlocks.MOD_WOOD);
+                    itemGroup.addBefore(Items.BIRCH_LOG, PineWoodModBlocks.STRIPPED_MOD_LOG);
+                    itemGroup.addBefore(Items.BIRCH_LOG, PineWoodModBlocks.STRIPPED_MOD_WOOD);
+                    itemGroup.addBefore(Items.BIRCH_LOG, PineWoodModBlocks.MOD_PLANKS);
+                    itemGroup.addBefore(Items.BIRCH_LOG, PineWoodModBlocks.MOD_STAIRS);
+                    itemGroup.addBefore(Items.BIRCH_LOG, PineWoodModBlocks.MOD_SLAB);
+                    itemGroup.addBefore(Items.BIRCH_LOG, PineWoodModBlocks.MOD_FENCE);
+                    itemGroup.addBefore(Items.BIRCH_LOG, PineWoodModBlocks.MOD_FENCE_GATE);
+                    itemGroup.addBefore(Items.BIRCH_LOG, PineWoodModBlocks.MOD_DOOR);
+                    itemGroup.addBefore(Items.BIRCH_LOG, PineWoodModBlocks.MOD_TRAPDOOR);
+                    itemGroup.addBefore(Items.BIRCH_LOG, PineWoodModBlocks.MOD_PRESSURE_PLATE);
+                    itemGroup.addBefore(Items.BIRCH_LOG, PineWoodModBlocks.MOD_BUTTON);
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.SPRUCE_LOG, PineWoodModBlocks.MOD_LOG);
-                    itemGroup.addAfter(Items.SPRUCE_LEAVES, PineWoodModBlocks.MOD_LEAVES);
-                    itemGroup.addAfter(Items.SPRUCE_SAPLING, PineWoodModBlocks.MOD_SAPLING);
+                    itemGroup.addBefore(Items.BIRCH_LOG, PineWoodModBlocks.MOD_LOG);
+                    itemGroup.addBefore(Items.BIRCH_LEAVES, PineWoodModBlocks.MOD_LEAVES);
+                    itemGroup.addBefore(Items.BIRCH_SAPLING, PineWoodModBlocks.MOD_SAPLING);
 
                     /* ADDITIONAL BLOCKS */
                     itemGroup.addAfter(PineWoodModBlocks.MOD_LEAVES, PineWoodModBlocks.SNOWY_PINE_LEAVES);
@@ -85,7 +82,7 @@ public class PineWoodModBlocks {
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.SPRUCE_SHELF, PineWoodModBlocks.MOD_SHELF);
+                    itemGroup.addBefore(Items.BIRCH_SHELF, PineWoodModBlocks.MOD_SHELF);
                 });
     }
 }

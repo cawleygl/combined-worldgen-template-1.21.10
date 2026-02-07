@@ -2,6 +2,7 @@ package bluesteel42.combinedworldgen.wood.azalea.block;
 
 import bluesteel42.combinedworldgen.block.ModBlocks;
 import bluesteel42.combinedworldgen.wood.azalea.AzaleaWoodInitializer;
+import bluesteel42.combinedworldgen.wood.dogwood.block.DogwoodWoodModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
@@ -97,20 +98,20 @@ public class AzaleaWoodModBlocks {
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, AzaleaWoodModBlocks.MOD_BUTTON);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, AzaleaWoodModBlocks.MOD_PRESSURE_PLATE);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, AzaleaWoodModBlocks.MOD_TRAPDOOR);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, AzaleaWoodModBlocks.MOD_DOOR);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, AzaleaWoodModBlocks.MOD_FENCE_GATE);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, AzaleaWoodModBlocks.MOD_FENCE);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, AzaleaWoodModBlocks.MOD_MOSAIC_SLAB);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, AzaleaWoodModBlocks.MOD_SLAB);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, AzaleaWoodModBlocks.MOD_MOSAIC_STAIRS);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, AzaleaWoodModBlocks.MOD_STAIRS);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, AzaleaWoodModBlocks.MOD_MOSAIC);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, AzaleaWoodModBlocks.MOD_PLANKS);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, AzaleaWoodModBlocks.STRIPPED_MOD_BLOCK);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, AzaleaWoodModBlocks.MOD_BLOCK);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, AzaleaWoodModBlocks.MOD_BLOCK);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, AzaleaWoodModBlocks.STRIPPED_MOD_BLOCK);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, AzaleaWoodModBlocks.MOD_PLANKS);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, AzaleaWoodModBlocks.MOD_MOSAIC);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, AzaleaWoodModBlocks.MOD_STAIRS);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, AzaleaWoodModBlocks.MOD_MOSAIC_STAIRS);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, AzaleaWoodModBlocks.MOD_SLAB);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, AzaleaWoodModBlocks.MOD_MOSAIC_SLAB);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, AzaleaWoodModBlocks.MOD_FENCE);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, AzaleaWoodModBlocks.MOD_FENCE_GATE);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, AzaleaWoodModBlocks.MOD_DOOR);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, AzaleaWoodModBlocks.MOD_TRAPDOOR);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, AzaleaWoodModBlocks.MOD_PRESSURE_PLATE);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, AzaleaWoodModBlocks.MOD_BUTTON);
                 });
         /* ADDITIONAL BLOCKS */
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL)
@@ -121,7 +122,7 @@ public class AzaleaWoodModBlocks {
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.BAMBOO_SHELF, AzaleaWoodModBlocks.MOD_SHELF);
+                    itemGroup.addBefore(Items.CRIMSON_SHELF, AzaleaWoodModBlocks.MOD_SHELF);
                 });
     }
 }

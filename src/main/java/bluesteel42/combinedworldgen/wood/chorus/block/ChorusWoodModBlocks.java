@@ -35,24 +35,24 @@ public class ChorusWoodModBlocks {
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, ChorusWoodModBlocks.MOD_BUTTON);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, ChorusWoodModBlocks.MOD_PRESSURE_PLATE);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, ChorusWoodModBlocks.MOD_TRAPDOOR);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, ChorusWoodModBlocks.MOD_DOOR);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, ChorusWoodModBlocks.MOD_FENCE_GATE);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, ChorusWoodModBlocks.MOD_FENCE);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, ChorusWoodModBlocks.MOD_MOSAIC_SLAB);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, ChorusWoodModBlocks.MOD_SLAB);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, ChorusWoodModBlocks.MOD_MOSAIC_STAIRS);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, ChorusWoodModBlocks.MOD_STAIRS);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, ChorusWoodModBlocks.MOD_MOSAIC);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, ChorusWoodModBlocks.MOD_PLANKS);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, ChorusWoodModBlocks.STRIPPED_MOD_BLOCK);
-                    itemGroup.addAfter(Items.BAMBOO_BUTTON, ChorusWoodModBlocks.MOD_BLOCK);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, ChorusWoodModBlocks.MOD_BLOCK);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, ChorusWoodModBlocks.STRIPPED_MOD_BLOCK);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, ChorusWoodModBlocks.MOD_PLANKS);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, ChorusWoodModBlocks.MOD_MOSAIC);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, ChorusWoodModBlocks.MOD_STAIRS);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, ChorusWoodModBlocks.MOD_MOSAIC_STAIRS);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, ChorusWoodModBlocks.MOD_SLAB);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, ChorusWoodModBlocks.MOD_MOSAIC_SLAB);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, ChorusWoodModBlocks.MOD_FENCE);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, ChorusWoodModBlocks.MOD_FENCE_GATE);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, ChorusWoodModBlocks.MOD_DOOR);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, ChorusWoodModBlocks.MOD_TRAPDOOR);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, ChorusWoodModBlocks.MOD_PRESSURE_PLATE);
+                    itemGroup.addBefore(Items.CRIMSON_STEM, ChorusWoodModBlocks.MOD_BUTTON);
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.BAMBOO_SHELF, ChorusWoodModBlocks.MOD_SHELF);
+                    itemGroup.addBefore(Items.CRIMSON_SHELF, ChorusWoodModBlocks.MOD_SHELF);
                 });
     }
 }

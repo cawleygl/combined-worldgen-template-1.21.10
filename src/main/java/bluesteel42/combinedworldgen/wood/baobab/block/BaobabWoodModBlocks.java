@@ -40,29 +40,29 @@ public class BaobabWoodModBlocks {
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.ACACIA_BUTTON, BaobabWoodModBlocks.MOD_BUTTON);
-                    itemGroup.addAfter(Items.ACACIA_BUTTON, BaobabWoodModBlocks.MOD_PRESSURE_PLATE);
-                    itemGroup.addAfter(Items.ACACIA_BUTTON, BaobabWoodModBlocks.MOD_TRAPDOOR);
-                    itemGroup.addAfter(Items.ACACIA_BUTTON, BaobabWoodModBlocks.MOD_DOOR);
-                    itemGroup.addAfter(Items.ACACIA_BUTTON, BaobabWoodModBlocks.MOD_FENCE_GATE);
-                    itemGroup.addAfter(Items.ACACIA_BUTTON, BaobabWoodModBlocks.MOD_FENCE);
-                    itemGroup.addAfter(Items.ACACIA_BUTTON, BaobabWoodModBlocks.MOD_SLAB);
-                    itemGroup.addAfter(Items.ACACIA_BUTTON, BaobabWoodModBlocks.MOD_STAIRS);
-                    itemGroup.addAfter(Items.ACACIA_BUTTON, BaobabWoodModBlocks.MOD_PLANKS);
-                    itemGroup.addAfter(Items.ACACIA_BUTTON, BaobabWoodModBlocks.STRIPPED_MOD_WOOD);
-                    itemGroup.addAfter(Items.ACACIA_BUTTON, BaobabWoodModBlocks.STRIPPED_MOD_LOG);
-                    itemGroup.addAfter(Items.ACACIA_BUTTON, BaobabWoodModBlocks.MOD_WOOD);
-                    itemGroup.addAfter(Items.ACACIA_BUTTON, BaobabWoodModBlocks.MOD_LOG);
+                    itemGroup.addBefore(Items.DARK_OAK_LOG, BaobabWoodModBlocks.MOD_LOG);
+                    itemGroup.addBefore(Items.DARK_OAK_LOG, BaobabWoodModBlocks.MOD_WOOD);
+                    itemGroup.addBefore(Items.DARK_OAK_LOG, BaobabWoodModBlocks.STRIPPED_MOD_LOG);
+                    itemGroup.addBefore(Items.DARK_OAK_LOG, BaobabWoodModBlocks.STRIPPED_MOD_WOOD);
+                    itemGroup.addBefore(Items.DARK_OAK_LOG, BaobabWoodModBlocks.MOD_PLANKS);
+                    itemGroup.addBefore(Items.DARK_OAK_LOG, BaobabWoodModBlocks.MOD_STAIRS);
+                    itemGroup.addBefore(Items.DARK_OAK_LOG, BaobabWoodModBlocks.MOD_SLAB);
+                    itemGroup.addBefore(Items.DARK_OAK_LOG, BaobabWoodModBlocks.MOD_FENCE);
+                    itemGroup.addBefore(Items.DARK_OAK_LOG, BaobabWoodModBlocks.MOD_FENCE_GATE);
+                    itemGroup.addBefore(Items.DARK_OAK_LOG, BaobabWoodModBlocks.MOD_DOOR);
+                    itemGroup.addBefore(Items.DARK_OAK_LOG, BaobabWoodModBlocks.MOD_TRAPDOOR);
+                    itemGroup.addBefore(Items.DARK_OAK_LOG, BaobabWoodModBlocks.MOD_PRESSURE_PLATE);
+                    itemGroup.addBefore(Items.DARK_OAK_LOG, BaobabWoodModBlocks.MOD_BUTTON);
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.ACACIA_LOG, BaobabWoodModBlocks.MOD_LOG);
-                    itemGroup.addAfter(Items.ACACIA_LEAVES, BaobabWoodModBlocks.MOD_LEAVES);
-                    itemGroup.addAfter(Items.ACACIA_SAPLING, BaobabWoodModBlocks.MOD_SAPLING);
+                    itemGroup.addBefore(Items.DARK_OAK_LOG, BaobabWoodModBlocks.MOD_LOG);
+                    itemGroup.addBefore(Items.DARK_OAK_LEAVES, BaobabWoodModBlocks.MOD_LEAVES);
+                    itemGroup.addBefore(Items.DARK_OAK_SAPLING, BaobabWoodModBlocks.MOD_SAPLING);
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.ACACIA_SHELF, BaobabWoodModBlocks.MOD_SHELF);
+                    itemGroup.addBefore(Items.DARK_OAK_SHELF, BaobabWoodModBlocks.MOD_SHELF);
                 });
     }
 }

@@ -50,31 +50,31 @@ public class CitrusWoodModBlocks {
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.JUNGLE_BUTTON, CitrusWoodModBlocks.MOD_BUTTON);
-                    itemGroup.addAfter(Items.JUNGLE_BUTTON, CitrusWoodModBlocks.MOD_PRESSURE_PLATE);
-                    itemGroup.addAfter(Items.JUNGLE_BUTTON, CitrusWoodModBlocks.MOD_TRAPDOOR);
-                    itemGroup.addAfter(Items.JUNGLE_BUTTON, CitrusWoodModBlocks.MOD_DOOR);
-                    itemGroup.addAfter(Items.JUNGLE_BUTTON, CitrusWoodModBlocks.MOD_FENCE_GATE);
-                    itemGroup.addAfter(Items.JUNGLE_BUTTON, CitrusWoodModBlocks.MOD_FENCE);
-                    itemGroup.addAfter(Items.JUNGLE_BUTTON, CitrusWoodModBlocks.MOD_SLAB);
-                    itemGroup.addAfter(Items.JUNGLE_BUTTON, CitrusWoodModBlocks.MOD_STAIRS);
-                    itemGroup.addAfter(Items.JUNGLE_BUTTON, CitrusWoodModBlocks.MOD_PLANKS);
-                    itemGroup.addAfter(Items.JUNGLE_BUTTON, CitrusWoodModBlocks.STRIPPED_MOD_WOOD);
-                    itemGroup.addAfter(Items.JUNGLE_BUTTON, CitrusWoodModBlocks.STRIPPED_MOD_LOG);
-                    itemGroup.addAfter(Items.JUNGLE_BUTTON, CitrusWoodModBlocks.MOD_WOOD);
-                    itemGroup.addAfter(Items.JUNGLE_BUTTON, CitrusWoodModBlocks.MOD_LOG);
+                    itemGroup.addBefore(Items.ACACIA_LOG, CitrusWoodModBlocks.MOD_LOG);
+                    itemGroup.addBefore(Items.ACACIA_LOG, CitrusWoodModBlocks.MOD_WOOD);
+                    itemGroup.addBefore(Items.ACACIA_LOG, CitrusWoodModBlocks.STRIPPED_MOD_LOG);
+                    itemGroup.addBefore(Items.ACACIA_LOG, CitrusWoodModBlocks.STRIPPED_MOD_WOOD);
+                    itemGroup.addBefore(Items.ACACIA_LOG, CitrusWoodModBlocks.MOD_PLANKS);
+                    itemGroup.addBefore(Items.ACACIA_LOG, CitrusWoodModBlocks.MOD_STAIRS);
+                    itemGroup.addBefore(Items.ACACIA_LOG, CitrusWoodModBlocks.MOD_SLAB);
+                    itemGroup.addBefore(Items.ACACIA_LOG, CitrusWoodModBlocks.MOD_FENCE);
+                    itemGroup.addBefore(Items.ACACIA_LOG, CitrusWoodModBlocks.MOD_FENCE_GATE);
+                    itemGroup.addBefore(Items.ACACIA_LOG, CitrusWoodModBlocks.MOD_DOOR);
+                    itemGroup.addBefore(Items.ACACIA_LOG, CitrusWoodModBlocks.MOD_TRAPDOOR);
+                    itemGroup.addBefore(Items.ACACIA_LOG, CitrusWoodModBlocks.MOD_PRESSURE_PLATE);
+                    itemGroup.addBefore(Items.ACACIA_LOG, CitrusWoodModBlocks.MOD_BUTTON);
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.JUNGLE_LOG, CitrusWoodModBlocks.MOD_LOG);
-                    itemGroup.addAfter(Items.JUNGLE_LEAVES, CitrusWoodModBlocks.MOD_LEAVES);
-                    itemGroup.addAfter(Items.JUNGLE_SAPLING, CitrusWoodModBlocks.MOD_SAPLING);
+                    itemGroup.addBefore(Items.ACACIA_LOG, CitrusWoodModBlocks.MOD_LOG);
+                    itemGroup.addBefore(Items.ACACIA_LEAVES, CitrusWoodModBlocks.MOD_LEAVES);
+                    itemGroup.addBefore(Items.ACACIA_SAPLING, CitrusWoodModBlocks.MOD_SAPLING);
                     /* ADDITIONAL BLOCKS */
                     itemGroup.addAfter(CitrusWoodModBlocks.MOD_LEAVES, CitrusWoodModBlocks.FLOWERING_ORANGE_LEAVES);
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL)
                 .register((itemGroup) -> {
-                    itemGroup.addAfter(Items.JUNGLE_SHELF, CitrusWoodModBlocks.MOD_SHELF);
+                    itemGroup.addBefore(Items.ACACIA_SHELF, CitrusWoodModBlocks.MOD_SHELF);
                 });
     }
 }
