@@ -3,7 +3,6 @@ package bluesteel42.combinedworldgen.wood.pine.tree;
 import bluesteel42.combinedworldgen.wood.pine.block.PineWoodModBlocks;
 import bluesteel42.combinedworldgen.world.ModConfiguredFeatures;
 import com.google.common.collect.ImmutableList;
-import com.sun.source.tree.Tree;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

@@ -54,10 +54,8 @@ public class FloweringOrangeLeavesBlock extends TintedParticleLeavesBlock implem
 
     @Override
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (this.shouldDecay(state)) {
-            dropStacks(state, world, pos);
-            world.removeBlock(pos, false);
-        } else if (world.getBaseLightLevel(pos, 0) >= 9) {
+        super.randomTick(state, world, pos, random);
+        if (world.getBaseLightLevel(pos, 0) >= 9) {
             int i = this.getAge(state);
             if (i < this.getMaxAge()) {
                 if (random.nextInt(100) == 0) {

@@ -331,7 +331,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         );
 
         /* ADDITIONAL BLOCKS */
-        valueLookupBuilder(BlockTags.LEAVES).add(CitrusWoodModBlocks.MOD_LEAVES);
+        valueLookupBuilder(BlockTags.LEAVES).add(KapokWoodModBlocks.MOD_LEAVES);
     }
     public void generateMapleBlockTags() {
         generateNaturalWoodBlockTags(

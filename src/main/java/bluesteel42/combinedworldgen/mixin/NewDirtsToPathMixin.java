@@ -39,7 +39,7 @@ public class NewDirtsToPathMixin {
 		World world = context.getWorld();
 		BlockPos blockPos = context.getBlockPos();
 		BlockState blockState = world.getBlockState(blockPos);
-		if (blockState.getBlock().getDefaultState().isOf(ModBlocks.LOOSE_DIRT)) {
+		if (blockState.getBlock().getDefaultState().isOf(ModBlocks.LOOSE_DIRT) || blockState.getBlock().getDefaultState().isOf(ModBlocks.TUBERED_DIRT)) {
 			if (context.getSide() == Direction.DOWN) {
 				cir.setReturnValue(ActionResult.PASS);
 				cir.cancel();

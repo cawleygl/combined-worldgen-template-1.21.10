@@ -31,7 +31,7 @@ public class PineWoodModBlocks {
     public static final Block MOD_HANGING_SIGN = ModBlocks.registerHangingSign(PineWoodInitializer.MOD_WOOD_NAME, PineWoodInitializer.MOD_FIBER_COLOR, PineWoodInitializer.MOD_WOOD_TYPE);
     public static final Block MOD_WALL_HANGING_SIGN = ModBlocks.registerWallHangingSign(PineWoodInitializer.MOD_WOOD_NAME, PineWoodInitializer.MOD_FIBER_COLOR, PineWoodInitializer.MOD_WOOD_TYPE, MOD_HANGING_SIGN);
 
-    public static final Block MOD_SHELF = ModBlocks.registerShelf(PineWoodInitializer.MOD_WOOD_NAME);
+    public static final Block MOD_SHELF = ModBlocks.registerShelf(PineWoodInitializer.MOD_WOOD_NAME, PineWoodInitializer.MOD_FIBER_COLOR);
 
     public static final BlockFamily MOD_BLOCK_FAMILY = ModBlocks.registerNaturalBlockFamily(MOD_PLANKS, MOD_BUTTON, MOD_DOOR, MOD_FENCE, MOD_FENCE_GATE, MOD_STANDING_SIGN, MOD_WALL_SIGN, MOD_SLAB, MOD_STAIRS, MOD_PRESSURE_PLATE, MOD_TRAPDOOR);
 
@@ -42,12 +42,12 @@ public class PineWoodModBlocks {
 
     /* ADDITIONAL BLOCKS */
     public static final Block SPRUCE_LEAVES_FALLING_NEEDLES = ModBlocks.registerLeavesWithCustomParticles("spruce", MapColor.DARK_GREEN, BlockSoundGroup.GRASS, settings -> new TintedParticleSpruceNeedleLeavesBlock(0.01F, settings));
-    public static final Block SNOWY_SPRUCE_LEAVES = ModBlocks.registerLeavesWithCustomParticles("snowy_spruce", MapColor.WHITE, BlockSoundGroup.GRASS, settings -> new SnowySpruceLeavesBlock(0.01F, PineWoodModParticles.SNOWY_SPRUCE_NEEDLES, settings));
-    public static final Block SNOWY_PINE_LEAVES = ModBlocks.registerLeavesWithCustomParticles("snowy_" + PineWoodInitializer.MOD_WOOD_NAME, MapColor.WHITE, PineWoodInitializer.MOD_LEAF_SOUND, settings -> new SnowyPineLeavesBlock(0.01F, PineWoodModParticles.SNOWY_PINE_NEEDLES, settings));
+    public static final Block SNOWY_SPRUCE_LEAVES = ModBlocks.registerLeavesWithCustomParticles("snowy_spruce", MapColor.WHITE, BlockSoundGroup.GRASS, settings -> new SnowyLeavesBlock(0.01F, PineWoodModParticles.SNOWY_SPRUCE_NEEDLES, settings, PineWoodModBlocks.SPRUCE_LEAVES_FALLING_NEEDLES));
+    public static final Block SNOWY_PINE_LEAVES = ModBlocks.registerLeavesWithCustomParticles("snowy_" + PineWoodInitializer.MOD_WOOD_NAME, MapColor.WHITE, PineWoodInitializer.MOD_LEAF_SOUND, settings -> new SnowyLeavesBlock(0.01F, PineWoodModParticles.SNOWY_PINE_NEEDLES, settings, PineWoodModBlocks.MOD_LEAVES));
 
-    public static final Block SNOWY_PINE_SAPLING = ModBlocks.registerCustomSapling("snowy_" + PineWoodInitializer.MOD_WOOD_NAME, settings -> new SnowyPineSaplingBlock(PineWoodModSaplingGenerators.SNOWY_PINE_SAPLING_GENERATOR, settings), MapColor.WHITE, PineWoodInitializer.MOD_SAPLING_SOUND);
+    public static final Block SNOWY_PINE_SAPLING = ModBlocks.registerCustomSapling("snowy_" + PineWoodInitializer.MOD_WOOD_NAME, settings -> new SnowySaplingBlock(PineWoodModSaplingGenerators.SNOWY_PINE_SAPLING_GENERATOR, settings, PineWoodModBlocks.MOD_SAPLING), MapColor.WHITE, PineWoodInitializer.MOD_SAPLING_SOUND);
     public static final Block POTTED_SNOWY_PINE_SAPLING = ModBlocks.registerPottedSapling("snowy_" + PineWoodInitializer.MOD_WOOD_NAME, SNOWY_PINE_SAPLING);
-    public static final Block SNOWY_SPRUCE_SAPLING = ModBlocks.registerCustomSapling("snowy_spruce", settings -> new SnowySpruceSaplingBlock(PineWoodModSaplingGenerators.SNOWY_SPRUCE_SAPLING_GENERATOR, settings), PineWoodInitializer.MOD_LEAF_COLOR, PineWoodInitializer.MOD_SAPLING_SOUND);
+    public static final Block SNOWY_SPRUCE_SAPLING = ModBlocks.registerCustomSapling("snowy_spruce", settings -> new SnowySaplingBlock(PineWoodModSaplingGenerators.SNOWY_SPRUCE_SAPLING_GENERATOR, settings, Blocks.SPRUCE_SAPLING), MapColor.WHITE, PineWoodInitializer.MOD_SAPLING_SOUND);
     public static final Block POTTED_SNOWY_SPRUCE_SAPLING = ModBlocks.registerPottedSapling("snowy_spruce", SNOWY_SPRUCE_SAPLING);
 
     public static void initialize() {

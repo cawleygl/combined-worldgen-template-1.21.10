@@ -192,7 +192,7 @@ public class PetrifiedWoodModBlocks {
                     .mapColor(PetrifiedWoodInitializer.MOD_FIBER_COLOR)
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .sounds(PetrifiedWoodInitializer.MOD_BLOCK_SOUND)
-                    .strength(1.5F, 6.0F)
+                    .strength(2.0F, 6.0F)
     );
 
     public static final BlockFamily MOD_BLOCK_FAMILY = ModBlocks.registerNaturalBlockFamily(MOD_PLANKS, MOD_BUTTON, MOD_DOOR, MOD_FENCE, MOD_FENCE_GATE, MOD_STANDING_SIGN, MOD_WALL_SIGN, MOD_SLAB, MOD_STAIRS, MOD_PRESSURE_PLATE, MOD_TRAPDOOR);

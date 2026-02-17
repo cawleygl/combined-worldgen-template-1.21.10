@@ -138,8 +138,8 @@ public class ModBlocks {
     public static Block registerWallHangingSign(String woodName, MapColor fiberColor, WoodType woodType, Block hangingSign) {
         return register(woodName + "_wall_hanging_sign", settings -> new WallHangingSignBlock(woodType, settings), getSignSettings(fiberColor).lootTable(hangingSign.getLootTableKey()).overrideTranslationKey(hangingSign.getTranslationKey()), false, false);
     }
-    public static Block registerShelf(String woodName) {
-        return register(woodName + "_shelf", ShelfBlock::new, AbstractBlock.Settings.create().mapColor(MapColor.OAK_TAN).instrument(NoteBlockInstrument.BASS).sounds(BlockSoundGroup.SHELF).burnable().strength(2.0F, 3.0F));
+    public static Block registerShelf(String woodName, MapColor fiberColor) {
+        return register(woodName + "_shelf", ShelfBlock::new, AbstractBlock.Settings.create().mapColor(fiberColor).instrument(NoteBlockInstrument.BASS).sounds(BlockSoundGroup.SHELF).burnable().strength(2.0F, 3.0F));
     }
     public static BlockFamily registerNaturalBlockFamily(Block planks, Block button, Block door, Block fence, Block fenceGate, Block standingSign, Block wallSign, Block slab, Block stairs, Block pressurePlate, Block trapdoor) {
         return BlockFamilies.register(planks).button(button).door(door).fence(fence).fenceGate(fenceGate).sign(standingSign, wallSign).slab(slab).stairs(stairs).pressurePlate(pressurePlate).trapdoor(trapdoor).group("wooden").unlockCriterionName("has_planks").build();

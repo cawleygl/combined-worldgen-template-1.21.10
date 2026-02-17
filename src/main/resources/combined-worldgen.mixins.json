@@ -12,7 +12,8 @@
     "StripAzaleaStemBlockStateMixin",
     "STRIPPED_BLOCKSAccessor",
     "StripPetrifiedWoodSoundMixin",
-    "SwampWoodHutMixin"
+    "SwampWoodHutMixin",
+    "LeavesBlockDistanceInvoker"
   ],
   "injectors": {
     "defaultRequire": 1

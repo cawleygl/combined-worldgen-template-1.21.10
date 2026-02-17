@@ -30,7 +30,7 @@ public class MapleWoodModBlocks {
     public static final Block MOD_HANGING_SIGN = ModBlocks.registerHangingSign(MapleWoodInitializer.MOD_WOOD_NAME, MapleWoodInitializer.MOD_FIBER_COLOR, MapleWoodInitializer.MOD_WOOD_TYPE);
     public static final Block MOD_WALL_HANGING_SIGN = ModBlocks.registerWallHangingSign(MapleWoodInitializer.MOD_WOOD_NAME, MapleWoodInitializer.MOD_FIBER_COLOR, MapleWoodInitializer.MOD_WOOD_TYPE, MOD_HANGING_SIGN);
 
-    public static final Block MOD_SHELF = ModBlocks.registerShelf(MapleWoodInitializer.MOD_WOOD_NAME);
+    public static final Block MOD_SHELF = ModBlocks.registerShelf(MapleWoodInitializer.MOD_WOOD_NAME, MapleWoodInitializer.MOD_FIBER_COLOR);
 
     public static final BlockFamily MOD_BLOCK_FAMILY = ModBlocks.registerNaturalBlockFamily(MOD_PLANKS, MOD_BUTTON, MOD_DOOR, MOD_FENCE, MOD_FENCE_GATE, MOD_STANDING_SIGN, MOD_WALL_SIGN, MOD_SLAB, MOD_STAIRS, MOD_PRESSURE_PLATE, MOD_TRAPDOOR);
 

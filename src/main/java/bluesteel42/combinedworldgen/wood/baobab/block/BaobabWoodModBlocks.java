@@ -29,7 +29,7 @@ public class BaobabWoodModBlocks {
     public static final Block MOD_HANGING_SIGN = ModBlocks.registerHangingSign(BaobabWoodInitializer.MOD_WOOD_NAME, BaobabWoodInitializer.MOD_FIBER_COLOR, BaobabWoodInitializer.MOD_WOOD_TYPE);
     public static final Block MOD_WALL_HANGING_SIGN = ModBlocks.registerWallHangingSign(BaobabWoodInitializer.MOD_WOOD_NAME, BaobabWoodInitializer.MOD_FIBER_COLOR, BaobabWoodInitializer.MOD_WOOD_TYPE, MOD_HANGING_SIGN);
 
-    public static final Block MOD_SHELF = ModBlocks.registerShelf(BaobabWoodInitializer.MOD_WOOD_NAME);
+    public static final Block MOD_SHELF = ModBlocks.registerShelf(BaobabWoodInitializer.MOD_WOOD_NAME, BaobabWoodInitializer.MOD_FIBER_COLOR);
 
     public static final BlockFamily MOD_BLOCK_FAMILY = ModBlocks.registerNaturalBlockFamily(MOD_PLANKS, MOD_BUTTON, MOD_DOOR, MOD_FENCE, MOD_FENCE_GATE, MOD_STANDING_SIGN, MOD_WALL_SIGN, MOD_SLAB, MOD_STAIRS, MOD_PRESSURE_PLATE, MOD_TRAPDOOR);
 
