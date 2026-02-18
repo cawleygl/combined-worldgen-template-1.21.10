@@ -19,8 +19,8 @@ import net.minecraft.util.Identifier;
 public class ChorusWoodInitializer {
     /* COMBINED WOOD */
     public static String MOD_WOOD_NAME = "chorus";
-    public static MapColor MOD_UNSTRIPPED_COLOR = MapColor.TERRACOTTA_PURPLE;
-    public static MapColor MOD_STRIPPED_COLOR = MapColor.PINK;
+    public static MapColor MOD_UNSTRIPPED_COLOR = MapColor.PURPLE;
+    public static MapColor MOD_STRIPPED_COLOR = MapColor.PURPLE;
 
     public static BlockSoundGroup MOD_BLOCK_SOUND = BlockSoundGroup.WOOD;
     public static final BlockSetType MOD_BLOCK_SET = BlockSetTypeBuilder

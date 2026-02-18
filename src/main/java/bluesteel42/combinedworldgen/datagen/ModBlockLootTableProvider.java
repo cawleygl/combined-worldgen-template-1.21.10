@@ -9,6 +9,8 @@ import bluesteel42.combinedworldgen.property.ModProperties;
 import bluesteel42.combinedworldgen.wood.azalea.block.AzaleaWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.baobab.BaobabWoodInitializer;
 import bluesteel42.combinedworldgen.wood.baobab.block.BaobabWoodModBlocks;
+import bluesteel42.combinedworldgen.wood.cacao.CacaoWoodInitializer;
+import bluesteel42.combinedworldgen.wood.cacao.block.CacaoWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.cholla.block.ChollaWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.chorus.block.ChorusWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.citrus.CitrusWoodInitializer;
@@ -47,7 +49,6 @@ import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.ExplosionDecayLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
-import net.minecraft.loot.provider.number.LootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.predicate.StatePredicate;
 import net.minecraft.registry.RegistryKeys;
@@ -134,6 +135,54 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         addPottedPlantDrops(pottedSapling);
         addDrop(leaves, leavesDrops(leaves, sapling, saplingDropChance));
 
+    }
+
+    // USE VANILLA SAPLING WITH NEW LEAVES (KAPOK WOOD)
+    public void generateNaturalWoodBlockLootTablesWithVanillaSapling(
+            Block log,
+            Block wood,
+            Block strippedLog,
+            Block strippedWood,
+            Block planks,
+            Block stairs,
+            Block slab,
+            Block button,
+            Block fence,
+            Block fenceGate,
+            Block pressurePlate,
+            Block door,
+            Block trapdoor,
+            Block leaves,
+            Block vanillaSapling,
+            float[] saplingDropChance,
+            Block standingSign,
+            Block wallSign,
+            Block hangingSign,
+            Block wallHangingSign,
+            Block shelf
+    ) {
+        addDrop(log);
+        addDrop(wood);
+        addDrop(strippedLog);
+        addDrop(strippedWood);
+
+        addDrop(planks);
+        addDrop(stairs);
+        addDrop(button);
+        addDrop(fenceGate);
+        addDrop(fence);
+        addDrop(pressurePlate);
+        addDrop(trapdoor);
+        addDrop(door, doorDrops(door));
+        addDrop(slab, slabDrops(slab));
+
+        addDrop(standingSign);
+        addDrop(wallSign);
+        addDrop(hangingSign);
+        addDrop(wallHangingSign);
+
+        addDrop(shelf);
+        addDrop(leaves, leavesDrops(leaves, vanillaSapling, saplingDropChance));
     }
 
     public void generateCombinedWoodBlockLootTables(
@@ -235,6 +284,32 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
                 BaobabWoodModBlocks.MOD_HANGING_SIGN,
                 BaobabWoodModBlocks.MOD_WALL_HANGING_SIGN,
                 BaobabWoodModBlocks.MOD_SHELF
+        );
+    }
+    public void generateCacaoWoodLootTables() {
+        generateNaturalWoodBlockLootTables(
+                CacaoWoodModBlocks.MOD_LOG,
+                CacaoWoodModBlocks.MOD_WOOD,
+                CacaoWoodModBlocks.STRIPPED_MOD_LOG,
+                CacaoWoodModBlocks.STRIPPED_MOD_WOOD,
+                CacaoWoodModBlocks.MOD_PLANKS,
+                CacaoWoodModBlocks.MOD_STAIRS,
+                CacaoWoodModBlocks.MOD_SLAB,
+                CacaoWoodModBlocks.MOD_BUTTON,
+                CacaoWoodModBlocks.MOD_FENCE,
+                CacaoWoodModBlocks.MOD_FENCE_GATE,
+                CacaoWoodModBlocks.MOD_PRESSURE_PLATE,
+                CacaoWoodModBlocks.MOD_DOOR,
+                CacaoWoodModBlocks.MOD_TRAPDOOR,
+                CacaoWoodModBlocks.MOD_LEAVES,
+                CacaoWoodModBlocks.MOD_SAPLING,
+                CacaoWoodInitializer.MOD_SAPLING_DROP_CHANCE,
+                CacaoWoodModBlocks.POTTED_MOD_SAPLING,
+                CacaoWoodModBlocks.MOD_STANDING_SIGN,
+                CacaoWoodModBlocks.MOD_WALL_SIGN,
+                CacaoWoodModBlocks.MOD_HANGING_SIGN,
+                CacaoWoodModBlocks.MOD_WALL_HANGING_SIGN,
+                CacaoWoodModBlocks.MOD_SHELF
         );
     }
     public void generateChollaWoodLootTables() {
@@ -345,7 +420,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         );
     }
     public void generateKapokWoodLootTables() {
-        generateNaturalWoodBlockLootTables(
+        generateNaturalWoodBlockLootTablesWithVanillaSapling(
                 KapokWoodModBlocks.MOD_LOG,
                 KapokWoodModBlocks.MOD_WOOD,
                 KapokWoodModBlocks.STRIPPED_MOD_LOG,
@@ -359,10 +434,9 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
                 KapokWoodModBlocks.MOD_PRESSURE_PLATE,
                 KapokWoodModBlocks.MOD_DOOR,
                 KapokWoodModBlocks.MOD_TRAPDOOR,
-                KapokWoodModBlocks.CACAO_LEAVES,
-                KapokWoodModBlocks.CACAO_SAPLING,
+                KapokWoodModBlocks.MOD_LEAVES,
+                Blocks.JUNGLE_SAPLING,
                 KapokWoodInitializer.MOD_SAPLING_DROP_CHANCE,
-                KapokWoodModBlocks.POTTED_CACAO_SAPLING,
                 KapokWoodModBlocks.MOD_STANDING_SIGN,
                 KapokWoodModBlocks.MOD_WALL_SIGN,
                 KapokWoodModBlocks.MOD_HANGING_SIGN,
@@ -546,6 +620,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
         generateAzaleaWoodLootTables();
         generateBaobabWoodLootTables();
+        generateCacaoWoodLootTables();
         generateChollaWoodLootTables();
         generateChorusWoodLootTables();
         generateCitrusWoodLootTables();

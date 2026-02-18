@@ -21,10 +21,7 @@ public class KapokWoodModRegistries {
 
     public static void registerCompostables() {
         CompostingChanceRegistry.INSTANCE.add(KapokWoodModBlocks.MOD_LEAVES, 0.3F);
-        CompostingChanceRegistry.INSTANCE.add(KapokWoodModBlocks.CACAO_SAPLING, 0.3F);
-
-        /* ADDITIONAL BLOCKS */
-        CompostingChanceRegistry.INSTANCE.add(KapokWoodModBlocks.CACAO_LEAVES, 0.3F);
+//        CompostingChanceRegistry.INSTANCE.add(KapokWoodModBlocks.MOD_SAPLING, 0.3F);
     }
 
     public static void registerFlammables() {
@@ -38,20 +35,17 @@ public class KapokWoodModRegistries {
         FlammableBlockRegistry.getDefaultInstance().add(KapokWoodModBlocks.MOD_FENCE, 5, 20);
         FlammableBlockRegistry.getDefaultInstance().add(KapokWoodModBlocks.MOD_STAIRS, 5, 20);
         FlammableBlockRegistry.getDefaultInstance().add(KapokWoodModBlocks.MOD_LEAVES, 30, 60);
-
-        /* ADDITIONAL BLOCKS */
-        FlammableBlockRegistry.getDefaultInstance().add(KapokWoodModBlocks.CACAO_LEAVES, 30, 60);
     }
 
     public static void registerTrades() {
-        TradeOfferHelper.registerWanderingTraderOffers(wanderingTraderOffersBuilder -> {
-            wanderingTraderOffersBuilder.addOffersToPool(TradeOfferHelper.WanderingTraderOffersBuilder.SELL_COMMON_ITEMS_POOL,
-                (entity, random) -> new TradeOffer(
-                    new TradedItem(Items.EMERALD, 5),
-                    new ItemStack(KapokWoodModBlocks.CACAO_SAPLING.asItem(), 1),
-                    8,  1, 5)
-            );
-        });
+//        TradeOfferHelper.registerWanderingTraderOffers(wanderingTraderOffersBuilder -> {
+//            wanderingTraderOffersBuilder.addOffersToPool(TradeOfferHelper.WanderingTraderOffersBuilder.SELL_COMMON_ITEMS_POOL,
+//                (entity, random) -> new TradeOffer(
+//                    new TradedItem(Items.EMERALD, 5),
+//                    new ItemStack(KapokWoodModBlocks.MOD_SAPLING.asItem(), 1),
+//                    8,  1, 5)
+//            );
+//        });
 
         TradeOfferHelper.registerWanderingTraderOffers(wanderingTraderOffersBuilder -> {
             wanderingTraderOffersBuilder.addOffersToPool(TradeOfferHelper.WanderingTraderOffersBuilder.SELL_SPECIAL_ITEMS_POOL,

@@ -3,6 +3,7 @@ package bluesteel42.combinedworldgen.datagen;
 import bluesteel42.combinedworldgen.entity.ModEntities;
 import bluesteel42.combinedworldgen.wood.azalea.entity.AzaleaWoodModRafts;
 import bluesteel42.combinedworldgen.wood.baobab.entity.BaobabWoodModBoats;
+import bluesteel42.combinedworldgen.wood.cacao.entity.CacaoWoodModBoats;
 import bluesteel42.combinedworldgen.wood.cholla.entity.ChollaWoodModRafts;
 import bluesteel42.combinedworldgen.wood.citrus.entity.CitrusWoodModBoats;
 import bluesteel42.combinedworldgen.wood.dogwood.entity.DogwoodWoodModBoats;
@@ -28,6 +29,7 @@ public class ModEntityTypeTagProvider extends FabricTagProvider.EntityTypeTagPro
 
         valueLookupBuilder(EntityTypeTags.BOAT).add(AzaleaWoodModRafts.MOD_RAFT_ENTITY);
         valueLookupBuilder(EntityTypeTags.BOAT).add(BaobabWoodModBoats.MOD_BOAT_ENTITY);
+        valueLookupBuilder(EntityTypeTags.BOAT).add(CacaoWoodModBoats.MOD_BOAT_ENTITY);
         valueLookupBuilder(EntityTypeTags.BOAT).add(ChollaWoodModRafts.MOD_RAFT_ENTITY);
         valueLookupBuilder(EntityTypeTags.BOAT).add(CitrusWoodModBoats.MOD_BOAT_ENTITY);
         valueLookupBuilder(EntityTypeTags.BOAT).add(DogwoodWoodModBoats.MOD_BOAT_ENTITY);

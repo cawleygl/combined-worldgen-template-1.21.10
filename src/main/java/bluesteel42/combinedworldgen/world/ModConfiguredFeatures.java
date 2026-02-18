@@ -5,6 +5,7 @@ import bluesteel42.combinedworldgen.block.ModBlocks;
 import bluesteel42.combinedworldgen.block.flora.ModFloraBlocks;
 import bluesteel42.combinedworldgen.block.pumpkin.ModPumpkinBlocks;
 import bluesteel42.combinedworldgen.wood.baobab.tree.BaobabWoodTreeConfiguredFeatures;
+import bluesteel42.combinedworldgen.wood.cacao.tree.CacaoWoodTreeConfiguredFeatures;
 import bluesteel42.combinedworldgen.wood.citrus.tree.CitrusWoodTreeConfiguredFeatures;
 import bluesteel42.combinedworldgen.wood.dogwood.tree.DogwoodWoodTreeConfiguredFeatures;
 import bluesteel42.combinedworldgen.wood.dogwood.tree.DogwoodWoodTreePlacedFeatures;
@@ -162,6 +163,7 @@ public class ModConfiguredFeatures {
 
         /* TREES */
         BaobabWoodTreeConfiguredFeatures.bootstrap(context);
+        CacaoWoodTreeConfiguredFeatures.bootstrap(context);
         CitrusWoodTreeConfiguredFeatures.bootstrap(context);
         DogwoodWoodTreeConfiguredFeatures.bootstrap(context);
         KapokWoodTreeConfiguredFeatures.bootstrap(context);

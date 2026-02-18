@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:stripped_jungle_log"
+  ],
+  "result": {
+    "count": 1,
+    "id": "combined-worldgen:stripped_cacao_log"
+  }
+}

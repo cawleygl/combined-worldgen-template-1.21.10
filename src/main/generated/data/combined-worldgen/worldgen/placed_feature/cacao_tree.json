@@ -6,7 +6,7 @@
       "predicate": {
         "type": "minecraft:would_survive",
         "state": {
-          "Name": "minecraft:jungle_sapling",
+          "Name": "combined-worldgen:cacao_sapling",
           "Properties": {
             "stage": "0"
           }

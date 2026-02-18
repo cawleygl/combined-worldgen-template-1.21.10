@@ -14,6 +14,10 @@ import bluesteel42.combinedworldgen.wood.baobab.block.BaobabWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.baobab.entity.BaobabWoodModBoats;
 import bluesteel42.combinedworldgen.wood.baobab.item.BaobabWoodModItems;
 import bluesteel42.combinedworldgen.wood.baobab.util.BaobabWoodModTags;
+import bluesteel42.combinedworldgen.wood.cacao.block.CacaoWoodModBlocks;
+import bluesteel42.combinedworldgen.wood.cacao.entity.CacaoWoodModBoats;
+import bluesteel42.combinedworldgen.wood.cacao.item.CacaoWoodModItems;
+import bluesteel42.combinedworldgen.wood.cacao.util.CacaoWoodModTags;
 import bluesteel42.combinedworldgen.wood.cholla.block.ChollaWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.cholla.entity.ChollaWoodModRafts;
 import bluesteel42.combinedworldgen.wood.cholla.item.ChollaWoodModItems;
@@ -107,6 +111,48 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(ItemTags.LEAVES).add(leaves.asItem());
         valueLookupBuilder(ItemTags.SAPLINGS).add(sapling.asItem());
     }
+    // USE VANILLA SAPLING WITH NEW LEAVES (KAPOK WOOD)
+    public void generateNaturalWoodItemTagsWithVanillaSapling(
+            TagKey<Item> logTag,
+            Block log,
+            Block wood,
+            Block strippedLog,
+            Block strippedWood,
+            Block planks,
+            Block stairs,
+            Block slab,
+            Block button,
+            Block fence,
+            Block fenceGate,
+            Block pressurePlate,
+            Block door,
+            Block trapdoor,
+            Block leaves,
+            Item sign,
+            Item hangingSign,
+            Item boat,
+            Item chestBoat,
+            Block shelf
+    ) {
+        valueLookupBuilder(logTag).add(log.asItem()).add(strippedLog.asItem());
+        valueLookupBuilder(logTag).add(wood.asItem()).add(strippedWood.asItem());
+        valueLookupBuilder(ItemTags.LOGS_THAT_BURN).addTag(logTag);
+        valueLookupBuilder(ItemTags.PLANKS).add(planks.asItem());
+        valueLookupBuilder(ItemTags.WOODEN_STAIRS).add(stairs.asItem());
+        valueLookupBuilder(ItemTags.WOODEN_SLABS).add(slab.asItem());
+        valueLookupBuilder(ItemTags.WOODEN_DOORS).add(door.asItem());
+        valueLookupBuilder(ItemTags.WOODEN_TRAPDOORS).add(trapdoor.asItem());
+        valueLookupBuilder(ItemTags.WOODEN_FENCES).add(fence.asItem());
+        valueLookupBuilder(ItemTags.FENCE_GATES).add(fenceGate.asItem());
+        valueLookupBuilder(ItemTags.WOODEN_BUTTONS).add(button.asItem());
+        valueLookupBuilder(ItemTags.WOODEN_PRESSURE_PLATES).add(pressurePlate.asItem());
+        valueLookupBuilder(ItemTags.SIGNS).add(sign);
+        valueLookupBuilder(ItemTags.HANGING_SIGNS).add(hangingSign);
+        valueLookupBuilder(ItemTags.BOATS).add(boat);
+        valueLookupBuilder(ItemTags.CHEST_BOATS).add(chestBoat);
+        valueLookupBuilder(ItemTags.WOODEN_SHELVES).add(shelf.asItem());
+        valueLookupBuilder(ItemTags.LEAVES).add(leaves.asItem());
+    }
     public void generateCombinedWoodItemTags(
             TagKey<Item> logTag,
             Block log,
@@ -198,6 +244,31 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 BaobabWoodModBoats.MOD_BOAT,
                 BaobabWoodModBoats.MOD_CHEST_BOAT,
                 BaobabWoodModBlocks.MOD_SHELF
+        );
+    }
+    public void generateCacaoItemTags() {
+        generateNaturalWoodItemTags(
+                CacaoWoodModTags.Items.MOD_LOGS,
+                CacaoWoodModBlocks.MOD_LOG,
+                CacaoWoodModBlocks.MOD_WOOD,
+                CacaoWoodModBlocks.STRIPPED_MOD_LOG,
+                CacaoWoodModBlocks.STRIPPED_MOD_WOOD,
+                CacaoWoodModBlocks.MOD_PLANKS,
+                CacaoWoodModBlocks.MOD_STAIRS,
+                CacaoWoodModBlocks.MOD_SLAB,
+                CacaoWoodModBlocks.MOD_BUTTON,
+                CacaoWoodModBlocks.MOD_FENCE,
+                CacaoWoodModBlocks.MOD_FENCE_GATE,
+                CacaoWoodModBlocks.MOD_PRESSURE_PLATE,
+                CacaoWoodModBlocks.MOD_DOOR,
+                CacaoWoodModBlocks.MOD_TRAPDOOR,
+                CacaoWoodModBlocks.MOD_LEAVES,
+                CacaoWoodModBlocks.MOD_SAPLING,
+                CacaoWoodModItems.MOD_SIGN,
+                CacaoWoodModItems.MOD_HANGING_SIGN,
+                CacaoWoodModBoats.MOD_BOAT,
+                CacaoWoodModBoats.MOD_CHEST_BOAT,
+                CacaoWoodModBlocks.MOD_SHELF
         );
     }
     public void generateChollaItemTags() {
@@ -306,7 +377,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(ItemTags.FLOWERS).add(DogwoodWoodModBlocks.MOD_LEAVES.asItem());
     }
     public void generateKapokItemTags() {
-        generateNaturalWoodItemTags(
+        generateNaturalWoodItemTagsWithVanillaSapling(
                 KapokWoodModTags.Items.MOD_LOGS,
                 KapokWoodModBlocks.MOD_LOG,
                 KapokWoodModBlocks.MOD_WOOD,
@@ -321,17 +392,13 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 KapokWoodModBlocks.MOD_PRESSURE_PLATE,
                 KapokWoodModBlocks.MOD_DOOR,
                 KapokWoodModBlocks.MOD_TRAPDOOR,
-                KapokWoodModBlocks.CACAO_LEAVES,
-                KapokWoodModBlocks.CACAO_SAPLING,
+                KapokWoodModBlocks.MOD_LEAVES,
                 KapokWoodModItems.MOD_SIGN,
                 KapokWoodModItems.MOD_HANGING_SIGN,
                 KapokWoodModBoats.MOD_BOAT,
                 KapokWoodModBoats.MOD_CHEST_BOAT,
                 KapokWoodModBlocks.MOD_SHELF
         );
-
-        /* ADDITIONAL BLOCKS */
-        valueLookupBuilder(ItemTags.LEAVES).add(KapokWoodModBlocks.MOD_LEAVES.asItem());
     }
     public void generateMapleItemTags() {
         generateNaturalWoodItemTags(
@@ -462,6 +529,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         generateAzaleaItemTags();
         generateBaobabItemTags();
+        generateCacaoItemTags();
         generateChollaItemTags();
         generateChorusItemTags();
         generateCitrusItemTags();

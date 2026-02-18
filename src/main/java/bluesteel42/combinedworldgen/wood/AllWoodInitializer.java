@@ -2,6 +2,7 @@ package bluesteel42.combinedworldgen.wood;
 
 import bluesteel42.combinedworldgen.wood.azalea.AzaleaWoodInitializer;
 import bluesteel42.combinedworldgen.wood.baobab.BaobabWoodInitializer;
+import bluesteel42.combinedworldgen.wood.cacao.CacaoWoodInitializer;
 import bluesteel42.combinedworldgen.wood.cholla.ChollaWoodInitializer;
 import bluesteel42.combinedworldgen.wood.chorus.ChorusWoodInitializer;
 import bluesteel42.combinedworldgen.wood.citrus.CitrusWoodInitializer;
@@ -18,6 +19,7 @@ public class AllWoodInitializer {
         MapleWoodInitializer.initializeWood();
         PineWoodInitializer.initializeWood();
         KapokWoodInitializer.initializeWood();
+        CacaoWoodInitializer.initializeWood();
         CitrusWoodInitializer.initializeWood();
         BaobabWoodInitializer.initializeWood();
         WillowWoodInitializer.initializeWood();
@@ -32,6 +34,7 @@ public class AllWoodInitializer {
         MapleWoodInitializer.initializeWoodClient();
         PineWoodInitializer.initializeWoodClient();
         KapokWoodInitializer.initializeWoodClient();
+        CacaoWoodInitializer.initializeWoodClient();
         CitrusWoodInitializer.initializeWoodClient();
         BaobabWoodInitializer.initializeWoodClient();
         WillowWoodInitializer.initializeWoodClient();

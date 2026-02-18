@@ -11,6 +11,9 @@ import bluesteel42.combinedworldgen.wood.azalea.entity.AzaleaWoodModRafts;
 import bluesteel42.combinedworldgen.wood.baobab.BaobabWoodInitializer;
 import bluesteel42.combinedworldgen.wood.baobab.block.BaobabWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.baobab.entity.BaobabWoodModBoats;
+import bluesteel42.combinedworldgen.wood.cacao.CacaoWoodInitializer;
+import bluesteel42.combinedworldgen.wood.cacao.block.CacaoWoodModBlocks;
+import bluesteel42.combinedworldgen.wood.cacao.entity.CacaoWoodModBoats;
 import bluesteel42.combinedworldgen.wood.cholla.block.ChollaWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.cholla.entity.ChollaWoodModRafts;
 import bluesteel42.combinedworldgen.wood.chorus.block.ChorusWoodModBlocks;
@@ -45,6 +48,8 @@ import net.minecraft.client.render.model.json.ModelVariant;
 import net.minecraft.client.render.model.json.WeightedVariant;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.Items;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
 import net.minecraft.util.Identifier;
@@ -100,6 +105,31 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerItemModel(boat);
         blockStateModelGenerator.registerItemModel(chestBoat);
         blockStateModelGenerator.registerFlowerPotPlantAndItem(sapling, pottedSapling, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        if (tintedLeaves) {
+            blockStateModelGenerator.registerTintedBlockAndItem(leaves, TexturedModel.LEAVES, leavesTintColor);
+        } else {
+            blockStateModelGenerator.registerSingleton(leaves, TexturedModel.LEAVES);
+        }
+    }
+    // USE VANILLA SAPLING WITH NEW LEAVES (KAPOK WOOD)
+    public void generateNaturalWoodBlockModelsWithVanillaSapling(BlockStateModelGenerator blockStateModelGenerator,
+            BlockFamily blockFamily,
+            Block log,
+            Block wood,
+            Block strippedLog,
+            Block strippedWood,
+            Block hangingSign,
+            Block wallHangingSign,
+            Item boat,
+            Item chestBoat,
+            Block leaves,
+            boolean tintedLeaves,
+            int leavesTintColor,
+            Block shelf
+    ) {
+        generateNaturalWoodSolidBlockModels(blockStateModelGenerator, blockFamily, log, wood, strippedLog, strippedWood, hangingSign, wallHangingSign, shelf);
+        blockStateModelGenerator.registerItemModel(boat);
+        blockStateModelGenerator.registerItemModel(chestBoat);
         if (tintedLeaves) {
             blockStateModelGenerator.registerTintedBlockAndItem(leaves, TexturedModel.LEAVES, leavesTintColor);
         } else {
@@ -168,6 +198,44 @@ public class ModModelProvider extends FabricModelProvider {
                 BaobabWoodModBlocks.POTTED_MOD_SAPLING,
                 BaobabWoodModBlocks.MOD_SHELF
         );
+    }
+    private void generateCacaoBlockModels(BlockStateModelGenerator blockStateModelGenerator) {
+        generateNaturalWoodBlockModels(blockStateModelGenerator,
+                CacaoWoodModBlocks.MOD_BLOCK_FAMILY,
+                CacaoWoodModBlocks.MOD_LOG,
+                CacaoWoodModBlocks.MOD_WOOD,
+                CacaoWoodModBlocks.STRIPPED_MOD_LOG,
+                CacaoWoodModBlocks.STRIPPED_MOD_WOOD,
+                CacaoWoodModBlocks.MOD_HANGING_SIGN,
+                CacaoWoodModBlocks.MOD_WALL_HANGING_SIGN,
+                CacaoWoodModBoats.MOD_BOAT,
+                CacaoWoodModBoats.MOD_CHEST_BOAT,
+                CacaoWoodModBlocks.MOD_LEAVES,
+                CacaoWoodInitializer.TINTED_LEAVES,
+                CacaoWoodInitializer.MOD_LEAF_TINT_COLOR,
+                CacaoWoodModBlocks.MOD_SAPLING,
+                CacaoWoodModBlocks.POTTED_MOD_SAPLING,
+                CacaoWoodModBlocks.MOD_SHELF
+        );
+
+        deprecateBlock(blockStateModelGenerator, Blocks.JUNGLE_LOG);
+        deprecateBlock(blockStateModelGenerator, Blocks.JUNGLE_WOOD);
+        deprecateBlock(blockStateModelGenerator, Blocks.STRIPPED_JUNGLE_LOG);
+        deprecateBlock(blockStateModelGenerator, Blocks.STRIPPED_JUNGLE_WOOD);
+        deprecateBlock(blockStateModelGenerator, Blocks.JUNGLE_PLANKS);
+        deprecateBlock(blockStateModelGenerator, Blocks.JUNGLE_STAIRS);
+        deprecateBlock(blockStateModelGenerator, Blocks.JUNGLE_SLAB);
+        deprecateBlock(blockStateModelGenerator, Blocks.JUNGLE_BUTTON);
+        deprecateBlock(blockStateModelGenerator, Blocks.JUNGLE_PRESSURE_PLATE);
+        deprecateBlock(blockStateModelGenerator, Blocks.JUNGLE_FENCE);
+        deprecateBlock(blockStateModelGenerator, Blocks.JUNGLE_FENCE_GATE);
+        deprecateBlock(blockStateModelGenerator, Blocks.JUNGLE_DOOR);
+        deprecateBlock(blockStateModelGenerator, Blocks.JUNGLE_TRAPDOOR);
+        deprecateBlock(blockStateModelGenerator, Blocks.JUNGLE_SHELF);
+        deprecateBlock(blockStateModelGenerator, Blocks.JUNGLE_SIGN);
+        deprecateBlock(blockStateModelGenerator, Blocks.JUNGLE_HANGING_SIGN);
+        deprecateBlock(blockStateModelGenerator, Items.JUNGLE_BOAT);
+        deprecateBlock(blockStateModelGenerator, Items.JUNGLE_CHEST_BOAT);
     }
     private void generateChollaBlockModels(BlockStateModelGenerator blockStateModelGenerator) {
         generateCombinedWoodBlockModels(blockStateModelGenerator,
@@ -245,7 +313,7 @@ public class ModModelProvider extends FabricModelProvider {
         );
     }
     private void generateKapokBlockModels(BlockStateModelGenerator blockStateModelGenerator) {
-        generateNaturalWoodBlockModels(blockStateModelGenerator,
+        generateNaturalWoodBlockModelsWithVanillaSapling(blockStateModelGenerator,
                 KapokWoodModBlocks.MOD_BLOCK_FAMILY,
                 KapokWoodModBlocks.MOD_LOG,
                 KapokWoodModBlocks.MOD_WOOD,
@@ -258,11 +326,9 @@ public class ModModelProvider extends FabricModelProvider {
                 KapokWoodModBlocks.MOD_LEAVES,
                 KapokWoodInitializer.TINTED_LEAVES,
                 KapokWoodInitializer.MOD_LEAF_TINT_COLOR,
-                KapokWoodModBlocks.CACAO_SAPLING,
-                KapokWoodModBlocks.POTTED_CACAO_SAPLING,
                 KapokWoodModBlocks.MOD_SHELF
         );
-        blockStateModelGenerator.registerTintedBlockAndItem(KapokWoodModBlocks.CACAO_LEAVES, TexturedModel.LEAVES, KapokWoodInitializer.MOD_LEAF_TINT_COLOR);
+        deprecateBlock(blockStateModelGenerator, Blocks.JUNGLE_LEAVES);
     }
     private void generateMapleBlockModels(BlockStateModelGenerator blockStateModelGenerator) {
         generateNaturalWoodBlockModels(blockStateModelGenerator,
@@ -311,6 +377,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(PineWoodModBlocks.SNOWY_SPRUCE_LEAVES);
         blockStateModelGenerator.registerFlowerPotPlantAndItem(PineWoodModBlocks.SNOWY_PINE_SAPLING, PineWoodModBlocks.POTTED_SNOWY_PINE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlantAndItem(PineWoodModBlocks.SNOWY_SPRUCE_SAPLING, PineWoodModBlocks.POTTED_SNOWY_SPRUCE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        deprecateBlock(blockStateModelGenerator, Blocks.SPRUCE_LEAVES);
     }
     private void generateWillowBlockModels(BlockStateModelGenerator blockStateModelGenerator) {
         generateNaturalWoodBlockModels(blockStateModelGenerator,
@@ -580,10 +647,16 @@ public class ModModelProvider extends FabricModelProvider {
         return new Model(Optional.of(Identifier.of(CombinedWorldgen.MOD_ID, "block/" + parent)), Optional.empty(), requiredTextureKeys);
     }
 
+    public final void deprecateBlock(BlockStateModelGenerator blockStateModelGenerator, ItemConvertible block) {
+        Identifier deprecatedBlock = Identifier.of(CombinedWorldgen.MOD_ID, "item/deprecated");
+        blockStateModelGenerator.itemModelOutput.accept(block.asItem(), ItemModels.basic(deprecatedBlock));
+    }
+
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         generateAzaleaBlockModels(blockStateModelGenerator);
         generateBaobabBlockModels(blockStateModelGenerator);
+        generateCacaoBlockModels(blockStateModelGenerator);
         generateChollaBlockModels(blockStateModelGenerator);
         generateChorusBlockModels(blockStateModelGenerator);
         generateCitrusBlockModels(blockStateModelGenerator);

@@ -2,7 +2,6 @@ package bluesteel42.combinedworldgen.wood.azalea.block;
 
 import bluesteel42.combinedworldgen.block.ModBlocks;
 import bluesteel42.combinedworldgen.wood.azalea.AzaleaWoodInitializer;
-import bluesteel42.combinedworldgen.wood.dogwood.block.DogwoodWoodModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;

@@ -18,7 +18,7 @@ public class AzaleaWoodInitializer {
     /* COMBINED WOOD */
     public static String MOD_WOOD_NAME = "azalea";
     public static MapColor MOD_UNSTRIPPED_COLOR = MapColor.TERRACOTTA_LIME;
-    public static MapColor MOD_STRIPPED_COLOR = MapColor.PINK;
+    public static MapColor MOD_STRIPPED_COLOR = MapColor.DARK_DULL_PINK;
     
     public static BlockSoundGroup MOD_BLOCK_SOUND = BlockSoundGroup.BAMBOO_WOOD;
     public static final BlockSetType MOD_BLOCK_SET = BlockSetTypeBuilder.copyOf(AzaleaWoodInitializer.MOD_BLOCK_SOUND == BlockSoundGroup.BAMBOO_WOOD ? BlockSetType.BAMBOO : BlockSetType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, AzaleaWoodInitializer.MOD_WOOD_NAME));

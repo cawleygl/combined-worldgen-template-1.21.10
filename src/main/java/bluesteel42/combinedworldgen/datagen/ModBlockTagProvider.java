@@ -9,6 +9,8 @@ import bluesteel42.combinedworldgen.wood.azalea.block.AzaleaWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.azalea.util.AzaleaWoodModTags;
 import bluesteel42.combinedworldgen.wood.baobab.block.BaobabWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.baobab.util.BaobabWoodModTags;
+import bluesteel42.combinedworldgen.wood.cacao.block.CacaoWoodModBlocks;
+import bluesteel42.combinedworldgen.wood.cacao.util.CacaoWoodModTags;
 import bluesteel42.combinedworldgen.wood.cholla.block.ChollaWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.cholla.util.ChollaWoodModTags;
 import bluesteel42.combinedworldgen.wood.chorus.block.ChorusWoodModBlocks;
@@ -86,6 +88,48 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         valueLookupBuilder(BlockTags.LEAVES).add(leaves);
         valueLookupBuilder(BlockTags.SAPLINGS).add(sapling);
         valueLookupBuilder(BlockTags.FLOWER_POTS).add(pottedSapling);
+    }
+    // USE VANILLA SAPLING WITH NEW LEAVES (KAPOK WOOD)
+    public void generateNaturalWoodBlockTagsWithVanillaSapling(
+            TagKey<Block> logTag,
+            Block log,
+            Block wood,
+            Block strippedLog,
+            Block strippedWood,
+            Block planks,
+            Block stairs,
+            Block slab,
+            Block button,
+            Block fence,
+            Block fenceGate,
+            Block pressurePlate,
+            Block door,
+            Block trapdoor,
+            Block leaves,
+            Block standingSign,
+            Block wallSign,
+            Block hangingSign,
+            Block wallHangingSign,
+            Block shelf
+    ) {
+        valueLookupBuilder(logTag).add(log).add(strippedLog);
+        valueLookupBuilder(logTag).add(wood).add(strippedWood);
+        valueLookupBuilder(BlockTags.LOGS_THAT_BURN).addTag(logTag);
+        valueLookupBuilder(BlockTags.PLANKS).add(planks);
+        valueLookupBuilder(BlockTags.WOODEN_STAIRS).add(stairs);
+        valueLookupBuilder(BlockTags.WOODEN_SLABS).add(slab);
+        valueLookupBuilder(BlockTags.WOODEN_DOORS).add(door);
+        valueLookupBuilder(BlockTags.WOODEN_TRAPDOORS).add(trapdoor);
+        valueLookupBuilder(BlockTags.WOODEN_FENCES).add(fence);
+        valueLookupBuilder(BlockTags.FENCE_GATES).add(fenceGate);
+        valueLookupBuilder(BlockTags.WOODEN_BUTTONS).add(button);
+        valueLookupBuilder(BlockTags.WOODEN_PRESSURE_PLATES).add(pressurePlate);
+        valueLookupBuilder(BlockTags.STANDING_SIGNS).add(standingSign);
+        valueLookupBuilder(BlockTags.WALL_SIGNS).add(wallSign);
+        valueLookupBuilder(BlockTags.CEILING_HANGING_SIGNS).add(hangingSign);
+        valueLookupBuilder(BlockTags.WALL_HANGING_SIGNS).add(wallHangingSign);
+        valueLookupBuilder(BlockTags.WOODEN_SHELVES).add(shelf);
+        valueLookupBuilder(BlockTags.LEAVES).add(leaves);
     }
     public void generateCombinedWoodBlockTags(
             TagKey<Block> logTag,
@@ -188,6 +232,32 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 BaobabWoodModBlocks.MOD_HANGING_SIGN,
                 BaobabWoodModBlocks.MOD_WALL_HANGING_SIGN,
                 BaobabWoodModBlocks.MOD_SHELF
+        );
+    }
+    public void generateCacaoBlockTags() {
+        generateNaturalWoodBlockTags(
+                CacaoWoodModTags.Blocks.MOD_LOGS,
+                CacaoWoodModBlocks.MOD_LOG,
+                CacaoWoodModBlocks.MOD_WOOD,
+                CacaoWoodModBlocks.STRIPPED_MOD_LOG,
+                CacaoWoodModBlocks.STRIPPED_MOD_WOOD,
+                CacaoWoodModBlocks.MOD_PLANKS,
+                CacaoWoodModBlocks.MOD_STAIRS,
+                CacaoWoodModBlocks.MOD_SLAB,
+                CacaoWoodModBlocks.MOD_BUTTON,
+                CacaoWoodModBlocks.MOD_FENCE,
+                CacaoWoodModBlocks.MOD_FENCE_GATE,
+                CacaoWoodModBlocks.MOD_PRESSURE_PLATE,
+                CacaoWoodModBlocks.MOD_DOOR,
+                CacaoWoodModBlocks.MOD_TRAPDOOR,
+                CacaoWoodModBlocks.MOD_LEAVES,
+                CacaoWoodModBlocks.MOD_SAPLING,
+                CacaoWoodModBlocks.POTTED_MOD_SAPLING,
+                CacaoWoodModBlocks.MOD_STANDING_SIGN,
+                CacaoWoodModBlocks.MOD_WALL_SIGN,
+                CacaoWoodModBlocks.MOD_HANGING_SIGN,
+                CacaoWoodModBlocks.MOD_WALL_HANGING_SIGN,
+                CacaoWoodModBlocks.MOD_SHELF
         );
     }
     public void generateChollaBlockTags() {
@@ -305,7 +375,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         valueLookupBuilder(BlockTags.FLOWERS).add(DogwoodWoodModBlocks.MOD_LEAVES);
     }
     public void generateKapokBlockTags() {
-        generateNaturalWoodBlockTags(
+        generateNaturalWoodBlockTagsWithVanillaSapling(
                 KapokWoodModTags.Blocks.MOD_LOGS,
                 KapokWoodModBlocks.MOD_LOG,
                 KapokWoodModBlocks.MOD_WOOD,
@@ -320,18 +390,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 KapokWoodModBlocks.MOD_PRESSURE_PLATE,
                 KapokWoodModBlocks.MOD_DOOR,
                 KapokWoodModBlocks.MOD_TRAPDOOR,
-                KapokWoodModBlocks.CACAO_LEAVES,
-                KapokWoodModBlocks.CACAO_SAPLING,
-                KapokWoodModBlocks.POTTED_CACAO_SAPLING,
+                KapokWoodModBlocks.MOD_LEAVES,
                 KapokWoodModBlocks.MOD_STANDING_SIGN,
                 KapokWoodModBlocks.MOD_WALL_SIGN,
                 KapokWoodModBlocks.MOD_HANGING_SIGN,
                 KapokWoodModBlocks.MOD_WALL_HANGING_SIGN,
                 KapokWoodModBlocks.MOD_SHELF
         );
-
-        /* ADDITIONAL BLOCKS */
-        valueLookupBuilder(BlockTags.LEAVES).add(KapokWoodModBlocks.MOD_LEAVES);
     }
     public void generateMapleBlockTags() {
         generateNaturalWoodBlockTags(
@@ -481,6 +546,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         generateAzaleaBlockTags();
         generateBaobabBlockTags();
+        generateCacaoBlockTags();
         generateChollaBlockTags();
         generateChorusBlockTags();
         generateCitrusBlockTags();

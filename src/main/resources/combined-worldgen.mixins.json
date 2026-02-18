@@ -13,7 +13,8 @@
     "STRIPPED_BLOCKSAccessor",
     "StripPetrifiedWoodSoundMixin",
     "SwampWoodHutMixin",
-    "LeavesBlockDistanceInvoker"
+    "LeavesBlockDistanceInvoker",
+    "CocoaBeansStickOnCacaoWoodMixin"
   ],
   "injectors": {
     "defaultRequire": 1

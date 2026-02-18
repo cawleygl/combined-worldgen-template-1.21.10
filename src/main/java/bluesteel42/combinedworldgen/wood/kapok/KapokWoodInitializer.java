@@ -39,16 +39,6 @@ public class KapokWoodInitializer {
     public static boolean BIOME_LEAF_TINT = true && KapokWoodInitializer.TINTED_LEAVES;
     public static float[] MOD_SAPLING_DROP_CHANCE = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
 
-    /* KAPOK TREES USE VANILLA JUNGLE SAPLING */
-    public static String CACAO_WOOD_NAME = "cacao";
-    public static float CACAO_SAPLING_RARE_VARIANT_CHANCE = 0.3F;
-    public static Optional<RegistryKey<ConfiguredFeature<?, ?>>> CACAO_SAPLING_STANDARD_TREE = Optional.of(KapokWoodTreeConfiguredFeatures.CACAO_TREE_KEY);
-    public static Optional<RegistryKey<ConfiguredFeature<?, ?>>> CACAO_SAPLING_RARE_TREE =  Optional.empty();
-    public static Optional<RegistryKey<ConfiguredFeature<?, ?>>> CACAO_SAPLING_MEGA_TREE = Optional.empty();
-    public static Optional<RegistryKey<ConfiguredFeature<?, ?>>> CACAO_SAPLING_RARE_MEGA_TREE = Optional.empty();
-    public static Optional<RegistryKey<ConfiguredFeature<?, ?>>> CACAO_SAPLING_BEES_TREE = Optional.empty();
-    public static Optional<RegistryKey<ConfiguredFeature<?, ?>>> CACAO_SAPLING_RARE_BEES_TREE = Optional.empty();
-
     public static void initializeWood() {
         KapokWoodModBlocks.initialize();
         KapokWoodModItems.initialize();
@@ -71,9 +61,9 @@ public class KapokWoodInitializer {
                 }
                 return BiomeColors.getFoliageColor(view, pos);
                 // ADDITIONAL BLOCKS
-            }, KapokWoodModBlocks.MOD_LEAVES, KapokWoodModBlocks.CACAO_LEAVES);
+            }, KapokWoodModBlocks.MOD_LEAVES);
         } else if (KapokWoodInitializer.TINTED_LEAVES) {
-            ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> MOD_LEAF_TINT_COLOR, KapokWoodModBlocks.MOD_LEAVES, KapokWoodModBlocks.CACAO_LEAVES);
+            ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> MOD_LEAF_TINT_COLOR, KapokWoodModBlocks.MOD_LEAVES);
         }
     }
 }

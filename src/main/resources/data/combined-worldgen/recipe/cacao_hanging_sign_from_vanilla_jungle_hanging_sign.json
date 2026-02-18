@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:jungle_hanging_sign"
+  ],
+  "result": {
+    "count": 1,
+    "id": "combined-worldgen:cacao_hanging_sign"
+  }
+}

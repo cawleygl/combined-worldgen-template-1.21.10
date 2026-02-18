@@ -2,13 +2,11 @@ package bluesteel42.combinedworldgen.wood.kapok.block;
 
 import bluesteel42.combinedworldgen.block.ModBlocks;
 import bluesteel42.combinedworldgen.wood.kapok.KapokWoodInitializer;
-import bluesteel42.combinedworldgen.wood.kapok.item.KapokWoodModSaplingGenerators;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
-import net.minecraft.sound.BlockSoundGroup;
 
 public class KapokWoodModBlocks {
     public static final Block MOD_LOG = ModBlocks.registerLog(KapokWoodInitializer.MOD_WOOD_NAME, KapokWoodInitializer.MOD_FIBER_COLOR, KapokWoodInitializer.MOD_BARK_COLOR, KapokWoodInitializer.MOD_BLOCK_SOUND);
@@ -40,11 +38,6 @@ public class KapokWoodModBlocks {
 //    public static final Block POTTED_MOD_SAPLING = ModBlocks.registerPottedSapling(KapokWoodInitializer.MOD_WOOD_NAME, MOD_SAPLING);
 
 
-    /* ADDITIONAL BLOCKS */
-    public static final Block CACAO_LEAVES = ModBlocks.registerTintedLeaves(KapokWoodInitializer.CACAO_WOOD_NAME, MapColor.DARK_GREEN, BlockSoundGroup.GRASS);
-    public static final Block CACAO_SAPLING = ModBlocks.registerSapling(KapokWoodInitializer.CACAO_WOOD_NAME, KapokWoodModSaplingGenerators.CACAO_SAPLING_GENERATOR, MapColor.DARK_GREEN, BlockSoundGroup.GRASS);
-    public static final Block POTTED_CACAO_SAPLING = ModBlocks.registerPottedSapling(KapokWoodInitializer.CACAO_WOOD_NAME, CACAO_SAPLING);
-
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS)
                 .register((itemGroup) -> {
@@ -66,10 +59,6 @@ public class KapokWoodModBlocks {
                 .register((itemGroup) -> {
                     itemGroup.addBefore(Items.JUNGLE_LEAVES, KapokWoodModBlocks.MOD_LEAVES);
                     itemGroup.addBefore(Items.JUNGLE_LOG, KapokWoodModBlocks.MOD_LOG);
-
-                    /* ADDITIONAL BLOCKS */
-                    itemGroup.addAfter(Items.JUNGLE_LEAVES, KapokWoodModBlocks.CACAO_LEAVES);
-                    itemGroup.addAfter(Items.JUNGLE_SAPLING, KapokWoodModBlocks.CACAO_SAPLING);
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL)
                 .register((itemGroup) -> {

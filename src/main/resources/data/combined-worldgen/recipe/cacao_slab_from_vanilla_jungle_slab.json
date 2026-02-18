@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:jungle_slab"
+  ],
+  "result": {
+    "count": 1,
+    "id": "combined-worldgen:cacao_slab"
+  }
+}

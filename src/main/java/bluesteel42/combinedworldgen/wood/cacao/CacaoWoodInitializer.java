@@ -1,0 +1,77 @@
+package bluesteel42.combinedworldgen.wood.cacao;
+
+import bluesteel42.combinedworldgen.CombinedWorldgen;
+import bluesteel42.combinedworldgen.wood.cacao.block.CacaoWoodModBlocks;
+import bluesteel42.combinedworldgen.wood.cacao.entity.CacaoWoodModBoats;
+import bluesteel42.combinedworldgen.wood.cacao.item.CacaoWoodModItems;
+import bluesteel42.combinedworldgen.wood.cacao.registries.CacaoWoodModRegistries;
+import bluesteel42.combinedworldgen.wood.cacao.tree.CacaoWoodTreeConfiguredFeatures;
+import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
+import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
+import net.minecraft.block.BlockSetType;
+import net.minecraft.block.MapColor;
+import net.minecraft.block.WoodType;
+import net.minecraft.client.color.world.BiomeColors;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.Identifier;
+import net.minecraft.world.biome.FoliageColors;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+
+import java.util.Optional;
+
+public class CacaoWoodInitializer {
+    public static String MOD_WOOD_NAME = "cacao";
+    public static MapColor MOD_BARK_COLOR = MapColor.YELLOW;
+    public static MapColor MOD_FIBER_COLOR = MapColor.TERRACOTTA_PURPLE;
+    public static MapColor MOD_LEAF_COLOR = MapColor.DARK_GREEN;
+
+    public static BlockSoundGroup MOD_BLOCK_SOUND = BlockSoundGroup.WOOD;
+    public static final BlockSetType MOD_BLOCK_SET = BlockSetTypeBuilder.copyOf(CacaoWoodInitializer.MOD_BLOCK_SOUND == BlockSoundGroup.CHERRY_WOOD ? BlockSetType.CHERRY : BlockSetType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, CacaoWoodInitializer.MOD_WOOD_NAME));
+    public static final WoodType MOD_WOOD_TYPE = WoodTypeBuilder.copyOf(CacaoWoodInitializer.MOD_BLOCK_SOUND == BlockSoundGroup.CHERRY_WOOD ? WoodType.CHERRY : WoodType.OAK).register(Identifier.of(CombinedWorldgen.MOD_ID, CacaoWoodInitializer.MOD_WOOD_NAME), CacaoWoodInitializer.MOD_BLOCK_SET);
+
+    public static BlockSoundGroup MOD_LEAF_SOUND = BlockSoundGroup.GRASS;
+    public static BlockSoundGroup MOD_SAPLING_SOUND = CacaoWoodInitializer.MOD_LEAF_SOUND == BlockSoundGroup.CHERRY_LEAVES ? BlockSoundGroup.CHERRY_SAPLING : BlockSoundGroup.GRASS;
+    public static boolean TINTED_LEAVES = true;
+    public static int MOD_LEAF_TINT_COLOR = FoliageColors.DEFAULT;
+    public static boolean BIOME_LEAF_TINT = true && CacaoWoodInitializer.TINTED_LEAVES;
+    public static float[] MOD_SAPLING_DROP_CHANCE = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
+
+    public static float MOD_SAPLING_RARE_VARIANT_CHANCE = 0.3F;
+    public static Optional<RegistryKey<ConfiguredFeature<?, ?>>> MOD_SAPLING_STANDARD_TREE = Optional.of(CacaoWoodTreeConfiguredFeatures.CACAO_TREE_KEY);
+    public static Optional<RegistryKey<ConfiguredFeature<?, ?>>> MOD_SAPLING_RARE_TREE =  Optional.empty();
+    public static Optional<RegistryKey<ConfiguredFeature<?, ?>>> MOD_SAPLING_MEGA_TREE = Optional.empty();
+    public static Optional<RegistryKey<ConfiguredFeature<?, ?>>> MOD_SAPLING_RARE_MEGA_TREE = Optional.empty();
+    public static Optional<RegistryKey<ConfiguredFeature<?, ?>>> MOD_SAPLING_BEES_TREE = Optional.empty();
+    public static Optional<RegistryKey<ConfiguredFeature<?, ?>>> MOD_SAPLING_RARE_BEES_TREE = Optional.empty();
+
+    public static void initializeWood() {
+        CacaoWoodModBlocks.initialize();
+        CacaoWoodModItems.initialize();
+        CacaoWoodModBoats.initialize();
+        CacaoWoodModRegistries.registerStrippables();
+        CacaoWoodModRegistries.registerCompostables();
+        CacaoWoodModRegistries.registerFlammables();
+        CacaoWoodModRegistries.registerTrades();
+    }
+
+    public static void initializeWoodClient() {
+        // Register Boat Models
+        TerraformBoatClientHelper.registerModelLayers(CacaoWoodModBoats.MOD_BOATS_ID);
+
+        // Color Leaves
+        if (CacaoWoodInitializer.BIOME_LEAF_TINT) {
+            ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> {
+                if (view == null || pos == null) {
+                    return MOD_LEAF_TINT_COLOR;
+                }
+                return BiomeColors.getFoliageColor(view, pos);
+                // ADDITIONAL BLOCKS
+            }, CacaoWoodModBlocks.MOD_LEAVES);
+        } else if (CacaoWoodInitializer.TINTED_LEAVES) {
+            ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> MOD_LEAF_TINT_COLOR, CacaoWoodModBlocks.MOD_LEAVES);
+        }
+    }
+}

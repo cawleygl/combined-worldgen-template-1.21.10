@@ -14,6 +14,10 @@ import bluesteel42.combinedworldgen.wood.baobab.block.BaobabWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.baobab.entity.BaobabWoodModBoats;
 import bluesteel42.combinedworldgen.wood.baobab.item.BaobabWoodModItems;
 import bluesteel42.combinedworldgen.wood.baobab.util.BaobabWoodModTags;
+import bluesteel42.combinedworldgen.wood.cacao.block.CacaoWoodModBlocks;
+import bluesteel42.combinedworldgen.wood.cacao.entity.CacaoWoodModBoats;
+import bluesteel42.combinedworldgen.wood.cacao.item.CacaoWoodModItems;
+import bluesteel42.combinedworldgen.wood.cacao.util.CacaoWoodModTags;
 import bluesteel42.combinedworldgen.wood.cholla.block.ChollaWoodModBlocks;
 import bluesteel42.combinedworldgen.wood.cholla.entity.ChollaWoodModRafts;
 import bluesteel42.combinedworldgen.wood.cholla.item.ChollaWoodModItems;
@@ -300,6 +304,118 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         BaobabWoodModBlocks.MOD_SHELF
                 );
             }
+            private void generateCacaoRecipes() {
+                generateNaturalWoodRecipes(
+                        CacaoWoodModTags.Items.MOD_LOGS,
+                        CacaoWoodModBlocks.MOD_LOG,
+                        CacaoWoodModBlocks.MOD_WOOD,
+                        CacaoWoodModBlocks.STRIPPED_MOD_LOG,
+                        CacaoWoodModBlocks.STRIPPED_MOD_WOOD,
+                        CacaoWoodModBlocks.MOD_PLANKS,
+                        CacaoWoodModBlocks.MOD_STAIRS,
+                        CacaoWoodModBlocks.MOD_SLAB,
+                        CacaoWoodModBlocks.MOD_BUTTON,
+                        CacaoWoodModBlocks.MOD_FENCE,
+                        CacaoWoodModBlocks.MOD_FENCE_GATE,
+                        CacaoWoodModBlocks.MOD_PRESSURE_PLATE,
+                        CacaoWoodModBlocks.MOD_DOOR,
+                        CacaoWoodModBlocks.MOD_TRAPDOOR,
+                        CacaoWoodModItems.MOD_SIGN,
+                        CacaoWoodModItems.MOD_HANGING_SIGN,
+                        CacaoWoodModBoats.MOD_BOAT,
+                        CacaoWoodModBoats.MOD_CHEST_BOAT,
+                        CacaoWoodModBlocks.MOD_SHELF
+                );
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModBlocks.MOD_LOG, 1)
+//                        .input(Blocks.JUNGLE_LOG)
+//                        .criterion(hasItem(Blocks.JUNGLE_LOG), conditionsFromItem(Blocks.JUNGLE_LOG))
+//                        .offerTo(exporter, "cacao_log_from_vanilla_jungle_log");
+//
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModBlocks.MOD_WOOD, 1)
+//                        .input(Blocks.JUNGLE_WOOD)
+//                        .criterion(hasItem(Blocks.JUNGLE_WOOD), conditionsFromItem(Blocks.JUNGLE_WOOD))
+//                        .offerTo(exporter, "cacao_wood_from_vanilla_jungle_wood");
+//
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModBlocks.STRIPPED_MOD_LOG, 1)
+//                        .input(Blocks.STRIPPED_JUNGLE_LOG)
+//                        .criterion(hasItem(Blocks.STRIPPED_JUNGLE_LOG), conditionsFromItem(Blocks.STRIPPED_JUNGLE_LOG))
+//                        .offerTo(exporter, "stripped_cacao_log_from_vanilla_stripped_jungle_log");
+//
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModBlocks.STRIPPED_MOD_WOOD, 1)
+//                        .input(Blocks.STRIPPED_JUNGLE_WOOD)
+//                        .criterion(hasItem(Blocks.STRIPPED_JUNGLE_WOOD), conditionsFromItem(Blocks.STRIPPED_JUNGLE_WOOD))
+//                        .offerTo(exporter, "stripped_cacao_wood_from_vanilla_stripped_jungle_wood");
+//
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModBlocks.MOD_PLANKS, 1)
+//                        .input(Blocks.JUNGLE_PLANKS)
+//                        .criterion(hasItem(Blocks.JUNGLE_PLANKS), conditionsFromItem(Blocks.JUNGLE_PLANKS))
+//                        .offerTo(exporter, "cacao_planks_from_vanilla_jungle_planks");
+//
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModBlocks.MOD_STAIRS, 1)
+//                        .input(Blocks.JUNGLE_STAIRS)
+//                        .criterion(hasItem(Blocks.JUNGLE_STAIRS), conditionsFromItem(Blocks.JUNGLE_STAIRS))
+//                        .offerTo(exporter, "cacao_stairs_from_vanilla_jungle_stairs");
+//
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModBlocks.MOD_SLAB, 1)
+//                        .input(Blocks.JUNGLE_SLAB)
+//                        .criterion(hasItem(Blocks.JUNGLE_SLAB), conditionsFromItem(Blocks.JUNGLE_SLAB))
+//                        .offerTo(exporter, "cacao_slab_from_vanilla_jungle_slab");
+//
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModBlocks.MOD_BUTTON, 1)
+//                        .input(Blocks.JUNGLE_BUTTON)
+//                        .criterion(hasItem(Blocks.JUNGLE_BUTTON), conditionsFromItem(Blocks.JUNGLE_BUTTON))
+//                        .offerTo(exporter, "cacao_button_from_vanilla_jungle_button");
+//
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModBlocks.MOD_PRESSURE_PLATE, 1)
+//                        .input(Blocks.JUNGLE_PRESSURE_PLATE)
+//                        .criterion(hasItem(Blocks.JUNGLE_PRESSURE_PLATE), conditionsFromItem(Blocks.JUNGLE_PRESSURE_PLATE))
+//                        .offerTo(exporter, "cacao_pressure_plate_from_vanilla_jungle_pressure_plate");
+//
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModBlocks.MOD_FENCE, 1)
+//                        .input(Blocks.JUNGLE_FENCE)
+//                        .criterion(hasItem(Blocks.JUNGLE_FENCE), conditionsFromItem(Blocks.JUNGLE_FENCE))
+//                        .offerTo(exporter, "cacao_fence_from_vanilla_jungle_fence");
+//
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModBlocks.MOD_FENCE_GATE, 1)
+//                        .input(Blocks.JUNGLE_FENCE_GATE)
+//                        .criterion(hasItem(Blocks.JUNGLE_FENCE_GATE), conditionsFromItem(Blocks.JUNGLE_FENCE_GATE))
+//                        .offerTo(exporter, "cacao_fence_gate_from_vanilla_jungle_fence_gate");
+//
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModBlocks.MOD_DOOR, 1)
+//                        .input(Blocks.JUNGLE_DOOR)
+//                        .criterion(hasItem(Blocks.JUNGLE_DOOR), conditionsFromItem(Blocks.JUNGLE_DOOR))
+//                        .offerTo(exporter, "cacao_door_from_vanilla_jungle_door");
+//
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModBlocks.MOD_TRAPDOOR, 1)
+//                        .input(Blocks.JUNGLE_TRAPDOOR)
+//                        .criterion(hasItem(Blocks.JUNGLE_TRAPDOOR), conditionsFromItem(Blocks.JUNGLE_TRAPDOOR))
+//                        .offerTo(exporter, "cacao_trapdoor_from_vanilla_jungle_trapdoor");
+//
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModItems.MOD_SIGN, 1)
+//                        .input(Blocks.JUNGLE_SIGN)
+//                        .criterion(hasItem(Blocks.JUNGLE_SIGN), conditionsFromItem(Items.JUNGLE_SIGN))
+//                        .offerTo(exporter, "cacao_sign_from_vanilla_jungle_sign");
+//
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModItems.MOD_HANGING_SIGN, 1)
+//                        .input(Items.JUNGLE_HANGING_SIGN)
+//                        .criterion(hasItem(Items.JUNGLE_HANGING_SIGN), conditionsFromItem(Items.JUNGLE_HANGING_SIGN))
+//                        .offerTo(exporter, "cacao_hanging_sign_from_vanilla_jungle_hanging_sign");
+//
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModBoats.MOD_BOAT, 1)
+//                        .input(Items.JUNGLE_BOAT)
+//                        .criterion(hasItem(Items.JUNGLE_BOAT), conditionsFromItem(Items.JUNGLE_BOAT))
+//                        .offerTo(exporter, "cacao_boat_from_vanilla_jungle_boat");
+//
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModBoats.MOD_CHEST_BOAT, 1)
+//                        .input(Items.JUNGLE_CHEST_BOAT)
+//                        .criterion(hasItem(Items.JUNGLE_CHEST_BOAT), conditionsFromItem(Items.JUNGLE_CHEST_BOAT))
+//                        .offerTo(exporter, "cacao_chest_boat_from_vanilla_jungle_chest_boat");
+//                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModBlocks.MOD_SHELF, 1)
+//                        .input(Blocks.JUNGLE_SHELF)
+//                        .criterion(hasItem(Blocks.JUNGLE_SHELF), conditionsFromItem(Blocks.JUNGLE_SHELF))
+//                        .offerTo(exporter, "cacao_shelf_from_vanilla_jungle_shelf");
+
+            }
             private void generateChollaRecipes() {
                 generateCombinedWoodRecipes(
                         ChollaWoodModTags.Items.MOD_BLOCKS,
@@ -419,10 +535,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         KapokWoodModBoats.MOD_CHEST_BOAT,
                         KapokWoodModBlocks.MOD_SHELF
                 );
-//                createShapeless(RecipeCategory.BUILDING_BLOCKS, KapokWoodModBlocks.MOD_LEAVES, 1)
-//                        .input(Blocks.JUNGLE_LEAVES)
-//                        .criterion(hasItem(Blocks.JUNGLE_LEAVES), conditionsFromItem(Blocks.JUNGLE_LEAVES))
-//                        .offerTo(exporter, "kapok_leaves_from_vanilla_jungle_leaves");
             }
             private void generateMapleRecipes() {
                 generateNaturalWoodRecipes(
@@ -581,6 +693,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             public void generate() {
                 generateAzaleaRecipes();
                 generateBaobabRecipes();
+                generateCacaoRecipes();
                 generateChollaRecipes();
                 generateChorusRecipes();
                 generateCitrusRecipes();

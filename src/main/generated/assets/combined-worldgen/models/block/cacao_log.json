@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "combined-worldgen:block/cacao_log_top",
+    "side": "combined-worldgen:block/cacao_log"
+  }
+}

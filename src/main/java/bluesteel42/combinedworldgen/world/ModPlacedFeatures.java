@@ -2,9 +2,9 @@ package bluesteel42.combinedworldgen.world;
 
 import bluesteel42.combinedworldgen.CombinedWorldgen;
 import bluesteel42.combinedworldgen.wood.baobab.tree.BaobabWoodTreePlacedFeatures;
+import bluesteel42.combinedworldgen.wood.cacao.tree.CacaoWoodTreePlacedFeatures;
 import bluesteel42.combinedworldgen.wood.citrus.tree.CitrusWoodTreePlacedFeatures;
 import bluesteel42.combinedworldgen.wood.dogwood.tree.DogwoodWoodTreePlacedFeatures;
-import bluesteel42.combinedworldgen.wood.kapok.tree.KapokWoodTreePlacedFeatures;
 import bluesteel42.combinedworldgen.wood.maple.tree.MapleWoodTreePlacedFeatures;
 import bluesteel42.combinedworldgen.wood.petrified.tree.PetrifiedWoodTreePlacedFeatures;
 import bluesteel42.combinedworldgen.wood.pine.tree.PineWoodTreeConfiguredFeatures;
@@ -23,7 +23,6 @@ import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.*;
-import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 
 import java.util.List;
 
@@ -120,9 +119,10 @@ public class ModPlacedFeatures {
 
         /* TREES */
         BaobabWoodTreePlacedFeatures.bootstrap(context);
+        CacaoWoodTreePlacedFeatures.bootstrap(context);
         CitrusWoodTreePlacedFeatures.bootstrap(context);
         DogwoodWoodTreePlacedFeatures.bootstrap(context);
-        KapokWoodTreePlacedFeatures.bootstrap(context);
+//        KapokWoodTreePlacedFeatures.bootstrap(context);
         MapleWoodTreePlacedFeatures.bootstrap(context);
         PetrifiedWoodTreePlacedFeatures.bootstrap(context);
         PineWoodTreePlacedFeatures.bootstrap(context);
