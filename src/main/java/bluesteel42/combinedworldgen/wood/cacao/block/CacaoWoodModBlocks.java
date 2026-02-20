@@ -5,11 +5,9 @@ import bluesteel42.combinedworldgen.wood.cacao.CacaoWoodInitializer;
 import bluesteel42.combinedworldgen.wood.cacao.item.CacaoWoodModSaplingGenerators;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.Block;
-import net.minecraft.block.MapColor;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
-import net.minecraft.sound.BlockSoundGroup;
 
 public class CacaoWoodModBlocks {
     public static final Block MOD_LOG = ModBlocks.registerLog(CacaoWoodInitializer.MOD_WOOD_NAME, CacaoWoodInitializer.MOD_FIBER_COLOR, CacaoWoodInitializer.MOD_BARK_COLOR, CacaoWoodInitializer.MOD_BLOCK_SOUND);
@@ -60,6 +58,7 @@ public class CacaoWoodModBlocks {
                 .register((itemGroup) -> {
                     itemGroup.addBefore(Items.JUNGLE_LEAVES, CacaoWoodModBlocks.MOD_LEAVES);
                     itemGroup.addBefore(Items.JUNGLE_LOG, CacaoWoodModBlocks.MOD_LOG);
+                    itemGroup.addBefore(Items.JUNGLE_SAPLING, CacaoWoodModBlocks.MOD_SAPLING);
                 });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL)
                 .register((itemGroup) -> {
