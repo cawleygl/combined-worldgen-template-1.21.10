@@ -305,27 +305,28 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 );
             }
             private void generateCacaoRecipes() {
-                generateNaturalWoodRecipes(
-                        CacaoWoodModTags.Items.MOD_LOGS,
-                        CacaoWoodModBlocks.MOD_LOG,
-                        CacaoWoodModBlocks.MOD_WOOD,
-                        CacaoWoodModBlocks.STRIPPED_MOD_LOG,
-                        CacaoWoodModBlocks.STRIPPED_MOD_WOOD,
-                        CacaoWoodModBlocks.MOD_PLANKS,
-                        CacaoWoodModBlocks.MOD_STAIRS,
-                        CacaoWoodModBlocks.MOD_SLAB,
-                        CacaoWoodModBlocks.MOD_BUTTON,
-                        CacaoWoodModBlocks.MOD_FENCE,
-                        CacaoWoodModBlocks.MOD_FENCE_GATE,
-                        CacaoWoodModBlocks.MOD_PRESSURE_PLATE,
-                        CacaoWoodModBlocks.MOD_DOOR,
-                        CacaoWoodModBlocks.MOD_TRAPDOOR,
-                        CacaoWoodModItems.MOD_SIGN,
-                        CacaoWoodModItems.MOD_HANGING_SIGN,
-                        CacaoWoodModBoats.MOD_BOAT,
-                        CacaoWoodModBoats.MOD_CHEST_BOAT,
-                        CacaoWoodModBlocks.MOD_SHELF
-                );
+                //MOVED TO MINECRAFT TO OVERRIDE JUNGLE RECIPES
+//                generateNaturalWoodRecipes(
+//                        CacaoWoodModTags.Items.MOD_LOGS,
+//                        CacaoWoodModBlocks.MOD_LOG,
+//                        CacaoWoodModBlocks.MOD_WOOD,
+//                        CacaoWoodModBlocks.STRIPPED_MOD_LOG,
+//                        CacaoWoodModBlocks.STRIPPED_MOD_WOOD,
+//                        CacaoWoodModBlocks.MOD_PLANKS,
+//                        CacaoWoodModBlocks.MOD_STAIRS,
+//                        CacaoWoodModBlocks.MOD_SLAB,
+//                        CacaoWoodModBlocks.MOD_BUTTON,
+//                        CacaoWoodModBlocks.MOD_FENCE,
+//                        CacaoWoodModBlocks.MOD_FENCE_GATE,
+//                        CacaoWoodModBlocks.MOD_PRESSURE_PLATE,
+//                        CacaoWoodModBlocks.MOD_DOOR,
+//                        CacaoWoodModBlocks.MOD_TRAPDOOR,
+//                        CacaoWoodModItems.MOD_SIGN,
+//                        CacaoWoodModItems.MOD_HANGING_SIGN,
+//                        CacaoWoodModBoats.MOD_BOAT,
+//                        CacaoWoodModBoats.MOD_CHEST_BOAT,
+//                        CacaoWoodModBlocks.MOD_SHELF
+//                );
 //                createShapeless(RecipeCategory.BUILDING_BLOCKS, CacaoWoodModBlocks.MOD_LOG, 1)
 //                        .input(Blocks.JUNGLE_LOG)
 //                        .criterion(hasItem(Blocks.JUNGLE_LOG), conditionsFromItem(Blocks.JUNGLE_LOG))
