@@ -29,12 +29,12 @@ public class WillowWoodModRegistries {
         FlammableBlockRegistry.getDefaultInstance().add(WillowWoodModBlocks.MOD_WOOD, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(WillowWoodModBlocks.STRIPPED_MOD_LOG, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(WillowWoodModBlocks.STRIPPED_MOD_WOOD, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(WillowWoodModBlocks.MOD_PLANKS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(WillowWoodModBlocks.MOD_SLAB, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(WillowWoodModBlocks.MOD_FENCE_GATE, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(WillowWoodModBlocks.MOD_FENCE, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(WillowWoodModBlocks.MOD_STAIRS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(WillowWoodModBlocks.MOD_LEAVES, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(WillowWoodModBlocks.MOD_PLANKS, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(WillowWoodModBlocks.MOD_SLAB, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(WillowWoodModBlocks.MOD_FENCE_GATE, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(WillowWoodModBlocks.MOD_FENCE, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(WillowWoodModBlocks.MOD_STAIRS, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(WillowWoodModBlocks.MOD_LEAVES, 60, 30);
     }
 
     public static void registerTrades() {

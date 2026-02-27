@@ -29,12 +29,12 @@ public class CacaoWoodModRegistries {
         FlammableBlockRegistry.getDefaultInstance().add(CacaoWoodModBlocks.MOD_WOOD, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(CacaoWoodModBlocks.STRIPPED_MOD_LOG, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(CacaoWoodModBlocks.STRIPPED_MOD_WOOD, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(CacaoWoodModBlocks.MOD_PLANKS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(CacaoWoodModBlocks.MOD_SLAB, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(CacaoWoodModBlocks.MOD_FENCE_GATE, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(CacaoWoodModBlocks.MOD_FENCE, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(CacaoWoodModBlocks.MOD_STAIRS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(CacaoWoodModBlocks.MOD_LEAVES, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(CacaoWoodModBlocks.MOD_PLANKS, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(CacaoWoodModBlocks.MOD_SLAB, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(CacaoWoodModBlocks.MOD_FENCE_GATE, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(CacaoWoodModBlocks.MOD_FENCE, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(CacaoWoodModBlocks.MOD_STAIRS, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(CacaoWoodModBlocks.MOD_LEAVES, 60, 30);
     }
 
     public static void registerTrades() {

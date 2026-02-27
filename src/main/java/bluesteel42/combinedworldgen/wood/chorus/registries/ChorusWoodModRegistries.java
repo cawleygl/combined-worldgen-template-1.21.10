@@ -22,14 +22,14 @@ public class ChorusWoodModRegistries {
     public static void registerFlammables() {
         FlammableBlockRegistry.getDefaultInstance().add(ChorusWoodModBlocks.MOD_BLOCK, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(ChorusWoodModBlocks.STRIPPED_MOD_BLOCK, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(ChorusWoodModBlocks.MOD_PLANKS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(ChorusWoodModBlocks.MOD_MOSAIC, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(ChorusWoodModBlocks.MOD_SLAB, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(ChorusWoodModBlocks.MOD_MOSAIC_SLAB, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(ChorusWoodModBlocks.MOD_FENCE_GATE, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(ChorusWoodModBlocks.MOD_FENCE, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(ChorusWoodModBlocks.MOD_STAIRS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(ChorusWoodModBlocks.MOD_MOSAIC_STAIRS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(ChorusWoodModBlocks.MOD_PLANKS, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ChorusWoodModBlocks.MOD_MOSAIC, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ChorusWoodModBlocks.MOD_SLAB, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ChorusWoodModBlocks.MOD_MOSAIC_SLAB, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ChorusWoodModBlocks.MOD_FENCE_GATE, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ChorusWoodModBlocks.MOD_FENCE, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ChorusWoodModBlocks.MOD_STAIRS, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ChorusWoodModBlocks.MOD_MOSAIC_STAIRS, 20, 5);
     }
 
     public static void registerTrades() {

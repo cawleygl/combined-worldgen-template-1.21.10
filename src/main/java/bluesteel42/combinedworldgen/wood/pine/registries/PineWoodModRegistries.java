@@ -36,17 +36,17 @@ public class PineWoodModRegistries {
         FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.MOD_WOOD, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.STRIPPED_MOD_LOG, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.STRIPPED_MOD_WOOD, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.MOD_PLANKS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.MOD_SLAB, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.MOD_FENCE_GATE, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.MOD_FENCE, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.MOD_STAIRS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.MOD_LEAVES, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.MOD_PLANKS, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.MOD_SLAB, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.MOD_FENCE_GATE, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.MOD_FENCE, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.MOD_STAIRS, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.MOD_LEAVES, 60, 30);
 
         /* ADDITIONAL BLOCKS */
-        FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.SPRUCE_LEAVES_FALLING_NEEDLES, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.SNOWY_PINE_LEAVES, 30, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.SNOWY_SPRUCE_LEAVES, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.SPRUCE_LEAVES_FALLING_NEEDLES, 60, 30);
+        FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.SNOWY_PINE_LEAVES, 60, 30);
+        FlammableBlockRegistry.getDefaultInstance().add(PineWoodModBlocks.SNOWY_SPRUCE_LEAVES, 60, 30);
     }
 
     public static void registerTrades() {

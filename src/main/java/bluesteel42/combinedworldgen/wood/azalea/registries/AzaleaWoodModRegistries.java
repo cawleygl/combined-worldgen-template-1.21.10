@@ -26,18 +26,18 @@ public class AzaleaWoodModRegistries {
     public static void registerFlammables() {
         FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.MOD_BLOCK, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.STRIPPED_MOD_BLOCK, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.MOD_PLANKS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.MOD_MOSAIC, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.MOD_SLAB, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.MOD_MOSAIC_SLAB, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.MOD_FENCE_GATE, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.MOD_FENCE, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.MOD_STAIRS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.MOD_MOSAIC_STAIRS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.MOD_PLANKS, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.MOD_MOSAIC, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.MOD_SLAB, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.MOD_MOSAIC_SLAB, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.MOD_FENCE_GATE, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.MOD_FENCE, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.MOD_STAIRS, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.MOD_MOSAIC_STAIRS, 20, 5);
 
         /* ADDITIONAL BLOCKS */
         FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.AZALEA_STEM, 60, 60);
-        FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.LEAFY_AZALEA_STEM, 60, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.LEAFY_AZALEA_STEM, 60, 30);
         FlammableBlockRegistry.getDefaultInstance().add(AzaleaWoodModBlocks.STRIPPED_AZALEA_STEM, 60, 60);
     }
 

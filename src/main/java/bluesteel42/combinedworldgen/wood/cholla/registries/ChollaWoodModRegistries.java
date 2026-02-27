@@ -24,14 +24,14 @@ public class ChollaWoodModRegistries {
     public static void registerFlammables() {
         FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.MOD_BLOCK, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.STRIPPED_MOD_BLOCK, 5, 5);
-        FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.MOD_PLANKS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.MOD_MOSAIC, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.MOD_SLAB, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.MOD_MOSAIC_SLAB, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.MOD_FENCE_GATE, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.MOD_FENCE, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.MOD_STAIRS, 5, 20);
-        FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.MOD_MOSAIC_STAIRS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.MOD_PLANKS, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.MOD_MOSAIC, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.MOD_SLAB, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.MOD_MOSAIC_SLAB, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.MOD_FENCE_GATE, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.MOD_FENCE, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.MOD_STAIRS, 20, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.MOD_MOSAIC_STAIRS, 20, 5);
         /* ADDITIONAL BLOCKS */
         FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.DRIED_CHOLLA, 60, 60);
         FlammableBlockRegistry.getDefaultInstance().add(ChollaWoodModBlocks.STRIPPED_DRIED_CHOLLA, 60, 60);
